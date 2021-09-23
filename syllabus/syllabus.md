@@ -15,7 +15,7 @@ Linear algebra, multivariate calculus, and their applications in real world prob
 
 - Mandatory daily symptom monitoring survey: <https://uclasurveys.co1.qualtrics.com/jfe/form/SV_3qRLtouCYKzBbH7> or UCLA'S mobile app. Need to fill out each morning. If instructed by the survey to not come to campus, notify instructors. 
 
-- Face masks are required inside all UCLA buildings. Occasionally drinking water should be fine. 
+- Face masks are required inside all UCLA buildings. Occasionally drinking water is fine. 
 
 - Policies may be changing. Follow closely the emails sent by Fielding School of Public Health (FSPH) and UCLA campus.
 
@@ -23,7 +23,7 @@ Linear algebra, multivariate calculus, and their applications in real world prob
 
 Tuesdays and Thursdays, 10am-11:50am @ CHS 41-268. 
 
-Zoom link <https://ucla.zoom.us/j/98003745462> (synchronous) is provided for students who cannot attend in-person class **due to medical reasons**, for example, instructed by the [UCLA COVID Symptom Monitoring Survey](https://uclasurveys.co1.qualtrics.com/jfe/form/SV_3qRLtouCYKzBbH7).
+Zoom session <https://ucla.zoom.us/j/98003745462> (synchronous) is provided for students who cannot attend in-person class **due to medical reasons**, for example, instructed by the [UCLA COVID Symptom Monitoring Survey](https://uclasurveys.co1.qualtrics.com/jfe/form/SV_3qRLtouCYKzBbH7).
 
 ### Instructor
 
@@ -35,7 +35,7 @@ Office hours: Tuesdays and Thursdays, 12pm-1pm @ CHS 21-254A and Zoom (synchrono
 ### Teaching Assistant
 
 Do Hyun Kim: <dkim116@ucla.edu>  
-Office hours (Zoom): Wednesdays 7pm-8pm @ Zoom <https://ucla.zoom.us/j/98003745462> and Fridays 2pm-3pm @ <https://ucla.zoom.us/j/98003745462>.
+Office hours (Zoom): Wednesdays 7pm-8pm @ <https://ucla.zoom.us/j/98003745462> and Fridays 2pm-3pm @ <https://ucla.zoom.us/j/98003745462>.
 
 ### Course Description
 
