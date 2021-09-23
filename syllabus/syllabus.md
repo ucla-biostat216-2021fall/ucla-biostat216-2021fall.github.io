@@ -9,35 +9,45 @@ title: Biostat 216
 
 ### Course Description
 
-Linear algebra and multivariate calculus. 
+Linear algebra, multivariate calculus, and their applications in real world problems such as optimization, clustering, image compression, compressed sensing, matrix completion, and neural network.
+
+### Some COVID-19 related campus policies
+
+- Mandatory daily symptom monitoring survey: <https://uclasurveys.co1.qualtrics.com/jfe/form/SV_3qRLtouCYKzBbH7> or UCLA'S mobile app. Need to fill out each morning. If instructed by the survey to not come to campus, notify instructors. 
+
+- Face masks are required inside all UCLA buildings. Occasionally drinking water should be fine. 
+
+- Policies may be changing. Follow closely the emails sent by Fielding School of Public Health (FSPH) and UCLA campus.
 
 ### Lecture
 
 Tuesdays and Thursdays, 10am-11:50am @ CHS 41-268. 
 
-Zoom link <https://ucla.zoom.us/j/98003745462> (synchronous) is provided for students who cannot attend in-person class **due to medical reasons**, for example, failing the [UCLA COVID Symptom Monitoring Survey](https://uclasurveys.co1.qualtrics.com/jfe/form/SV_3qRLtouCYKzBbH7).
+Zoom link <https://ucla.zoom.us/j/98003745462> (synchronous) is provided for students who cannot attend in-person class **due to medical reasons**, for example, instructed by the [UCLA COVID Symptom Monitoring Survey](https://uclasurveys.co1.qualtrics.com/jfe/form/SV_3qRLtouCYKzBbH7).
 
 ### Instructor
 
 [Dr. Hua Zhou](http://hua-zhou.github.io/)  
 Office: CHS 21-254A  
 Email: <huazhou@ucla.edu>  
-Office hours: Tuesdays and Thursdays, 12pm-2pm @ CHS 21-254A and Zoom (synchronous) <https://ucla.zoom.us/j/98003745462>.
+Office hours: Tuesdays and Thursdays, 12pm-1pm @ CHS 21-254A and Zoom (synchronous) <https://ucla.zoom.us/j/98003745462>.
 
 ### Teaching Assistant
 
 Do Hyun Kim: <dkim116@ucla.edu>  
-Office hours: ??? @ ??? Zoom <https://ucla.zoom.us/j/98003745462> (synchronous).
+Office hours (Zoom): Wednesdays 7pm-8pm @ Zoom <https://ucla.zoom.us/j/98003745462> and Fridays 2pm-3pm @ <https://ucla.zoom.us/j/98003745462>.
 
 ### Course Description
 
 This 4-unit course is designed for first year biostatistics MS and PhD students. It will review, and in some cases introduce, specialized topics in Linear Algebra, Multivariate Calculus and Scientific Computing that are considered to be particularly pertinent for the subsequent courses in our MS and PhD curriculum. It is required for MS students and optional for PhD students.
 
-See the [schedule](https://ucla-biostat216-2021fall.github.io/schedule.html) page for a tentative list of topics.  
+See the [schedule](https://ucla-biostat216-2021fall.github.io/schedule/schedule.html) page for a tentative list of topics.  
 
 ### Prerequisite
 
 Prerequisites are the same as those for admission into biostatistics MS program. Students should have seen one course in basic linear algebra at the level of UCLA’s Math 33A (using a textbook such as O. Bretscher, Linear Algebra, 5th Ed., Prentice Hall.) and a Calculus sequence at the level of UCLA’s Math 31AB (e.g. J. Rogawski, Calculus, 3rd Edition , W.H. Freeman & Co). Biostatistics MPH students will need to obtain consent from the instructor to take this course. Students with more advanced mathematical preparation prior to admission may not need to take this course and should consult with their academic advisers.
+
+For example, if you understand the questions in this [previous homework](https://ucla-biostat216-2019fall.github.io/hw/hw5/hw5.html) and either know how to solve them or know where to find solutions, then this course is too easy for you. 
 
 ### Course Webpage
 
@@ -47,21 +57,21 @@ Prerequisites are the same as those for admission into biostatistics MS program.
 
 <https://ccle.ucla.edu/course/view/21F-BIOSTAT216-1>
 
-Recorded lectures will be posted on CCLE. 
+Recorded lectures will be posted on CCLE. Homework will be submitted to CCLE.
 
 ### Course Materials
 
-No required textbooks.
-
 Recommended books (not required):
 
-* Boyd and Vandenberghe, _Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares_, Cambridge University Press (2018), [UCLA library link](https://search.library.ucla.edu/permalink/01UCS_LAL/17p22dp/alma9992042123606533)  
+* Boyd and Vandenberghe, _Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares_, Cambridge University Press (2018). Authors kindly provide a free copy [online](https://web.stanford.edu/~boyd/vmls/).  
+
+    The first couple of weeks heavily use material in this textbook. There is a parallel [EE133A](https://www.seas.ucla.edu/~vandenbe/133A/) this quarter. 
 
 * Strang, _Linear Algebra and Learning From Data_, Wellesley, MA: Wellesley-Cambridge Press (2019), [UCLA library link](https://search.library.ucla.edu/permalink/01UCS_LAL/17p22dp/alma9912384821806531)  
 
 * Banerjee and Roy, _Linear Algebra And Matrix Analysis For Statistics_, 2nd Edition, CRC Press (2014), [UCLA library link](https://search.library.ucla.edu/permalink/01UCS_LAL/192ecse/cdi_safari_books_9781482248241)  
 
-* Magnus and Neudecker, _Matrix Differential Calculus With Applications in Statistics and Econometrics_, John Wiley & Sons, Inc. (2019), [UCLA library link](https://search.library.ucla.edu/permalink/01UCS_LAL/17p22dp/alma9914812790606531)
+* Magnus and Neudecker, _Matrix Differential Calculus With Applications in Statistics and Econometrics_, John Wiley & Sons, Inc. (2019), [UCLA library link](https://search.library.ucla.edu/permalink/01UCS_LAL/17p22dp/alma9914812790606531)  
 
 ### Attendance
 
@@ -73,7 +83,7 @@ Class attendance is **mandatory**. If you are not able to attend a lecture due t
 
 ### Exam
 
-In-class midterm in week 5 or 6. Final exam on Dec 9, 2021 @ 3pm-6pm.
+In-class midterm around week 6. Final exam on Dec 9, 2021 @ 3pm-6pm.
 
 ### Final Grade
 
@@ -94,7 +104,6 @@ Fax: (310)825-9656
 ### Inclusivity
 
 UCLA’s Office for Equity, Diversity, and Inclusion provides resources, events, and information about current initiatives at UCLA to support equality for all members of the UCLA community. I hope that you will communicate with me or your TA if you experience anything in this course that does not support an inclusive environment, and you can also report any incidents you may witness or experience on campus to the Office of Equity, Diversity, and Inclusion on their website <https://equity.ucla.edu>.
-
 
 ### Academic Integrity
 
