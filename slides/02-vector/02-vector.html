@@ -14025,7 +14025,7 @@ Environment:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  0.041586 seconds (76.21 k allocations: 4.502 MiB, 87.21% compilation time)
+<pre>  0.034458 seconds (76.21 k allocations: 4.502 MiB, 85.55% compilation time)
 </pre>
 </div>
 </div>
@@ -14077,7 +14077,7 @@ $$</p>
 <li><p>Triangle inequality: $\|\mathbf{x} + \mathbf{y}\| \le \|\mathbf{x}\| + \|\mathbf{y}\|$ for any $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$. Proof: use Cauchy-Schwartz inequality.</p>
 </li>
 <li><p><strong>Cauchy-Schwartz inequality</strong>: $|\mathbf{x}' \mathbf{y}| \le \|\mathbf{x}\| \|\mathbf{y}\|$ for any $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$. The equality holds when (1) $\mathbf{x} = \mathbf{0}$ or $\mathbf{y}=0$ or (2) $\mathbf{x} \ne \mathbf{0}$, $\mathbf{y} \ne \mathbf{0}$, and $\mathbf{x} = \alpha \mathbf{y}$ for some $\alpha \ne 0$.</p>
-<p>Proof: The function $f(t) = \|\mathbf{x} - \mathbf{y}\|_2^2 = \|\mathbf{x}\|_2^2 - 2t (\mathbf{x}' \mathbf{y}) + t^2\|\mathbf{y}\|_2^2$ is minimized at $t^\star =(\mathbf{x}'\mathbf{y}) / \|\mathbf{y}\|$ with minimal value $f(t^\star) = \|\mathbf{x}\|^2 - (\mathbf{x}'\mathbf{y})^2 / \|\mathbf{y}\|^2 \ge 0$.</p>
+<p>Proof: The function $f(t) = \|\mathbf{x} - t \mathbf{y}\|_2^2 = \|\mathbf{x}\|_2^2 - 2t (\mathbf{x}' \mathbf{y}) + t^2\|\mathbf{y}\|_2^2$ is minimized at $t^\star =(\mathbf{x}'\mathbf{y}) / \|\mathbf{y}\|$ with minimal value $f(t^\star) = \|\mathbf{x}\|^2 - (\mathbf{x}'\mathbf{y})^2 / \|\mathbf{y}\|^2 \ge 0$.</p>
 </li>
 </ol>
 </li>
@@ -14233,7 +14233,7 @@ $$</p>
 </li>
 <li><p>Theorem: $\operatorname{avg}(\mathbf{x})^2 + \operatorname{std}(\mathbf{x})^2 = \operatorname{rms}(\mathbf{x})^2$.</p>
 <p>This result underlies the famous <em>bias-variance tradeoff</em> in statistics.</p>
-<p>Proof: TODO in HW1. $\operatorname{std}(\mathbf{x})^2 = \frac{\|\mathbf{x} - (\mathbf{1}' \mathbf{x} / n) \mathbf{1}\|^2}{n} = ... = \operatorname{rms}(\mathbf{x})^2 - \operatorname{avg}(\mathbf{x})^2$.</p>
+<p>Proof: TODO in class. $\operatorname{std}(\mathbf{x})^2 = \frac{\|\mathbf{x} - (\mathbf{1}' \mathbf{x} / n) \mathbf{1}\|^2}{n} = ... = \operatorname{rms}(\mathbf{x})^2 - \operatorname{avg}(\mathbf{x})^2$.</p>
 </li>
 </ul>
 
