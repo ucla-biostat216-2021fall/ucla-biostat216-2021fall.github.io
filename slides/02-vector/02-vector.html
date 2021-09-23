@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Vectors-(BV-Chapters-1-5)" data-toc-modified-id="Vectors-(BV-Chapters-1-5)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Vectors (BV Chapters 1-5)</a></div><div class="lev2 toc-item"><a href="#Notation" data-toc-modified-id="Notation-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Notation</a></div><div class="lev2 toc-item"><a href="#Some-special-vectors" data-toc-modified-id="Some-special-vectors-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Some special vectors</a></div><div class="lev2 toc-item"><a href="#Vector-operations" data-toc-modified-id="Vector-operations-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Vector operations</a></div><div class="lev2 toc-item"><a href="#Computational-complexity-of-vector-operations" data-toc-modified-id="Computational-complexity-of-vector-operations-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Computational complexity of vector operations</a></div><div class="lev2 toc-item"><a href="#Norm,-distance,-angle" data-toc-modified-id="Norm,-distance,-angle-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Norm, distance, angle</a></div><div class="lev2 toc-item"><a href="#Linear-independence" data-toc-modified-id="Linear-independence-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Linear independence</a></div><div class="lev2 toc-item"><a href="#Basis" data-toc-modified-id="Basis-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Basis</a></div><div class="lev2 toc-item"><a href="#Orthonormal-basis" data-toc-modified-id="Orthonormal-basis-18"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Orthonormal basis</a></div><div class="lev2 toc-item"><a href="#Gram-Schmidt-algorithm" data-toc-modified-id="Gram-Schmidt-algorithm-19"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Gram-Schmidt algorithm</a></div></p>
+<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Vectors-(BV-Chapters-1,-3,-5)" data-toc-modified-id="Vectors-(BV-Chapters-1,-3,-5)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Vectors (BV Chapters 1, 3, 5)</a></div><div class="lev2 toc-item"><a href="#Notation" data-toc-modified-id="Notation-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Notation</a></div><div class="lev2 toc-item"><a href="#Some-special-vectors" data-toc-modified-id="Some-special-vectors-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Some special vectors</a></div><div class="lev2 toc-item"><a href="#Vector-operations" data-toc-modified-id="Vector-operations-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Vector operations</a></div><div class="lev2 toc-item"><a href="#Computational-complexity-of-vector-operations" data-toc-modified-id="Computational-complexity-of-vector-operations-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Computational complexity of vector operations</a></div><div class="lev2 toc-item"><a href="#Norm,-distance,-angle" data-toc-modified-id="Norm,-distance,-angle-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Norm, distance, angle</a></div><div class="lev2 toc-item"><a href="#Linear-independence" data-toc-modified-id="Linear-independence-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Linear independence</a></div><div class="lev2 toc-item"><a href="#Basis" data-toc-modified-id="Basis-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Basis</a></div><div class="lev2 toc-item"><a href="#Orthonormal-basis" data-toc-modified-id="Orthonormal-basis-18"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Orthonormal basis</a></div><div class="lev2 toc-item"><a href="#Gram-Schmidt-algorithm" data-toc-modified-id="Gram-Schmidt-algorithm-19"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Gram-Schmidt algorithm</a></div></p>
 
 </div>
 </div>
@@ -13151,7 +13151,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Vectors-(BV-Chapters-1-5)">Vectors (BV Chapters 1-5)<a class="anchor-link" href="#Vectors-(BV-Chapters-1-5)">&#182;</a></h1>
+<h1 id="Vectors-(BV-Chapters-1,-3,-5)">Vectors (BV Chapters 1, 3, 5)<a class="anchor-link" href="#Vectors-(BV-Chapters-1,-3,-5)">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13252,7 +13252,7 @@ $n$ is the <strong>dimension</strong> or <strong>length</strong> or <strong>size
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Subvector: $\mathbf{x}[2:4]$ or $\mathbf{x}_{2:4} = (x_2, x_3, x_4)'$.</li>
+<li>Subvector: $\mathbf{x}_{2:4} = (x_2, x_3, x_4)'$.</li>
 </ul>
 
 </div>
@@ -13525,7 +13525,6 @@ x_1 - y_1 \\ \vdots \\ x_n - y_n
 \end{pmatrix}.
 $$</li>
 </ul>
-<p>TODO: 2D picture.</p>
 
 </div>
 </div>
@@ -13667,7 +13666,7 @@ $$</li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><strong>Elementwise multiplication</strong> or <strong>Hadamard product</strong>. For two vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$ of same length
+<li><strong>Elementwise multiplication</strong> or <strong>Hadamard product</strong>. For two vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$ (of same length)
 $$
 \mathbf{x} \circ \mathbf{y} = \begin{pmatrix}
 x_1 y_1 \\ \vdots \\ x_n y_n
@@ -13723,9 +13722,9 @@ $$</li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>For scalars $\alpha_1, \ldots, \alpha_m \in \mathbb{R}$ and vectors $\mathbf{x}_1, \ldots, \mathbf{x}_m \in \mathbb{R}^n$, the <strong>linear combination</strong>
+<li>For scalars $\alpha_1, \ldots, \alpha_k \in \mathbb{R}$ and vectors $\mathbf{x}_1, \ldots, \mathbf{x}_k \in \mathbb{R}^n$, the <strong>linear combination</strong>
 $$
-\alpha_1 \mathbf{x}_1 + \cdots + \alpha_m \mathbf{x}_m
+\alpha_1 \mathbf{x}_1 + \cdots + \alpha_k \mathbf{x}_k
 $$
 is a sum of scalar-vector products. </li>
 </ul>
@@ -13920,7 +13919,7 @@ $$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Computational-complexity-of-vector-operations">Computational complexity of vector operations<a class="anchor-link" href="#Computational-complexity-of-vector-operations">&#182;</a></h2><ul>
-<li><p>One <strong>floating point operation</strong> (flop) is one basic arithmetic operation in $\mathbb{R}$: $+, -, *, /, \sqrt, ...$</p>
+<li><p>One <strong>floating point operation</strong> (flop) is one basic arithmetic operation in $\mathbb{R}$ or $\mathbb{C}$: $+, -, *, /, \sqrt, ...$</p>
 </li>
 <li><p>The <strong>flop count</strong> of <strong>operation count</strong> is the total number of flops in an algorithm.</p>
 </li>
@@ -14026,7 +14025,7 @@ Environment:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  0.037684 seconds (76.21 k allocations: 4.502 MiB, 87.61% compilation time)
+<pre>  0.041586 seconds (76.21 k allocations: 4.502 MiB, 87.21% compilation time)
 </pre>
 </div>
 </div>
@@ -14229,12 +14228,12 @@ $$</p>
 </li>
 <li><p>The <strong>standard deviation</strong> of a vector $\mathbf{x}$ is
 $$
-\operatorname{std}(\mathbf{x}) = \sqrt{\frac{(x_1 - \bar{\mathbf{x}})^2 + \cdots + (x_n - \bar{\mathbf{x}})^2}{n}} = \operatorname{rms}(\mathbf{x} - \bar{\mathbf{x}} \mathbf{1}) = \frac{\|\mathbf{x} - (\mathbf{1}' \mathbf{x}) / n) \mathbf{1}\|}{\sqrt n}.
+\operatorname{std}(\mathbf{x}) = \sqrt{\frac{(x_1 - \bar{\mathbf{x}})^2 + \cdots + (x_n - \bar{\mathbf{x}})^2}{n}} = \operatorname{rms}(\mathbf{x} - \bar{\mathbf{x}} \mathbf{1}) = \frac{\|\mathbf{x} - (\mathbf{1}' \mathbf{x} / n) \mathbf{1}\|}{\sqrt n}.
 $$</p>
 </li>
 <li><p>Theorem: $\operatorname{avg}(\mathbf{x})^2 + \operatorname{std}(\mathbf{x})^2 = \operatorname{rms}(\mathbf{x})^2$.</p>
 <p>This result underlies the famous <em>bias-variance tradeoff</em> in statistics.</p>
-<p>Proof: $\operatorname{std}(\mathbf{x})^2 = \frac{\|\mathbf{x} - (\mathbf{1}' \mathbf{x}) / n) \mathbf{1}\|^2}{n} = ... = \operatorname{rms}(\mathbf{x})^2 - \operatorname{avg}(\mathbf{x})^2$.</p>
+<p>Proof: TODO in HW1. $\operatorname{std}(\mathbf{x})^2 = \frac{\|\mathbf{x} - (\mathbf{1}' \mathbf{x} / n) \mathbf{1}\|^2}{n} = ... = \operatorname{rms}(\mathbf{x})^2 - \operatorname{avg}(\mathbf{x})^2$.</p>
 </li>
 </ul>
 
@@ -14314,17 +14313,17 @@ $$</p>
 </ul>
 <table>
 <thead><tr>
-<th>$\theta = 0$</th>
-<th>$\mathbf{x}'\mathbf{y}=\</th>
-<th>\mathbf{x}\</th>
-<th>\</th>
-<th>\mathbf{y}\</th>
-<th>$</th>
-<th>$\mathbf{x}$ and $\mathbf{y}$ are aligned or parallel</th>
+<th>Angle</th>
+<th>Sign of inner product</th>
+<th>Terminology</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>$\theta = 0$</td>
+<td>$\mathbf{x}'\mathbf{y}=|\mathbf{x}||\mathbf{y}|$</td>
+<td>$\mathbf{x}$ and $\mathbf{y}$ are aligned or parallel</td>
+<td></td>
 <td>$0 \le \theta &lt; \pi/2$</td>
 <td>$\mathbf{x}'\mathbf{y} &gt; 0$</td>
 <td>$\mathbf{x}$ and $\mathbf{y}$ make an acute angle</td>
@@ -14354,16 +14353,16 @@ $$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Linear-independence">Linear independence<a class="anchor-link" href="#Linear-independence">&#182;</a></h2><ul>
-<li><p>A set vectors $\mathbf{x}_1, \ldots, \mathbf{x}_m \in \mathbb{R}^n$ is <strong>linearly dependent</strong> if there exist constants $\alpha_1, \ldots, \alpha_m$, which are not all zeros, such that 
+<li><p>A set of vectors $\mathbf{a}_1, \ldots, \mathbf{a}_k \in \mathbb{R}^n$ are <strong>linearly dependent</strong> if there exist constants $\alpha_1, \ldots, \alpha_k$, which are not all zeros, such that 
 $$
-\alpha_1 \mathbf{x}_1 + \cdots + \alpha_m \mathbf{x}_m = \mathbf{0}.
+\alpha_1 \mathbf{a}_1 + \cdots + \alpha_k \mathbf{a}_k = \mathbf{0}.
 $$
-They are <strong>linearly independent</strong> if they are not linearly dependent. That is if $\alpha_1 \mathbf{x}_1 + \cdots + \alpha_m \mathbf{x}_m = \mathbf{0}$ then $\alpha_1 = \cdots = \alpha_m = 0$.</p>
+They are <strong>linearly independent</strong> if they are not linearly dependent. That is if $\alpha_1 \mathbf{a}_1 + \cdots + \alpha_k \mathbf{a}_k = \mathbf{0}$ then $\alpha_1 = \cdots = \alpha_k = 0$.</p>
 </li>
-<li><p>Theorem: Unit vectors $\mathbf{e}_1, \ldots, \mathbf{e}_n$ are linearly independent.</p>
+<li><p>Theorem: Unit vectors $\mathbf{e}_1, \ldots, \mathbf{e}_n \in \mathbb{R}^n$ are linearly independent.</p>
 <p>Proof: TODO in class.</p>
 </li>
-<li><p>Theorem: If $\mathbf{x}$ is a linear combination of linearly independent vectors $\mathbf{a}_1, \ldots, \mathbf{a}_m$. That is $\mathbf{x} = \alpha_1 \mathbf{a}_1 + \cdots \alpha_m \mathbf{a}_m$. Then the coefficients $\alpha_1, \ldots, \alpha_m$ are unique.</p>
+<li><p>Theorem: If $\mathbf{x}$ is a linear combination of linearly independent vectors $\mathbf{a}_1, \ldots, \mathbf{a}_k$. That is $\mathbf{x} = \alpha_1 \mathbf{a}_1 + \cdots \alpha_k \mathbf{a}_k$. Then the coefficients $\alpha_1, \ldots, \alpha_k$ are unique.</p>
 <p>Proof: TODO in class.</p>
 </li>
 <li><p><strong>Independence-dimension inequality</strong> or <strong>order-dimension inequality</strong>. If the vectors $\mathbf{a}_1, \ldots, \mathbf{a}_k \in \mathbb{R}^n$ are linearly independent, then $k \le n$.</p>
@@ -14396,8 +14395,10 @@ with $\gamma = - \alpha_j^{-1} \left( \sum_{i=1}^{j-1} \beta_i \alpha_i + \sum_{
 <h2 id="Basis">Basis<a class="anchor-link" href="#Basis">&#182;</a></h2><ul>
 <li><p>A set of $n$ linearly independent vectors $\mathbf{a}_1, \ldots, \mathbf{a}_n \in \mathbb{R}^n$ is called a <strong>basis</strong> for $\mathbb{R}^n$.</p>
 </li>
+<li><p>Fact: the zero vector $\mathbf{0}_n$ cannot be a basis vector in $\mathbb{R}^n$. Why?</p>
+</li>
 <li><p>Any vector $\mathbf{x} \in \mathbb{R}^n$ can be expressed as a linear combination of basis vectors $\mathbf{x} = \alpha_1 \mathbf{a}_1 + \cdots + \alpha_n \mathbf{a}_n$ for some $\alpha_1, \ldots, \alpha_n$, and these coefficients are unique. This is called expansion of $\mathbf{x}$ in the basis $\mathbf{a}_1, \ldots, \mathbf{a}_n$.</p>
-<p>Proof of existence by contradition. Suppose $\mathbf{x}$ can NOT be expressed as a linear combination of basis vectors $\mathbf{x} = \alpha_1 \mathbf{a}_1 + \cdots + \alpha_n \mathbf{a}_n$. Suppose an arbitrary linear combination $\alpha_1 \mathbf{a}_1 + \cdots + \alpha_n \mathbf{a}_n + \beta \mathbf{x} = \mathbf{0}$. Then $\beta \ne 0$ otherwise it contradictions with our assumption. Also $\alpha_1 = \cdots = \alpha_n = 0$ by linear independence of $\mathbf{a}_1, \ldots, \mathbf{a}_n$. Therefore we conclude $\alpha_1 = \cdots = \alpha_n = \beta = 0$. Thus $\mathbf{a}_1, \ldots, \mathbf{a}_n, \mathbf{x}$ are linearly independent, contradicting with the independence-dimension inequality.</p>
+<p>Proof of existence by contradition. Suppose $\mathbf{x}$ can NOT be expressed as a linear combination of basis vectors $\mathbf{x} = \alpha_1 \mathbf{a}_1 + \cdots + \alpha_n \mathbf{a}_n$. Suppose an arbitrary linear combination $\alpha_1 \mathbf{a}_1 + \cdots + \alpha_n \mathbf{a}_n + \beta \mathbf{x} = \mathbf{0}$. Then $\beta = 0$ otherwise it contradictions with our assumption. Also $\alpha_1 = \cdots = \alpha_n = 0$ by linear independence of $\mathbf{a}_1, \ldots, \mathbf{a}_n$. Therefore we conclude $\alpha_1 = \cdots = \alpha_n = \beta = 0$. Thus $\mathbf{a}_1, \ldots, \mathbf{a}_n, \mathbf{x}$ are linearly independent, contradicting with the independence-dimension inequality.</p>
 <p>Proof of uniqueness: TODO in class.</p>
 </li>
 <li><p>Example: Unit vectors $\mathbf{e}_1, \ldots, \mathbf{e}_n$ form a basis for $\mathbb{R}^n$. Expansion of a vector $\mathbf{x} \in \mathbb{R}^n$ in this basis is
@@ -14414,7 +14415,7 @@ $$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Orthonormal-basis">Orthonormal basis<a class="anchor-link" href="#Orthonormal-basis">&#182;</a></h2><ul>
-<li><p>A set of vectors $\mathbf{a}_1, \ldots, \mathbf{a}_k$ are <strong>(mutually) orthogonal</strong> if $\mathbf{a}_i \perp \mathbf{a}_j$ for any $i \ne j$. They are <strong>normalized</strong> if $\|\mathbf{a}_i\|=1$ for all $1 \le i \le k$. They are <strong>orthonormal</strong> if they are both orthogonal and normalized.</p>
+<li><p>A set of vectors $\mathbf{a}_1, \ldots, \mathbf{a}_k$ are <strong>(mutually) orthogonal</strong> if $\mathbf{a}_i \perp \mathbf{a}_j$ for any $i \ne j$. They are <strong>normalized</strong> if $\|\mathbf{a}_i\|=1$ for all $i$. They are <strong>orthonormal</strong> if they are both orthogonal and normalized.</p>
 <p>Orthonormality is often expressed compactly by $\mathbf{a}_i'\mathbf{a}_j = \delta_{ij}$, where 
 $$
 \delta_{ij} = \begin{cases} 
@@ -14723,6 +14724,53 @@ q2 = q̃2 / norm(q̃2) = [0.16821910046553434, -0.02338411091423074, 0.038173198
 q3 = q̃3 / norm(q̃3) = [-0.6421710176235804, 0.19999957193298795, 0.5314530243342332, 0.5102506406196355, -0.06941557479532266]
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># test for orthonormality of q1, q2, q3</span>
+<span class="nd">@show</span> <span class="n">norm</span><span class="p">(</span><span class="n">q1</span><span class="p">),</span> <span class="n">norm</span><span class="p">(</span><span class="n">q2</span><span class="p">),</span> <span class="n">norm</span><span class="p">(</span><span class="n">q3</span><span class="p">)</span>
+<span class="nd">@show</span> <span class="n">q1</span><span class="o">&#39;</span><span class="n">q2</span><span class="p">,</span> <span class="n">q1</span><span class="o">&#39;</span><span class="n">q3</span><span class="p">,</span> <span class="n">q2</span><span class="o">&#39;</span><span class="n">q3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(norm(q1), norm(q2), norm(q3)) = (1.0, 0.9999999999999999, 0.9999999999999999)
+(q1&#39; * q2, q1&#39; * q3, q2&#39; * q3) = (-9.71445146547012e-17, 2.6020852139652106e-18, 4.163336342344337e-17)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(-9.71445146547012e-17, 2.6020852139652106e-18, 4.163336342344337e-17)</pre>
+</div>
+
 </div>
 
 </div>

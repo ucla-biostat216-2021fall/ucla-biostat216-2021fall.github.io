@@ -65,7 +65,7 @@ Recommended books (not required):
 
 * Boyd and Vandenberghe, _Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares_, Cambridge University Press (2018). Authors kindly provide a free copy [online](https://web.stanford.edu/~boyd/vmls/).  
 
-    The first couple of weeks heavily use material in this textbook. There is a parallel [EE133A](https://www.seas.ucla.edu/~vandenbe/133A/) this quarter. 
+    The first couple of weeks heavily use material in this textbook, which is referred as BV in lecture notes. Professor Vandenberghe teaches [EE133A](https://www.seas.ucla.edu/~vandenbe/133A/) out of this book this quarter. 
 
 * Strang, _Linear Algebra and Learning From Data_, Wellesley, MA: Wellesley-Cambridge Press (2019), [UCLA library link](https://search.library.ucla.edu/permalink/01UCS_LAL/17p22dp/alma9912384821806531)  
 
