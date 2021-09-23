@@ -9,7 +9,7 @@ BIOSTAT 216 tentative schedule and handouts (expect frequent updates)
 
 | Week | Tuesday | Thursday | Homework |
 |:-----------|:------------|:------------|:------------|
-| 1 | | [9/23](https://ucla-biostat216-2021fall.github.io/biostat216fall2021/2021/09/23/week1.html) course logistics, intro. [[slide](./slides/01-intro/01-intro.html)\], vectors (BV Ch 1-5) [[slide](./slides/02-vector/02-vector.html)\] | |  
+| 1 | | [9/23](https://ucla-biostat216-2021fall.github.io/biostat216fall2021/2021/09/23/week1.html) course logistics, intro. [[slide](../slides/01-intro/01-intro.html)\], vectors (BV Ch 1-5) [[slide](../slides/02-vector/02-vector.html)\] | |  
 | 2 | 9/28 matrices | 9/30 rank | HW1 |  
 | 3 | 10/5 linear equations | 10/7 matrix inverses | HW2 |  
 | 4 | 10/12 projection | 10/14 orthogonal projection | HW3 |  
