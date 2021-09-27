@@ -19,6 +19,8 @@ Linear algebra, multivariate calculus, and their applications in real world prob
 
 - Policies may be changing. Follow closely the emails sent by Fielding School of Public Health (FSPH) and UCLA campus.
 
+- For instructor information: [COVID-19 Clearance Portal](https://secure.ctsext.it.ucla.edu/UCLACovidClearance/ClassRoster).
+
 ### Lecture
 
 Tuesdays and Thursdays, 10am-11:50am @ CHS 41-268. 
