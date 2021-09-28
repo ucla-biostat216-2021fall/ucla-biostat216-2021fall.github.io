@@ -13167,7 +13167,7 @@ x_1 \\ x_2 \\ \vdots \\ x_n
 $$
 $n$ is the <strong>dimension</strong> or <strong>length</strong> or <strong>size</strong> of the vector. $x_i$ is the $i$-th <strong>entry</strong> or <strong>element</strong> or <strong>component</strong> of $\mathbf{x}$.</p>
 </li>
-<li><p>A row vector $\mathbf{x}' = (x_1, \ldots, x_n)$.</p>
+<li><p>A row vector $\mathbf{x}' = (x_1 \ldots x_n)$.</p>
 </li>
 </ul>
 
@@ -13179,7 +13179,7 @@ $n$ is the <strong>dimension</strong> or <strong>length</strong> or <strong>size
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="c"># a vector in Julia</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># a (column) vector in Julia</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 
@@ -13899,18 +13899,18 @@ Other notations for inner products: $\langle \mathbf{x}, \mathbf{y} \rangle$.</l
 <ul>
 <li><p><strong>Vector transpose</strong>:
 $$
-\mathbf{x}' = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}' = (x_1, \ldots, x_n).
+\mathbf{x}' = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}' = (x_1 \, \ldots \, x_n).
 $$</p>
 <p>Properties:</p>
 <ol>
 <li><p>$(\mathbf{x}')' = \mathbf{x}$.</p>
 </li>
-<li><p>Transposition is a linear operator. $(\alpha \mathbf{x} + \beta \mathbf{y})' = \alpha \mathbf{x}' + \beta \mathbf{y}'$.</p>
+<li><p>Transposition is a linear operator: $(\alpha \mathbf{x} + \beta \mathbf{y})' = \alpha \mathbf{x}' + \beta \mathbf{y}'$.</p>
 </li>
 </ol>
 </li>
 </ul>
-<p>Superscript $^t$ or $^T$ is also commontly used to denote transpose: $\mathbf{x}^t$, $\mathbf{x}^T$.</p>
+<p>Superscript $^t$ or $^T$ is also commonly used to denote transpose: $\mathbf{x}^t$, $\mathbf{x}^T$.</p>
 
 </div>
 </div>
@@ -13928,7 +13928,7 @@ $$
 \text{run time} \approx \frac{\text{flop count}}{\text{computer speed}}.
 $$</p>
 </li>
-<li><p>Dominant term: the highest-order term in the flop count.
+<li><p><strong>Dominant term</strong>: the highest-order term in the flop count.
 $$
 \frac 13 n^3 + 100 n^2 + 10n + 5 \approx \frac 13 n^3.
 $$</p>
@@ -13940,7 +13940,7 @@ $$</p>
 </li>
 </ul>
 <ul>
-<li><p>Example. Assume vectors are all of length $n$.</p>
+<li><p>Assume vectors are all of length $n$.</p>
 <ol>
 <li><p>Vector addition and substraction: $n$ flops.</p>
 </li>
@@ -13952,7 +13952,7 @@ $$</p>
 </li>
 </ol>
 </li>
-<li><p>These algorithms are all order $n$.</p>
+<li><p>These vector operations are all order $n$ algorithms.</p>
 </li>
 </ul>
 
@@ -14025,7 +14025,7 @@ Environment:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  0.034458 seconds (76.21 k allocations: 4.502 MiB, 85.55% compilation time)
+<pre>  0.032333 seconds (76.21 k allocations: 4.502 MiB, 86.16% compilation time)
 </pre>
 </div>
 </div>
@@ -14092,7 +14092,6 @@ $$</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># check triangular inequality</span>
-<span class="c"># check Cauchy-Schwartz inequality</span>
 <span class="nd">@show</span> <span class="n">x</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="nd">@show</span> <span class="n">y</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="nd">@show</span> <span class="n">norm</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
@@ -14323,7 +14322,8 @@ $$</p>
 <td>$\theta = 0$</td>
 <td>$\mathbf{x}'\mathbf{y}=|\mathbf{x}||\mathbf{y}|$</td>
 <td>$\mathbf{x}$ and $\mathbf{y}$ are aligned or parallel</td>
-<td></td>
+</tr>
+<tr>
 <td>$0 \le \theta &lt; \pi/2$</td>
 <td>$\mathbf{x}'\mathbf{y} &gt; 0$</td>
 <td>$\mathbf{x}$ and $\mathbf{y}$ make an acute angle</td>
@@ -14345,6 +14345,7 @@ $$</p>
 </tr>
 </tbody>
 </table>
+<p>TODO: Picture.</p>
 
 </div>
 </div>
@@ -14440,6 +14441,7 @@ $$</li>
 </ol>
 </li>
 </ul>
+<p>TODO: Picture.</p>
 
 </div>
 </div>
@@ -14560,7 +14562,7 @@ x ≈ (a1&#39; * x) * a1 + (a2&#39; * x) * a2 + (a3&#39; * x) * a3 = true
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Gram-Schmidt-algorithm">Gram-Schmidt algorithm<a class="anchor-link" href="#Gram-Schmidt-algorithm">&#182;</a></h2><ul>
-<li><p>Given vectros $\mathbf{a}_1, \ldots, \mathbf{a}_k \in \mathbb{R}^n$. G-S algorithm generates an orthonormal basis $\mathbf{q}_1, \mathbf{q}_2, \ldots$.</p>
+<li><p>Given vectros $\mathbf{a}_1, \ldots, \mathbf{a}_k \in \mathbb{R}^n$. G-S algorithm generates an orthonormal basis $\mathbf{q}_1, \mathbf{q}_2, \ldots$, such that $\mathbf{q}_i$ is a linear combination of $\mathbf{a}_1,\ldots,\mathbf{a}_i$ and $\mathbf{a}_i$ is a linear combination of $\mathbf{q}_1,\ldots,\mathbf{q}_i$ for all $i$.</p>
 </li>
 <li><p>For $i=1,\ldots,k$:</p>
 <ol>
@@ -14628,7 +14630,8 @@ a3 = randn(5) = [-2.1799967231158695, 1.6267724851759806, 0.5422451069937892, 0.
 <span class="c"># orthogonalization</span>
 <span class="nd">@show</span> <span class="n">q̃1</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
 <span class="c"># test for linear independence</span>
-<span class="c"># Normalization</span>
+<span class="nd">@show</span> <span class="n">norm</span><span class="p">(</span><span class="n">q̃1</span><span class="p">)</span> <span class="n">≈</span> <span class="mi">0</span>
+<span class="c"># normalization</span>
 <span class="nd">@show</span> <span class="n">q1</span> <span class="o">=</span> <span class="n">q̃1</span> <span class="o">/</span> <span class="n">norm</span><span class="p">(</span><span class="n">q̃1</span><span class="p">);</span>
 </pre></div>
 
@@ -14647,6 +14650,7 @@ a3 = randn(5) = [-2.1799967231158695, 1.6267724851759806, 0.5422451069937892, 0.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>q̃1 = copy(a1) = [0.3794474614022756, -1.8588962079349254, 1.1184926614886757, 0.018548652538052303, -0.16650209737984434]
+norm(q̃1) ≈ 0 = false
 q1 = q̃1 / norm(q̃1) = [0.1717929968742402, -0.8416062378152109, 0.5063921249832146, 0.008397812428932689, -0.07538301663429839]
 </pre>
 </div>
@@ -14665,7 +14669,8 @@ q1 = q̃1 / norm(q̃1) = [0.1717929968742402, -0.8416062378152109, 0.50639212498
 <span class="c"># orthogonalization</span>
 <span class="nd">@show</span> <span class="n">q̃2</span> <span class="o">=</span> <span class="n">a2</span> <span class="o">-</span> <span class="p">(</span><span class="n">q1</span><span class="o">&#39;</span><span class="n">a2</span><span class="p">)</span> <span class="o">*</span> <span class="n">q1</span>
 <span class="c"># test for linear independence</span>
-<span class="c"># Normalization</span>
+<span class="nd">@show</span> <span class="n">norm</span><span class="p">(</span><span class="n">q̃2</span><span class="p">)</span> <span class="n">≈</span> <span class="mi">0</span>
+<span class="c"># normalization</span>
 <span class="nd">@show</span> <span class="n">q2</span> <span class="o">=</span> <span class="n">q̃2</span> <span class="o">/</span> <span class="n">norm</span><span class="p">(</span><span class="n">q̃2</span><span class="p">);</span>
 </pre></div>
 
@@ -14684,6 +14689,7 @@ q1 = q̃1 / norm(q̃1) = [0.1717929968742402, -0.8416062378152109, 0.50639212498
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>q̃2 = a2 - (q1&#39; * a2) * q1 = [0.2689585617873683, -0.03738788771764001, 0.061033548664228776, 0.49300016657686413, 1.4952719226248516]
+norm(q̃2) ≈ 0 = false
 q2 = q̃2 / norm(q̃2) = [0.16821910046553434, -0.02338411091423074, 0.03817319882396163, 0.3083450625248457, 0.9352120865896744]
 </pre>
 </div>
@@ -14702,6 +14708,7 @@ q2 = q̃2 / norm(q̃2) = [0.16821910046553434, -0.02338411091423074, 0.038173198
 <span class="c"># orthogonalization</span>
 <span class="nd">@show</span> <span class="n">q̃3</span> <span class="o">=</span> <span class="n">a3</span> <span class="o">-</span> <span class="p">(</span><span class="n">q1</span><span class="o">&#39;</span><span class="n">a3</span><span class="p">)</span> <span class="o">*</span> <span class="n">q1</span> <span class="o">-</span> <span class="p">(</span><span class="n">q2</span><span class="o">&#39;</span><span class="n">a3</span><span class="p">)</span> <span class="o">*</span> <span class="n">q2</span>
 <span class="c"># test for linear independence</span>
+<span class="nd">@show</span> <span class="n">norm</span><span class="p">(</span><span class="n">q̃3</span><span class="p">)</span> <span class="n">≈</span> <span class="mi">0</span>
 <span class="c"># Normalization</span>
 <span class="nd">@show</span> <span class="n">q3</span> <span class="o">=</span> <span class="n">q̃3</span> <span class="o">/</span> <span class="n">norm</span><span class="p">(</span><span class="n">q̃3</span><span class="p">);</span>
 </pre></div>
@@ -14721,6 +14728,7 @@ q2 = q̃2 / norm(q̃2) = [0.16821910046553434, -0.02338411091423074, 0.038173198
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>q̃3 = (a3 - (q1&#39; * a3) * q1) - (q2&#39; * a3) * q2 = [-1.5554755602603014, 0.48444174163375003, 1.2872928987631225, 1.2359361903751251, -0.16813936962635756]
+norm(q̃3) ≈ 0 = false
 q3 = q̃3 / norm(q̃3) = [-0.6421710176235804, 0.19999957193298795, 0.5314530243342332, 0.5102506406196355, -0.06941557479532266]
 </pre>
 </div>
@@ -14737,7 +14745,7 @@ q3 = q̃3 / norm(q̃3) = [-0.6421710176235804, 0.19999957193298795, 0.5314530243
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># test for orthonormality of q1, q2, q3</span>
 <span class="nd">@show</span> <span class="n">norm</span><span class="p">(</span><span class="n">q1</span><span class="p">),</span> <span class="n">norm</span><span class="p">(</span><span class="n">q2</span><span class="p">),</span> <span class="n">norm</span><span class="p">(</span><span class="n">q3</span><span class="p">)</span>
-<span class="nd">@show</span> <span class="n">q1</span><span class="o">&#39;</span><span class="n">q2</span><span class="p">,</span> <span class="n">q1</span><span class="o">&#39;</span><span class="n">q3</span><span class="p">,</span> <span class="n">q2</span><span class="o">&#39;</span><span class="n">q3</span>
+<span class="nd">@show</span> <span class="n">q1</span><span class="o">&#39;</span><span class="n">q2</span><span class="p">,</span> <span class="n">q1</span><span class="o">&#39;</span><span class="n">q3</span><span class="p">,</span> <span class="n">q2</span><span class="o">&#39;</span><span class="n">q3</span><span class="p">;</span>
 </pre></div>
 
     </div>
@@ -14760,19 +14768,6 @@ q3 = q̃3 / norm(q̃3) = [-0.6421710176235804, 0.19999957193298795, 0.5314530243
 </div>
 </div>
 
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[28]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(-9.71445146547012e-17, 2.6020852139652106e-18, 4.163336342344337e-17)</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -14786,7 +14781,7 @@ q3 = q̃3 / norm(q̃3) = [-0.6421710176235804, 0.19999957193298795, 0.5314530243
 </li>
 <li><p>Orthogonalization step ensures that $\tilde{\mathbf{q}}_i \perp \mathbf{q}_1, \ldots, \tilde{\mathbf{q}}_i \perp \mathbf{q}_{i-1}$. To show this, take inner product of both sides with $\mathbf{q}_j$, $j &lt; i$
 $$
-\mathbf{q}_j' \tilde{\mathbf{q}}_i = \mathbf{q}_j' \mathbf{a}_i - (\mathbf{q}_1' \mathbf{a}_i) (\mathbf{q}_j' \mathbf{q}_1) - \cdots - (\mathbf{q}_{i-1}' \mathbf{a}_i) (\mathbf{q}_j' \mathbf{q}_{i-1}) = 0.
+\mathbf{q}_j' \tilde{\mathbf{q}}_i = \mathbf{q}_j' \mathbf{a}_i - (\mathbf{q}_1' \mathbf{a}_i) (\mathbf{q}_j' \mathbf{q}_1) - \cdots - (\mathbf{q}_{i-1}' \mathbf{a}_i) (\mathbf{q}_j' \mathbf{q}_{i-1}) = \mathbf{q}_j' \mathbf{a}_i - \mathbf{q}_j' \mathbf{a}_i = 0.
 $$</p>
 </li>
 <li><p>So $\mathbf{q}_1, \ldots, \mathbf{q}_i$ are orthogonal. The normalization step enures $\mathbf{q}_i$ is normal.</p>
