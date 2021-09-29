@@ -13778,7 +13778,7 @@ is a sum of scalar-vector products. </li>
 <ul>
 <li>The <strong>inner product</strong> or <strong>dot product</strong> between two vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$ is
 $$
-\mathbf{x}' \mathbf{y} = x_1 y_1 + \cdots x_n y_n.
+\mathbf{x}' \mathbf{y} = x_1 y_1 + \cdots + x_n y_n.
 $$
 Other notations for inner products: $\langle \mathbf{x}, \mathbf{y} \rangle$.</li>
 </ul>
@@ -14008,7 +14008,8 @@ Environment:
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="o">^</span><span class="mi">7</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="nd">@time</span> <span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c"># compile</span>
+<span class="nd">@time</span> <span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -14025,22 +14026,9 @@ Environment:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  0.032333 seconds (76.21 k allocations: 4.502 MiB, 86.16% compilation time)
+<pre>  0.004457 seconds (1 allocation: 16 bytes)
 </pre>
 </div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[18]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1785.3360432278994</pre>
-</div>
-
 </div>
 
 </div>
@@ -14077,7 +14065,7 @@ $$</p>
 <li><p>Triangle inequality: $\|\mathbf{x} + \mathbf{y}\| \le \|\mathbf{x}\| + \|\mathbf{y}\|$ for any $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$. Proof: use Cauchy-Schwartz inequality.</p>
 </li>
 <li><p><strong>Cauchy-Schwartz inequality</strong>: $|\mathbf{x}' \mathbf{y}| \le \|\mathbf{x}\| \|\mathbf{y}\|$ for any $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$. The equality holds when (1) $\mathbf{x} = \mathbf{0}$ or $\mathbf{y}=0$ or (2) $\mathbf{x} \ne \mathbf{0}$, $\mathbf{y} \ne \mathbf{0}$, and $\mathbf{x} = \alpha \mathbf{y}$ for some $\alpha \ne 0$.</p>
-<p>Proof: The function $f(t) = \|\mathbf{x} - t \mathbf{y}\|_2^2 = \|\mathbf{x}\|_2^2 - 2t (\mathbf{x}' \mathbf{y}) + t^2\|\mathbf{y}\|_2^2$ is minimized at $t^\star =(\mathbf{x}'\mathbf{y}) / \|\mathbf{y}\|$ with minimal value $f(t^\star) = \|\mathbf{x}\|^2 - (\mathbf{x}'\mathbf{y})^2 / \|\mathbf{y}\|^2 \ge 0$.</p>
+<p>Proof: The function $f(t) = \|\mathbf{x} - t \mathbf{y}\|_2^2 = \|\mathbf{x}\|_2^2 - 2t (\mathbf{x}' \mathbf{y}) + t^2\|\mathbf{y}\|_2^2$ is minimized at $t^\star =(\mathbf{x}'\mathbf{y}) / \|\mathbf{y}\|^2$ with minimal value $f(t^\star) = \|\mathbf{x}\|^2 - (\mathbf{x}'\mathbf{y})^2 / \|\mathbf{y}\|^2 \ge 0$.</p>
 </li>
 </ol>
 </li>
@@ -14196,7 +14184,7 @@ abs(x&#39; * y) ≤ norm(x) * norm(y) = true
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>The <strong>(Euclidean) distrance</strong> between vectors $\mathbf{x}$ and $\mathbf{y}$ is defined as $\|\mathbf{x} - \mathbf{y}\|$.</p>
+<li><p>The <strong>(Euclidean) distance</strong> between vectors $\mathbf{x}$ and $\mathbf{y}$ is defined as $\|\mathbf{x} - \mathbf{y}\|$.</p>
 </li>
 <li><p>Property of distances.</p>
 <ol>
@@ -14404,7 +14392,7 @@ with $\gamma = - \alpha_j^{-1} \left( \sum_{i=1}^{j-1} \beta_i \alpha_i + \sum_{
 </li>
 <li><p>Example: Unit vectors $\mathbf{e}_1, \ldots, \mathbf{e}_n$ form a basis for $\mathbb{R}^n$. Expansion of a vector $\mathbf{x} \in \mathbb{R}^n$ in this basis is
 $$
-\mathbf{x} = x_1 \mathbf{e}_1 + \cdots x_n \mathbf{e}_n.
+\mathbf{x} = x_1 \mathbf{e}_1 + \cdots + x_n \mathbf{e}_n.
 $$</p>
 </li>
 </ul>
