@@ -10,8 +10,8 @@ BIOSTAT 216 tentative schedule and handouts (expect frequent updates)
 | Week | Tuesday | Thursday | Homework |
 |:-----------|:------------|:------------|:------------|
 | 1 | | [9/23](https://ucla-biostat216-2021fall.github.io/biostat216fall2021/2021/09/23/week1.html) course logistics, intro. [[slide](https://ucla-biostat216-2021fall.github.io/slides/01-intro/01-intro.html)\] | [HW1](https://ucla-biostat216-2021fall.github.io/hw/hw1/hw1.html) |  
-| 2 | [9/28](https://ucla-biostat216-2021fall.github.io/biostat216fall2021/2021/09/28/week2-day1.html) vectors (BV Ch 1,3,5) [[slide](https://ucla-biostat216-2021fall.github.io/slides/02-vector/02-vector.html)\] | [9/30](https://ucla-biostat216-2021fall.github.io/biostat216fall2021/2021/09/30/week2-day2.html) matrices (BV Ch 6-10) [[slide](https://ucla-biostat216-2021fall.github.io/slides/03-matrix/03-matrix.html)\] | HW2 |  
-| 3 | 10/5 vector space, rank | 10/7 linear equations, matrix inverses | |  
+| 2 | [9/28](https://ucla-biostat216-2021fall.github.io/biostat216fall2021/2021/09/28/week2-day1.html) vectors (BV Ch 1,3,5) [[slide](https://ucla-biostat216-2021fall.github.io/slides/02-vector/02-vector.html)\] | [9/30](https://ucla-biostat216-2021fall.github.io/biostat216fall2021/2021/09/30/week2-day2.html) matrices (BV Ch 6-10) [[slide](https://ucla-biostat216-2021fall.github.io/slides/03-matrix/03-matrix.html)\] | [HW2](https://ucla-biostat216-2021fall.github.io/hw/hw1/hw2.html) |  
+| 3 | [10/5](https://ucla-biostat216-2021fall.github.io/biostat216fall2021/2021/10/05/week3-day1.html) vector space, rank | 10/7 linear equations, matrix inverses | |  
 | 4 | 10/12 projection | 10/14 orthogonal projection | HW3 |  
 | 5 | 10/19 determinant | 10/21 GE/LU, QR, eigen-decomposition | HW4 |  
 | 6 | 10/26 positive (semi)definite matrix | 10/28 **midterm** |   
