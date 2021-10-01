@@ -1,5 +1,6 @@
 [deps]
 DSP = "717857b8-e6f2-59f4-9121-6e50c889abd2"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
 GraphPlot = "a2cc645c-3eea-5389-862e-a155d0052231"
 IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
