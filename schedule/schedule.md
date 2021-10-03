@@ -7,6 +7,14 @@ title: Biostat 216
 
 BIOSTAT 216 tentative schedule and handouts (expect frequent updates)
 
+Zoom link: <https://ucla.zoom.us/j/98003745462>
+
+[CCLE site](https://ccle.ucla.edu/course/view/21F-BIOSTAT216-1)
+
+[Slack channel](biostat-216-2021-fall.slack.com)
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ucla-biostat216-2021fall/ucla-biostat216-2021fall.github.io/main)
+
 | Week | Tuesday | Thursday | Homework |
 |:-----------|:------------|:------------|:------------|
 | 1 | | [9/23](https://ucla-biostat216-2021fall.github.io/biostat216fall2021/2021/09/23/week1.html) course logistics, intro. [[slide](https://ucla-biostat216-2021fall.github.io/slides/01-intro/01-intro.html)\] | [HW1](https://ucla-biostat216-2021fall.github.io/hw/hw1/hw1.html) |  
