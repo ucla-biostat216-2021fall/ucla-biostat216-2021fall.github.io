@@ -13448,7 +13448,7 @@ is full rank.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Effects-of-matrix-multiplication-on-rank">Effects of matrix multiplication on rank<a class="anchor-link" href="#Effects-of-matrix-multiplication-on-rank">&#182;</a></h2><ul>
 <li><p>$\text{rank}(\mathbf{A}\mathbf{B}) \le \min \{\text{rank}(\mathbf{A}), \text{rank}(\mathbf{B})\}$. In words, <strong>matrix multiplication can only decrease the rank</strong>.</p>
-<p>Proof: Because $\mathcal{C}(\mathbf{A}\mathbf{B}) \subseteq \mathcal{C}(\mathbf{A})$ (why?), we have $\text{rank}(\mathbf{A}\mathbf{B}) \le \text{rank}(\mathbf{A})$ by monotonicity of dimension. Similary, because the row space of $\mathbf{A}\mathbf{B}$ is a subset of the row space of  $\mathbf{A}$, we have $\text{rank}(\mathbf{A}\mathbf{B}) \le \text{rank}(\mathbf{B})$.</p>
+<p>Proof: Because $\mathcal{C}(\mathbf{A}\mathbf{B}) \subseteq \mathcal{C}(\mathbf{A})$ (why?), we have $\text{rank}(\mathbf{A}\mathbf{B}) \le \text{rank}(\mathbf{A})$ by monotonicity of dimension. Similary, because the row space of $\mathbf{A}\mathbf{B}$ is a subset of the row space of  $\mathbf{B}$, we have $\text{rank}(\mathbf{A}\mathbf{B}) \le \text{rank}(\mathbf{B})$.</p>
 </li>
 </ul>
 <ul>
@@ -13551,11 +13551,11 @@ be a basis of $\mathcal{C}(\mathbf{A})$. Then $\mathcal{C}(\mathbf{A}) \subseteq
 </li>
 <li><p>Given a rank factorization $\mathbf{A} = \mathbf{C} \mathbf{R}$,
 $$
-  \text{rank}(\mathbf{A}') = \text{rank}(\mathbf{R}' \mathbf{C}') \le \text{rank}(\mathbf{R}') \le r = \text{rank}(\mathbf{A}).
+  \text{row rank of } \mathbf{A} = \text{rank}(\mathbf{A}') = \text{rank}(\mathbf{R}' \mathbf{C}') \le \text{rank}(\mathbf{R}') \le r = \text{rank}(\mathbf{A}) = \text{column rank of } \mathbf{A}.
 $$
 Now apply the same argument to rank factorization $\mathbf{A}' = \mathbf{R}' \mathbf{C}'$, we get the other direction
 $$
-  \text{rank}(\mathbf{A}) \le \text{rank}(\mathbf{A}').
+  \text{column rank of } \mathbf{A} = \text{rank}(\mathbf{A}) \le \text{rank}(\mathbf{A}') = \text{row rank of } \mathbf{A}.
 $$
 Thus we have a proof of the result $\text{rank}(\mathbf{A}) = \text{rank}(\mathbf{A}')$.</p>
 </li>
