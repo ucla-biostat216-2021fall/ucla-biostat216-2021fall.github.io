@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Rank-and-nullity" data-toc-modified-id="Rank-and-nullity-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Rank and nullity</a></div><div class="lev2 toc-item"><a href="#Rank" data-toc-modified-id="Rank-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Rank</a></div><div class="lev2 toc-item"><a href="#Effects-of-matrix-multiplication-on-rank" data-toc-modified-id="Effects-of-matrix-multiplication-on-rank-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Effects of matrix multiplication on rank</a></div><div class="lev2 toc-item"><a href="#Nullity" data-toc-modified-id="Nullity-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Nullity</a></div><div class="lev2 toc-item"><a href="#Rank-nullity-theorem" data-toc-modified-id="Rank-nullity-theorem-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Rank-nullity theorem</a></div><div class="lev2 toc-item"><a href="#Fundamental-theorem-of-ranks-(important)" data-toc-modified-id="Fundamental-theorem-of-ranks-(important)-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Fundamental theorem of ranks (important)</a></div><div class="lev2 toc-item"><a href="#Rank-factorization" data-toc-modified-id="Rank-factorization-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Rank factorization</a></div></p>
+<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Rank-and-nullity" data-toc-modified-id="Rank-and-nullity-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Rank and nullity</a></div><div class="lev2 toc-item"><a href="#Rank" data-toc-modified-id="Rank-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Rank</a></div><div class="lev2 toc-item"><a href="#Effects-of-matrix-multiplication-on-rank" data-toc-modified-id="Effects-of-matrix-multiplication-on-rank-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Effects of matrix multiplication on rank</a></div><div class="lev2 toc-item"><a href="#Rank-nullity-theorem" data-toc-modified-id="Rank-nullity-theorem-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Rank-nullity theorem</a></div><div class="lev2 toc-item"><a href="#Fundamental-theorem-of-ranks-(important)" data-toc-modified-id="Fundamental-theorem-of-ranks-(important)-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Fundamental theorem of ranks (important)</a></div><div class="lev2 toc-item"><a href="#Rank-factorization-(important)" data-toc-modified-id="Rank-factorization-(important)-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Rank factorization (important)</a></div></p>
 
 </div>
 </div>
@@ -13143,25 +13143,6 @@ $\text{rank}(\mathbf{A} \mathbf{B}) \le \text{rank}(\mathbf{A})$<br>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>┌ Info: Precompiling RDatasets [ce6b1742-4840-55fa-b093-852dadbb1d8b]
-└ @ Base loading.jl:1317
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13470,30 +13451,224 @@ Thus $\text{rank}(\mathbf{A}) = \text{rank} (\mathbf{A} \mathbf{B})$. Proof for 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Nullity">Nullity<a class="anchor-link" href="#Nullity">&#182;</a></h2><ul>
-<li><p>The nullity of a matrix $\mathbf{A}$ is the dimension of its null space 
-$$
-\text{nullity}(\mathbf{A}) = \text{dim}(\mathcal{N}(\mathbf{A})).
-$$</p>
-</li>
-<li><p>If $\mathcal{N}(\mathbf{A}) \subseteq \mathcal{N}(\mathbf{B})$, then $\text{rank}(\mathbf{A}) \ge \text{rank}(\mathbf{B})$.</p>
-<p>Proof: If $\mathbf{A} \mathbf{x} = \mathbf{0}$, then $\mathbf{B} \mathbf{x} = \mathbf{0}$. Then for any set of linearly independent columns in $\mathbf{B}$, the corresponding columns in $\mathbf{A}$ are linearly independent as well. Thus the maximum number of linearly independent columns in $\mathbf{A}$ is at least as many as that of $\mathbf{B}$.</p>
-</li>
-<li><p>$\text{nullity}(\mathbf{A}) \le \text{nullity}(\mathbf{B} \mathbf{A})$. <strong>(Left) matrix multiplication can only inreases the nullity.</strong></p>
-<p>Proof: Since $\mathcal{N}(\mathbf{A}) \subseteq \mathcal{N}(\mathbf{B} \mathbf{A})$ (why?), we have $\text{nullity}(\mathbf{A}) \le \text{nullity}(\mathbf{B} \mathbf{A})$.</p>
-</li>
-</ul>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">2</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="o">-</span><span class="mi">6</span> <span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×3 Matrix{Int64}:
+ 1  -2  -2
+ 3  -6  -6</pre>
+</div>
+
+</div>
 
 </div>
 </div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">rank</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># this B does not have full row rank</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3×2 Matrix{Int64}:
+ 2  2
+ 1  0
+ 0  1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">rank</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># B has full row rank</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">2</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3×3 Matrix{Int64}:
+ 2  2  0
+ 1  0  0
+ 0  1  1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># A * B preserves rank of A</span>
+<span class="n">rank</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Rank-nullity-theorem">Rank-nullity theorem<a class="anchor-link" href="#Rank-nullity-theorem">&#182;</a></h2><ul>
+<li><p>The <strong>nullity</strong> of a matrix $\mathbf{A}$ is the dimension of its null space 
+$$
+\text{nullity}(\mathbf{A}) = \text{dim}(\mathcal{N}(\mathbf{A})).
+$$</p>
+</li>
 <li><p>Let $\mathbf{A} \in \mathbb{R}^{m \times n}$, then
 $$
   \text{rank}(\mathbf{A}) + \text{nullity}(\mathbf{A}) = n.
@@ -13515,6 +13690,107 @@ Since the matrix $\begin{pmatrix} \mathbf{X}_1 : \mathbf{X}_2 \end{pmatrix}$ is 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">2</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="o">-</span><span class="mi">6</span> <span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×3 Matrix{Int64}:
+ 1  -2  -2
+ 3  -6  -6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">rank</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">nullity</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">nullspace</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13529,13 +13805,196 @@ Since the matrix $\begin{pmatrix} \mathbf{X}_1 : \mathbf{X}_2 \end{pmatrix}$ is 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">2</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="o">-</span><span class="mi">6</span> <span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">rank</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">A</span><span class="o">&#39;</span><span class="n">A</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3×3 Matrix{Int64}:
+  10  -20  -20
+ -20   40   40
+ -20   40   40</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">rank</span><span class="p">(</span><span class="n">A</span><span class="o">&#39;</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">A</span> <span class="o">*</span> <span class="n">A</span><span class="o">&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×2 Matrix{Int64}:
+  9  27
+ 27  81</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">rank</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">A</span><span class="o">&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Rank-factorization">Rank factorization<a class="anchor-link" href="#Rank-factorization">&#182;</a></h2><ul>
+<h2 id="Rank-factorization-(important)">Rank factorization (important)<a class="anchor-link" href="#Rank-factorization-(important)">&#182;</a></h2><ul>
 <li><p>Let $\mathbf{A} \in \mathbb{R}^{m \times n}$ with rank $r \ge 1$. The product $\mathbf{A} = \mathbf{C} \mathbf{R}$, where $\mathbf{C} \in \mathbb{R}^{m \times r}$ and $\mathbf{R} \in \mathbb{R}^{r \times n}$ is called a <strong>rank decomposition</strong> or <strong>rank factorization</strong> of $\mathbf{A}$.</p>
 </li>
-<li><p>Visualize: TODO.</p>
+<li><p>Visualize (TODO):
+$$
+\mathbf{A} = \begin{pmatrix}
+| &amp; &amp; | \\
+\mathbf{c}_1 &amp; \cdots &amp; \mathbf{c}_r \\
+| &amp; &amp; |
+\end{pmatrix} \begin{pmatrix}</p>
+</li>
+<li>&amp; \mathbf{r}_1' &amp; - \
+&amp; \vdots &amp; \</li>
+<li><p>&amp; \mathbf{r}_r' &amp; -
+\end{pmatrix}.
+$$</p>
 </li>
 <li><p><strong>Existence of rank factorization.</strong> Any non-null matrix has a rank decomposition. To construct one, let columns of
 \begin{eqnarray*}
@@ -13564,7 +14023,7 @@ Thus we have a proof of the result $\text{rank}(\mathbf{A}) = \text{rank}(\mathb
 <li>$\text{rank}(\mathbf{C}) = \text{rank}(\mathbf{R}) = r$,</li>
 <li><p>$\mathcal{C}(\mathbf{A}) = \mathcal{C}(\mathbf{C})$, $\mathcal{C}(\mathbf{A}') = \mathcal{C}(\mathbf{R}')$ and $\mathcal{N}(\mathbf{A}) = \mathcal{N}(\mathbf{R})$.</p>
 <p>Proof of 1: $r = \text{rank}(\mathbf{A}) = \text{rank}(\mathbf{C}\mathbf{R}) \le \text{rank}(\mathbf{C}) \le r$. Thus $\text{rank}(\mathbf{C}) = r$. Similarly $\text{rank}(\mathbf{R}) = r$.<br>
-Proof of 2: $\mathcal{C}(\mathbf{A}) \subseteq \mathcal{C}(\mathbf{C})$ is trivial. Suppose $\mathcal{C}(\mathbf{C})$ is strictly larger than $\mathcal{C}(\mathbf{A})$. Then there exists vector $\mathbf{v} \in \mathcal{C}(\mathbf{C})$ that is not a linear combination of columns of $\mathbf{A}$. Let $\mathbf{u}_1, \ldots, \mathbf{u}_r$ be a basis of $\mathcal{C}(\mathbf{A})$. Then the $r+1$ vectors $\mathbf{u}_1, \ldots, \mathbf{u}_r, \mathbf{v}$ is an independent set in $\mathcal{C}(\mathbf{C})$, contadicting the fact $\text{rank}(\mathbf{C}) = r$. Therefore we must have $\mathcal{C}(\mathbf{A}) = \mathcal{C}(\mathbf{C})$. Similar argument shows $\mathcal{C}(\mathbf{A}') = \mathcal{C}(\mathbf{R}')$.<br>
+Proof of 2 (optional): $\mathcal{C}(\mathbf{A}) \subseteq \mathcal{C}(\mathbf{C})$ is trivial. Suppose $\mathcal{C}(\mathbf{C})$ is strictly larger than $\mathcal{C}(\mathbf{A})$. Then there exists vector $\mathbf{v} \in \mathcal{C}(\mathbf{C})$ that is not a linear combination of columns of $\mathbf{A}$. Let $\mathbf{u}_1, \ldots, \mathbf{u}_r$ be a basis of $\mathcal{C}(\mathbf{A})$. Then the $r+1$ vectors $\mathbf{u}_1, \ldots, \mathbf{u}_r, \mathbf{v}$ is an independent set in $\mathcal{C}(\mathbf{C})$, contadicting the fact $\text{rank}(\mathbf{C}) = r$. Therefore we must have $\mathcal{C}(\mathbf{A}) = \mathcal{C}(\mathbf{C})$. Similar argument shows $\mathcal{C}(\mathbf{A}') = \mathcal{C}(\mathbf{R}')$.<br>
 To show $\mathcal{N}(\mathbf{A}) = \mathcal{N}(\mathbf{R})$, one direction $\mathcal{N}(\mathbf{A}) \supseteq \mathcal{N}(\mathbf{R})$ is trivial (why?). To show the other direction,
 \begin{eqnarray*}
 &amp; &amp; \mathbf{x} \in \mathcal{N}(\mathbf{A}) \\
@@ -13580,6 +14039,145 @@ But by the rank-nullity theorem, $\text{nullity}(\mathbf{C}) = r - \text{rank}(\
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">2</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="o">-</span><span class="mi">6</span> <span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×3 Matrix{Int64}:
+ 1  -2  -2
+ 3  -6  -6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2-element Vector{Int64}:
+ 1
+ 3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">2</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1×3 Matrix{Int64}:
+ 1  -2  -2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">C</span> <span class="o">*</span> <span class="n">R</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×3 Matrix{Int64}:
+ 1  -2  -2
+ 3  -6  -6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
