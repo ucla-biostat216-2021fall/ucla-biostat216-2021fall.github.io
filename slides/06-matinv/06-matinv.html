@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Linear-equations-and-matrix-inverses-(BV-Chapter-11)" data-toc-modified-id="Linear-equations-and-matrix-inverses-(BV-Chapter-11)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Linear equations and matrix inverses (BV Chapter 11)</a></div><div class="lev2 toc-item"><a href="#Left-and-right-inverses" data-toc-modified-id="Left-and-right-inverses-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Left and right inverses</a></div><div class="lev2 toc-item"><a href="#When-does-a-matrix-have-a-left-or-right-inverse?" data-toc-modified-id="When-does-a-matrix-have-a-left-or-right-inverse?-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>When does a matrix have a left or right inverse?</a></div><div class="lev2 toc-item"><a href="#Generalized-inverse-and-Moore-Penrose-inverse" data-toc-modified-id="Generalized-inverse-and-Moore-Penrose-inverse-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Generalized inverse and Moore-Penrose inverse</a></div><div class="lev2 toc-item"><a href="#Linear-equations" data-toc-modified-id="Linear-equations-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Linear equations</a></div><div class="lev2 toc-item"><a href="#Application:-least-squares" data-toc-modified-id="Application:-least-squares-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Application: least squares</a></div><div class="lev2 toc-item"><a href="#Projection" data-toc-modified-id="Projection-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Projection</a></div><div class="lev2 toc-item"><a href="#An-example-of-generalized-inverses" data-toc-modified-id="An-example-of-generalized-inverses-17"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>An example of generalized inverses</a></div></p>
+<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Linear-equations-and-matrix-inverses-(BV-Chapter-11)" data-toc-modified-id="Linear-equations-and-matrix-inverses-(BV-Chapter-11)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Linear equations and matrix inverses (BV Chapter 11)</a></div><div class="lev2 toc-item"><a href="#Left-and-right-inverses" data-toc-modified-id="Left-and-right-inverses-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Left and right inverses</a></div><div class="lev2 toc-item"><a href="#When-does-a-matrix-have-a-left-or-right-inverse?" data-toc-modified-id="When-does-a-matrix-have-a-left-or-right-inverse?-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>When does a matrix have a left or right inverse?</a></div><div class="lev2 toc-item"><a href="#Linear-equations-and-left/right-inverses" data-toc-modified-id="Linear-equations-and-left/right-inverses-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Linear equations and left/right inverses</a></div><div class="lev2 toc-item"><a href="#Solving-linear-equations" data-toc-modified-id="Solving-linear-equations-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Solving linear equations</a></div><div class="lev2 toc-item"><a href="#Generalized-inverse-and-Moore-Penrose-inverse" data-toc-modified-id="Generalized-inverse-and-Moore-Penrose-inverse-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Generalized inverse and Moore-Penrose inverse</a></div></p>
 
 </div>
 </div>
@@ -13567,8 +13567,8 @@ $$</li>
 <h2 id="When-does-a-matrix-have-a-left-or-right-inverse?">When does a matrix have a left or right inverse?<a class="anchor-link" href="#When-does-a-matrix-have-a-left-or-right-inverse?">&#182;</a></h2><ul>
 <li><p>For $\mathbf{A} \in \mathbb{R}^{m \times n}$,</p>
 <ol>
-<li>$\mathbf{A}$ has a right inverse if and only if $\text{rank}(\mathbf{A}) = m$, or equivalently, $\mathbf{A}$ has full row rank.  </li>
-<li><p>$\mathbf{A}$ has a left inverse if and only if $\text{rank}(\mathbf{A}) = n$, or equivalently, $\mathbf{A}$ has full column rank.</p>
+<li>$\mathbf{A}$ is right invertible if and only if $\text{rank}(\mathbf{A}) = m$, or equivalently, $\mathbf{A}$ has full row rank, or equivalently $\mathbf{A}$ has independent rows. (Only a square or wide matrix can have right inverses.)  </li>
+<li><p>$\mathbf{A}$ is left invertible if and only if $\text{rank}(\mathbf{A}) = n$, or equivalently, $\mathbf{A}$ has full column rank, or equivalently $\mathbf{A}$ has independent columns. (Only a square or tall matrix can have left inverses.)</p>
 <p>Proof of (1). For the <em>if</em> part, since column rank equals row rank, the columns of $\mathbf{A}$ span $\mathbb{R}^m$. Then for each column $\mathbf{e}_j$ of $\mathbf{I}_m$, there exists $\mathbf{c}_j$ such that $\mathbf{A} \mathbf{c}_j = \mathbf{e}_j$. Collecting $\mathbf{c}_j$ as columns of $\mathbf{C}$, we proved $\mathbf{A} \mathbf{C} = \mathbf{I}$.</p>
 <p>For the <em>only if</em> part, since $\mathbf{A} \mathbf{C} = \mathbf{I}_m$, we have $m \ge \text{rank}(\mathbf{A}) \ge \text{rank}(\mathbf{A} \mathbf{C}) = \text{rank}(\mathbf{I}_m) = m$. Thus $\text{rank}(\mathbf{A}) = m$.</p>
 <p>Proof of (2). Apply (1) to $\mathbf{A}'$.</p>
@@ -13591,11 +13591,22 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 </li>
 </ol>
 </li>
+<li><p><strong>Invertibility conditions</strong>. For a square matrix,</p>
+<p>left-invertibility $\Rightarrow$ column independence $\Rightarrow$ right-invertibility $\Rightarrow$ row independence $\Rightarrow$ left-invertibility</p>
+<p>Therefore, for a square matrix $\mathbf{A}$, the following are equivalent:</p>
+<ol>
+<li>$\mathbf{A}$ is invertible.  </li>
+<li>The columns of $\mathbf{A}$ are linear independent. </li>
+<li>The rows of $\mathbf{A}$ are linear independent. </li>
+<li>$\mathbf{A}$ has a left inverse. </li>
+<li>$\mathbf{A}$ has a right inverse. </li>
+</ol>
+</li>
 <li><p>Let $\mathbf{A} \in \mathbb{R}^{m \times n}$. Then</p>
 <ol>
 <li><p>$\mathbf{A}$ has full column rank if and only if $\mathbf{A}'\mathbf{A}$ is nonsingular. In this case, $(\mathbf{A}'\mathbf{A})^{-1} \mathbf{A}'$ is a left inverse of $\mathbf{A}$.</p>
 </li>
-<li><p>$\mathbf{A}$ has full row rank if and only if $\mathbf{A}\mathbf{A}'$ is nonsingular. In this case, $\mathbf{A}'(\mathbf{A}'\mathbf{A})^{-1}$ is a right inverse of $\mathbf{A}$.</p>
+<li><p>$\mathbf{A}$ has full row rank if and only if $\mathbf{A}\mathbf{A}'$ is nonsingular. In this case, $\mathbf{A}'(\mathbf{A} \mathbf{A}')^{-1}$ is a right inverse of $\mathbf{A}$.</p>
 <p>Proof: easy.</p>
 </li>
 </ol>
@@ -13752,6 +13763,588 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Examples</p>
+<ul>
+<li><p>Identity matrix $\mathbf{I}_n$ is invertible, with inverse $\mathbf{I}_n$.</p>
+</li>
+<li><p>A diagonal matrix is invertible if all diagonal entries are nonzero.
+$$
+\text{diag}(a_{11}, \ldots, a_{nn}) = \text{diag}(a_{11}^{-1}, \ldots, a_{nn}^{-1}).
+$$</p>
+</li>
+<li><p>A $2 \times 2$ matrix is invertible if and only if $a_{11} a_{22} \ne a_{12} a_{21}$
+$$
+\begin{pmatrix}
+a_{11} &amp; a_{12} \\
+a_{21} &amp; a_{22}
+\end{pmatrix}^{-1} = \frac{1}{a_{11} a_{22} - a_{12} a_{21}} \begin{pmatrix}
+a_{22} &amp; -a_{12} \\
+-a_{21} &amp; a_{11}
+\end{pmatrix}.
+$$</p>
+</li>
+<li><p>Inverse of orthogonal matrix. If $\mathbf{A}$ is square and has orthonormal columns, then
+$$
+\mathbf{A}^{-1} = \mathbf{A}'.
+$$</p>
+</li>
+<li><p>Inverse of matrix transpose. If $\mathbf{A}$ is invertible, then
+$$
+(\mathbf{A}')^{-1} = (\mathbf{A}^{-1})'.
+$$</p>
+</li>
+<li><p>Inverse of matrix product. If $\mathbf{A}$ and $\mathbf{B}$ are invertible, then
+$$
+(\mathbf{A} \mathbf{B})^{-1} = \mathbf{B}^{-1} \mathbf{A}^{-1}.
+$$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Linear-equations-and-left/right-inverses">Linear equations and left/right inverses<a class="anchor-link" href="#Linear-equations-and-left/right-inverses">&#182;</a></h2><ul>
+<li><p>Solving linear system
+\begin{eqnarray*}
+a_{11} x_1 + \cdots + a_{1n} x_n &amp;=&amp; b_1 \\
+a_{21} x_1 + \cdots + a_{2n} x_n &amp;=&amp; b_2 \\
+&amp;\vdots&amp; \\
+a_{m1} x_1 + \cdots + a_{mn} x_n &amp;=&amp; b_m
+\end{eqnarray*}
+or
+$$
+  \mathbf{A} \mathbf{x} = \mathbf{b},
+$$
+where $\mathbf{A} \in \mathbb{R}^{m \times n}$ (coefficient matrix), $\mathbf{x} \in \mathbb{R}^n$ (solution vector), and $\mathbf{b} \in \mathbb{R}^m$ (right hand side) is a central theme in linear algebra.</p>
+</li>
+<li><p><strong>Left-invertible matrix</strong>: If $\mathbf{X}$ is a left inverse of $\mathbf{A}$, then
+$$
+\mathbf{A} \mathbf{x} = \mathbf{b}
+$$
+implies (multiplying both sizes by $\mathbf{X}$)
+$$
+\mathbf{x} = \mathbf{X} \mathbf{b}.
+$$
+There is <strong>at most one</strong> solution. If there is a solution, it must be equal to $\mathbf{X} \mathbf{b}$. Note there might be no solution! $\mathbf{X} \mathbf{b}$ gives us a candidate solution to check.</p>
+</li>
+<li><p><strong>Right-invertible matrix</strong>: If $\mathbf{X}$ is a right inverse of $\mathbf{A}$, then
+$$
+\mathbf{A} (\mathbf{X} \mathbf{b}) = \mathbf{b}.
+$$
+This says there is <strong>at least one</strong> solution $\mathbf{x} = \mathbf{X} \mathbf{b}$.</p>
+</li>
+<li><p>Invertible matrix: If $\mathbf{A}$ is invertible, then
+$$
+\mathbf{A} \mathbf{x} = \mathbf{b}
+$$
+implies (multiplying both sizes of $\mathbf{A}^{-1}$)
+$$
+\mathbf{x} = \mathbf{A}^{-1} \mathbf{b}.
+$$
+There is a <em>unique</em> solution.</p>
+</li>
+<li><p>Example. Consider the 3x2 matrix
+$$
+\mathbf{A} = \begin{pmatrix} -3 &amp; -4 \\ 4 &amp; 6 \\ 1 &amp; 1 \end{pmatrix}.
+$$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># a 3x2 matrix</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span> <span class="o">-</span><span class="mi">4</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3×2 Matrix{Int64}:
+ -3  -4
+  4   6
+  1   1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>with left inverses</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># X1 is a left inverse of A</span>
+<span class="n">X1</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">11</span><span class="o">//</span><span class="mi">9</span> <span class="o">-</span><span class="mi">10</span><span class="o">//</span><span class="mi">9</span> <span class="mi">16</span><span class="o">//</span><span class="mi">9</span><span class="p">;</span> <span class="mi">7</span><span class="o">//</span><span class="mi">9</span> <span class="mi">8</span><span class="o">//</span><span class="mi">9</span> <span class="o">-</span><span class="mi">11</span><span class="o">//</span><span class="mi">9</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×3 Matrix{Rational{Int64}}:
+ -11//9  -10//9   16//9
+   7//9    8//9  -11//9</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># B2 is another left inverse of A</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="o">-</span><span class="mi">1</span><span class="o">//</span><span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span><span class="o">//</span><span class="mi">2</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×3 Matrix{Rational{Int64}}:
+ 0//1  -1//2   3//1
+ 0//1   1//2  -2//1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The over-determined linear equations
+$$
+\begin{pmatrix} -3 &amp; -4 \\ 4 &amp; 6 \\ 1 &amp; 1 \end{pmatrix} \mathbf{x} = \begin{pmatrix} 1 \\ -2 \\ 0 \end{pmatrix}
+$$
+has a unique solution $\mathbf{x} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$, which can be obtained from either of the left inverses.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">X1</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2-element Vector{Int64}:
+  1
+ -1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">X2</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2-element Vector{Int64}:
+  1
+ -1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The over-determined linear equations
+$$
+\begin{pmatrix} -3 &amp; -4 \\ 4 &amp; 6 \\ 1 &amp; 1 \end{pmatrix} \mathbf{x} = \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}
+$$
+has no solution since $\mathbf{x} = \mathbf{X}_1 \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix} = \begin{pmatrix} 1/2 \\ -1/2 \end{pmatrix}$ does not satisfy $\mathbf{A} \mathbf{x} = \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">A</span> <span class="o">*</span> <span class="p">(</span><span class="n">X1</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>false</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The under-determined linear equations 
+$$
+\mathbf{A}' \mathbf{y} = \begin{pmatrix} -3 &amp; 4 &amp; 1 \\ -4 &amp; 6 &amp; 1 \end{pmatrix} \begin{pmatrix} y_1 \\ y_2 \\ y_3 \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}
+$$
+has (different) solutions</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">X1</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3-element Vector{Rational{Int64}}:
+  1//3
+  2//3
+ -2//3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># check solution</span>
+<span class="n">A</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">X1</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>true</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">X2</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3-element Vector{Rational{Int64}}:
+  0//1
+  1//2
+ -1//1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># check solution</span>
+<span class="n">A</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">X2</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>true</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Recall that both $\mathbf{X}_1'$ and $\mathbf{X}_2'$ are right inverses of $\mathbf{A}'$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solving-linear-equations">Solving linear equations<a class="anchor-link" href="#Solving-linear-equations">&#182;</a></h2><ul>
+<li><p>To solve $\mathbf{A} \mathbf{x} = \mathbf{b}$, where $\mathbf{A} \in \mathbb{R}^{n \times n}$ is <strong>lower triangular</strong>
+$$
+\begin{pmatrix}
+  a_{11} &amp; 0 &amp; \cdots &amp; 0 \\
+  a_{21} &amp; a_{22} &amp; \cdots &amp; 0 \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{pmatrix} = \begin{pmatrix}
+b_1 \\ b_2 \\ \vdots \\ b_n
+\end{pmatrix}.
+$$</p>
+<p><strong>Forward substitution</strong>: 
+$$
+\begin{eqnarray*}
+  x_1 &amp;=&amp; b_1 / a_{11} \\
+  x_2 &amp;=&amp; (b_2 - a_{21} x_1) / a_{22} \\
+  x_3 &amp;=&amp; (b_3 - a_{31} x_1 - a_{32} x_2) / a_{33} \\
+  &amp;\vdots&amp; \\
+  x_n &amp;=&amp; (b_n - a_{n1} x_1 - a_{n2} x_2 - \cdots - a_{n,n-1} x_{n-1}) / a_{nn}.
+\end{eqnarray*}
+$$
+$1 + 3 + 5 + \cdots + (2n-1) = n^2$ flops.</p>
+</li>
+<li><p>To solve $\mathbf{A} \mathbf{x} = \mathbf{b}$, where $\mathbf{A} \in \mathbb{R}^{n \times n}$ is upper triangular<br>
+$$
+\begin{pmatrix}
+  a_{11} &amp; \cdots &amp; a_{1,n-1} &amp; a_{1n} \\
+  \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+  0 &amp; \cdots &amp; a_{n-1,n-1} &amp; a_{n-1,n} \\
+  0 &amp; 0 &amp; 0 &amp; a_{nn}
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ \vdots \\ x_{n-1} \\ x_n
+\end{pmatrix} = \begin{pmatrix}
+b_1 \\ \vdots \\ b_{n-1} \\ b_n
+\end{pmatrix}.
+$$
+  <strong>Back substitution</strong>: 
+$$
+\begin{eqnarray*}
+  x_n &amp;=&amp; b_n / a_{nn} \\
+  x_{n-1} &amp;=&amp; (b_{n-1} - a_{n-1,n} x_n) / a_{n-1,n-1} \\
+  x_{n-2} &amp;=&amp; (b_{n-2} - a_{n-2,n-1} x_{n-1} - a_{n-2,n} x_n) / a_{n-2,n-2} \\
+  &amp;\vdots&amp; \\
+  x_1 &amp;=&amp; (b_1 - a_{12} x_2 - a_{13} x_3 - \cdots - a_{1,n} x_{n}) / a_{11}.
+\end{eqnarray*}
+$$
+$n^2$ flops.</p>
+</li>
+<li><p>For an invertible matrix $\mathbf{A} \in \mathbb{R}^n$ and $\mathbf{b} \in \mathbb{R}^n$, we can solve the linear equation $\mathbf{A} \mathbf{x} = \mathbf{b}$ by following steps.</p>
+<ul>
+<li>Step 1: Comute QR factorization: $\mathbf{A} = \mathbf{Q} \mathbf{R}$. ??? flops.  </li>
+<li>Step 2: Compute $\mathbf{Q}^T \mathbf{b}$. ??? flops.  </li>
+<li><p>Step 3: Solve the triangular equation $\mathbf{R} \mathbf{x} = \mathbf{Q}' \mathbf{b}$ by back substitution. ??? flops.</p>
+<p>The total number of flops is ???. The dominant step is ???</p>
+</li>
+</ul>
+</li>
+<li><p>Factor-solve method with multiple right-hand sides. For multiple right hand sides $\mathbf{b}$, we only need to do Step ??? once.</p>
+</li>
+<li><p>Compute the inverse of an invertible matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$.</p>
+<ul>
+<li>Step 1. QR factorization $\mathbf{A} = \mathbf{Q} \mathbf{R}$.  </li>
+<li><p>Step 2. For $i=1,\ldots,n$, solve the triangular equation $\mathbf{R} \mathbf{b}_i = \tilde{\mathbf{q}}_i$.</p>
+<p>Total computational cost is ??? flops.</p>
+</li>
+</ul>
+</li>
+<li><p>Question. Two ways to solve a linear system. <code>qr(A) \ b</code> vs <code>inv(A) * b</code>. Which way is better?</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Generalized-inverse-and-Moore-Penrose-inverse">Generalized inverse and Moore-Penrose inverse<a class="anchor-link" href="#Generalized-inverse-and-Moore-Penrose-inverse">&#182;</a></h2><ul>
 <li><p>Let $\mathbf{A} \in \mathbb{R}^{m \times n}$. A matrix $\mathbf{G} \in \mathbb{R}^{n \times m}$ is called the <strong>Moore-Penrose inverse</strong> or <strong>MP inverse</strong> of $\mathbf{A}$ if it satisifes following four conditions:<br>
   (1) $\mathbf{A} \mathbf{G} \mathbf{A} = \mathbf{A}$. $\quad \quad$ (<em>generalized inverse</em>, $g_1$ inverse, or <em>inner pseudo-inverse</em>)<br>
@@ -13801,260 +14394,13 @@ Proof of 2: By definition of rank.</p>
 <li><p><strong>Generalized inverse has equal or larger rank.</strong>  $\text{rank}(\mathbf{A}^-) \ge \text{rank}(\mathbf{A})$.</p>
 <p>Proof: $\text{rank}(\mathbf{A}) = \text{rank}(\mathbf{A}\mathbf{A}^- \mathbf{A}) \le \text{rank}(\mathbf{A}\mathbf{A}^-) \le \text{rank}(\mathbf{A}^-)$.</p>
 </li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linear-equations">Linear equations<a class="anchor-link" href="#Linear-equations">&#182;</a></h2><ul>
-<li>Solving linear system
-\begin{eqnarray*}
-a_{11} x_1 + \cdots + a_{1n} x_n &amp;=&amp; b_1 \\
-a_{21} x_1 + \cdots + a_{2n} x_n &amp;=&amp; b_2 \\
-&amp;\vdots&amp; \\
-a_{m1} x_1 + \cdots + a_{mn} x_n &amp;=&amp; b_m
-\end{eqnarray*}
-or
-$$
-  \mathbf{A} \mathbf{x} = \mathbf{b},
-$$
-where $\mathbf{A} \in \mathbb{R}^{m \times n}$ (coefficient matrix), $\mathbf{x} \in \mathbb{R}^n$ (solution vector), and $\mathbf{b} \in \mathbb{R}^m$ (right hand side) is a central theme in linear algebra. </li>
-</ul>
-<p>We care about two fundamental questions: (1) when does the linear system has solution, and (2) how to characterize the solution set.</p>
-<ul>
-<li><p>Left-invertible matrix: If $\mathbf{X}$ is a left inverse of $\mathbf{A}$, then
-$$
-\mathbf{A} \mathbf{x} = \mathbf{b}
-$$
-implies (multiplying both sizes of $\mathbf{X}$)
-$$
-\mathbf{x} = \mathbf{X} \mathbf{b}.
-$$
-There is <em>at most one</em> solution. If there is a solution, it must be equal to $\mathbf{X} \mathbf{b}$.</p>
-</li>
-<li><p>Right-invertible matrix: If $\mathbf{X}$ is a right inverse of $\mathbf{A}$, then
-$$
-\mathbf{A} (\mathbf{X} \mathbf{b}) = \mathbf{b}.
-$$
-This says there is at least one solution $\mathbf{x} = \mathbf{X} \mathbf{b}$.</p>
-</li>
-<li><p>Invertible matrix: If $\mathbf{A}$ is invertible, then
-$$
-\mathbf{A} \mathbf{x} = \mathbf{b}
-$$
-implies (multiplying both sizes of $\mathbf{A}^{-1}$)
-$$
-\mathbf{x} = \mathbf{A}^{-1} \mathbf{b}.
-$$
-There is a <em>unique</em> solution.</p>
-</li>
-<li><p><strong>When is there a solution?</strong> The following statements are equivalent:</p>
+<li><p>Let $\mathbf{A} \in \mathbb{R}^{m \times n}$.</p>
 <ol>
-<li>The linear system $\mathbf{A} \mathbf{x} = \mathbf{b}$ has a solution (<strong>consistent</strong>).  </li>
-<li>$\mathbf{b} \in \mathcal{C}(\mathbf{A})$.  </li>
-<li>$\text{rank}((\mathbf{A} : \mathbf{b})) = \text{rank}(\mathbf{A})$.  </li>
-<li><p>$\mathbf{A} \mathbf{A}^- \mathbf{b} = \mathbf{b}$ for any generalized inverse $\mathbf{A}^-$.<br>
-The last equivalence gives some intuition why $\mathbf{A}^-$ is called an inverse.</p>
-<p>Proof: $1 \Rightarrow 2 \Rightarrow 3 \Rightarrow 1$ is easy. We show $1 \Rightarrow 4 \rightarrow 1$.<br>
-Proof of $1 \Rightarrow 4$: If $\tilde{\mathbf{x}}$ is a solution, then
-$$
-\mathbf{b} = \mathbf{A} \tilde{\mathbf{x}} = \mathbf{A}\mathbf{A}^- \mathbf{A} \tilde{\mathbf{x}} = \mathbf{A}\mathbf{A}^- \mathbf{b}.
-$$<br>
-Proof of $4 \Rightarrow 1$: Apparently $\tilde{\mathbf{x}} = \mathbf{A}^- \mathbf{b}$ is a solution.</p>
+<li><p>If $\mathbf{A}$ has full column rank, then the MP inverse is $\mathbf{A}^+ = (\mathbf{A}'\mathbf{A})^{-1} \mathbf{A}'$. Given QR factorization $\mathbf{A} = \mathbf{Q} \mathbf{R}$, $\mathbf{A}^+ = \mathbf{R}^{-1} \mathbf{Q}'$.</p>
+</li>
+<li><p>If $\mathbf{A}$ has full row rank, then the MP inverse is $\mathbf{A}^+ = \mathbf{A}'(\mathbf{A} \mathbf{A}')^{-1}$.  Given QR factorization $\mathbf{A}' = \mathbf{Q} \mathbf{R}$, $\mathbf{A}^+ = \mathbf{Q} \mathbf{R}'^{-1}$.</p>
 </li>
 </ol>
-</li>
-<li><p><strong>What are the solutions?</strong> Let's first consider the <strong>homogeneous</strong> system: $\mathbf{A} \mathbf{x} = \mathbf{0}$.  Note <strong>homogeneous</strong> system is always consistent (why?)</p>
-<p>Theorem: $\tilde{\mathbf{x}}$ is a solution of $\mathbf{A} \mathbf{x} = \mathbf{0}$ if and only if
-$$
-  \tilde{\mathbf{x}} = (\mathbf{I}_n - \mathbf{A}^- \mathbf{A}) \mathbf{q}
-$$
-for some $\mathbf{q} \in \mathbb{R}^n$.<br>
-  Rephrase of this theorem: $\mathcal{N}(\mathbf{A}) = \mathcal{C}(\mathbf{I}_n - \mathbf{A}^- \mathbf{A})$.</p>
-<p>Proof of "if" part: Regardless value of $\mathbf{q}$, we have
-$$
-  \mathbf{A} \tilde{\mathbf{x}} = \mathbf{A} (\mathbf{I}_n - \mathbf{A}^- \mathbf{A}) \mathbf{q} = (\mathbf{A} - \mathbf{A} \mathbf{A}^- \mathbf{A}) \mathbf{q} = \mathbf{O} \mathbf{q} = \mathbf{0}. 
-$$<br>
-  Proof of "only if" part: If $\tilde{\mathbf{x}}$ is a solution, then we have 
-$$
-  \tilde{\mathbf{x}} = (\mathbf{I}_n - \mathbf{A}^- \mathbf{A}) \mathbf{q},
-$$
-where $\mathbf{q} = \tilde{\mathbf{x}}$.</p>
-</li>
-<li><p><strong>What are the solutions?</strong> Now we can study the <strong>inhomogeneous</strong> system: $\mathbf{A} \mathbf{x} = \mathbf{b}$.</p>
-<p>Theorem: If $\mathbf{A} \mathbf{x} = \mathbf{b}$ is consistent, then $\tilde{\mathbf{x}}$ is a solution to $\mathbf{A} \mathbf{x} = \mathbf{b}$ if and only if 
-$$
-  \tilde{\mathbf{x}} = \mathbf{A}^- \mathbf{b} + (\mathbf{I}_n - \mathbf{A}^- \mathbf{A}) \mathbf{q}
-$$
-for some $\mathbf{q} \in \mathbb{R}^n$.<br>
-  Interpretation: "a specific solution" + "a vector in $\mathcal{N}(\mathbf{A})$".</p>
-<p>Proof:
-\begin{eqnarray*}
-  &amp; &amp; \mathbf{A} \mathbf{x} = \mathbf{b} \\
-  &amp;\Leftrightarrow&amp; \mathbf{A} \mathbf{x} = \mathbf{A} \mathbf{A}^- \mathbf{b} \\
-  &amp;\Leftrightarrow&amp; \mathbf{A} (\mathbf{x} - \mathbf{A}^- \mathbf{b}) = \mathbf{0} \\
-  &amp;\Leftrightarrow&amp; \mathbf{x} - \mathbf{A}^- \mathbf{b} \in \mathcal{N}(\mathbf{A}) \\
-  &amp;\Leftrightarrow&amp; \mathbf{x} - \mathbf{A}^- \mathbf{b} = (\mathbf{I}_n - \mathbf{A}^- \mathbf{A}) \mathbf{q} \text{ for some } \mathbf{q} \in \mathbb{R}^n \\
-  &amp;\Leftrightarrow&amp; \mathbf{x} = \mathbf{A}^- \mathbf{b} + (\mathbf{I}_n - \mathbf{A}^- \mathbf{A}) \mathbf{q} \text{ for some } \mathbf{q} \in \mathbb{R}^n.
-\end{eqnarray*}</p>
-</li>
-<li><p>$\mathbf{A} \mathbf{x} = \mathbf{b}$ is consistent <strong>for all $\mathbf{b}$</strong> if and only if $\mathbf{A}$ has full row rank.</p>
-<p>Proof of "if" part: If $\mathbf{A}$ has full row rank, then the column rank of $\mathbf{A}$ is $m$ and $\mathcal{C}(\mathbf{A}) = \mathbb{R}^m$. Thus for any $\mathbf{b} \in \mathbb{R}^m$, there exists a solution $\mathbf{x}$.<br>
-  Proof of "only if" part: $\mathbf{A} \mathbf{A}^- \mathbf{b} = \mathbf{b}$ for all $\mathbf{b} \in \mathbb{R}^m$. Take $\mathbf{b} = \mathbf{e}_i$ for $i=1,\ldots,m$. We have $\mathbf{A} \mathbf{A}^- = \mathbf{I}_m$. Thus 
-$$
-  m = \text{rank}(\mathbf{I}_m) = \text{rank}(\mathbf{A} \mathbf{A}^-) \le \text{rank}(\mathbf{A}) \le m.
-$$</p>
-</li>
-<li><p>If $\mathbf{A} \mathbf{x} = \mathbf{b}$ is consistent, then its solution is unique if and only if $\mathbf{A}$ has full column rank.</p>
-<p>Proof of "if" part: If there are two solutions $\mathbf{A} \mathbf{x}_1 = \mathbf{b}$ and $\mathbf{A} \mathbf{x}_2 = \mathbf{b}$, then $\mathbf{A} (\mathbf{x}_1 - \mathbf{x}_2) = \mathbf{0}$, i.e., $\mathbf{x}_1 - \mathbf{x}_2 \in \mathcal{N}(\mathbf{A})$. By the rank-nullity theorem, the $\mathcal{N}(\mathbf{A}) = \{\mathbf{0}\}$. Thus $\mathbf{x}_1 = \mathbf{x}_2$.<br>
-  Proof of "only if" part: By characterization of soultion set, uniqueness of solution implies $\mathcal{N}(\mathcal{A}) = \{\mathbf{0}\}$. Then by the rank-nullity theorem, $\mathbf{A}$ has full column rank.</p>
-</li>
-<li><p>If $\mathbf{A}$ has full row and column rank, then $\mathbf{A}$ is non-singular and the unique solution is $\mathbf{A}^{-1} \mathbf{b}$ for any $\mathbf{b}$.</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Application:-least-squares">Application: least squares<a class="anchor-link" href="#Application:-least-squares">&#182;</a></h2><ul>
-<li><p>Least squares problem:
-$$
-  \text{minimize}_{\boldsymbol{\beta}} \quad f(\boldsymbol{\beta}) = \frac 12 \|\mathbf{y} - \mathbf{X} \boldsymbol{\beta}\|^2.
-$$
-Find the linear combination of columns of $\mathbf{X} \in \mathbb{R}^{n \times p}$ that approximates $\mathbf{y} \in \mathbb{R}^n$ best, or equivalently, find the vector in $\mathcal{C}(\mathbf{X})$ that approximates $\mathbf{y}$ best.</p>
-</li>
-<li><p>Setting the gradient of objective to zero
-$$
-  \nabla f(\boldsymbol{\beta}) = - \mathbf{X}' (\mathbf{y} - \mathbf{X} \boldsymbol{\beta}) = \mathbf{0}
-$$
-leads to the <strong>normal equation</strong>
-$$
-  (\mathbf{X}' \mathbf{X}) \boldsymbol{\beta} = \mathbf{X}' \mathbf{y}.
-$$</p>
-</li>
-<li><p>Is there a solution to the normal equation?</p>
-<p>Claim: the normal equation is always consistent. Why?</p>
-</li>
-<li><p>Is the solution minimizer to the least squares criterion?</p>
-<p>Claim: any solution $\hat{\mathbf{b}}$ to the normal equation minimizes the least squares criterion.</p>
-<p>Optimization argument: Any stationary point (points with zero gradient) of a convex function is a global minimum. Now the least squares criterion is convex because the Hessian $\nabla^2 f(\boldsymbol{\beta}) = \mathbf{X}' \mathbf{X}$ is positive semidefinite. Therefore any solution to the normal equation is a stationary point and thus a global minimum.</p>
-<p>Direct verifcation: Let $\tilde{\boldsymbol{\beta}}$ be a solution to the normal equation. For arbitrary $\boldsymbol{\beta} \in \mathbb{R}^p$, 
-\begin{eqnarray*}
-  &amp; &amp; f(\boldsymbol{\beta}) - f(\tilde{\boldsymbol{\beta}}) \\
-  &amp;=&amp; \frac 12 \|\mathbf{y} - \mathbf{X} \boldsymbol{\beta}\|^2 - \frac 12 \|\mathbf{y} - \mathbf{X} \tilde{\boldsymbol{\beta}}\|^2 \\
-  &amp;=&amp; \left( \frac 12 \mathbf{y}' \mathbf{y} - \mathbf{y}' \mathbf{X} \boldsymbol{\beta} + \frac 12 \boldsymbol{\beta}' \mathbf{X}' \mathbf{X} \boldsymbol{\beta} \right) - \left( \frac 12 \mathbf{y}' \mathbf{y} - \mathbf{y}' \mathbf{X} \tilde{\boldsymbol{\beta}} + \frac 12 \tilde{\boldsymbol{\beta}}' \mathbf{X}' \mathbf{X} \tilde{\boldsymbol{\beta}} \right) \\
-  &amp;=&amp; - \mathbf{y}' \mathbf{X} (\boldsymbol{\beta} - \tilde{\boldsymbol{\beta}}) + \frac 12 \boldsymbol{\beta}' \mathbf{X}' \mathbf{X} \boldsymbol{\beta} - \frac 12 \tilde{\boldsymbol{\beta}}' \mathbf{X}' \mathbf{X} \tilde{\boldsymbol{\beta}} \\
-  &amp;=&amp; - \tilde{\boldsymbol{\beta}}' \mathbf{X}' \mathbf{X} (\boldsymbol{\beta} - \tilde{\boldsymbol{\beta}}) + \frac 12 \boldsymbol{\beta}' \mathbf{X}' \mathbf{X} \boldsymbol{\beta} - \frac 12 \tilde{\boldsymbol{\beta}}' \mathbf{X}' \mathbf{X} \tilde{\boldsymbol{\beta}} \\
-  &amp;=&amp; \frac 12 \tilde{\boldsymbol{\beta}}' \mathbf{X}' \mathbf{X} \tilde{\boldsymbol{\beta}} - \tilde{\boldsymbol{\beta}}' \mathbf{X}' \mathbf{X} \boldsymbol{\beta} + \frac 12 \boldsymbol{\beta}' \mathbf{X}' \mathbf{X} \boldsymbol{\beta} \\
-  &amp;=&amp; \frac 12 (\tilde{\boldsymbol{\beta}} - \boldsymbol{\beta})' \mathbf{X}' \mathbf{X} (\tilde{\boldsymbol{\beta}} - \boldsymbol{\beta}) \\
-  &amp;=&amp; \frac 12 \|\mathbf{X} (\tilde{\boldsymbol{\beta}} - \boldsymbol{\beta})\|^2 \\
-  &amp;\ge&amp; 0.
-\end{eqnarray*}
-Therefore $\tilde{\boldsymbol{\beta}}$ must be a global minimum of the least squares criterion $f(\boldsymbol{\beta})$.</p>
-</li>
-<li><p>When is the solution to the normal equation unique?</p>
-<p>The least squares solution is <strong>unique</strong> if and only if $\mathbf{X}' \mathbf{X}$ is non-singular if and only if $\mathbf{X}$ has full column rank.</p>
-</li>
-<li><p>In general, we can characterize the set of least squares solutions as
-$$
-  \tilde{\boldsymbol{\beta}}(\mathbf{q}) = (\mathbf{X}' \mathbf{X})^- \mathbf{X}' \mathbf{y} + [\mathbf{I}_p - (\mathbf{X}' \mathbf{X})^- (\mathbf{X}' \mathbf{X})] \mathbf{q},
-$$
-where $\mathbf{q} \in \mathbb{R}^q$ is arbitrary. A specific solution is
-$$
-  \tilde{\boldsymbol{\beta}} = (\mathbf{X}' \mathbf{X})^- \mathbf{X}' \mathbf{y}
-$$
-with <strong>fitted values</strong>
-$$
-  \hat{\mathbf{y}} = \mathbf{X} \tilde{\boldsymbol{\beta}} = \mathbf{X} (\mathbf{X}' \mathbf{X})^- \mathbf{X}' \mathbf{y}.
-$$</p>
-</li>
-<li><p>$(\mathbf{X}' \mathbf{X})^- \mathbf{X}'$ is a generalized inverse of $\mathbf{X}$.</p>
-<p>Proof: We need to show $\mathbf{X} (\mathbf{X}' \mathbf{X})^- \mathbf{X}' \mathbf{X} = \mathbf{X}$, or equivalently $\mathbf{X} (\mathbf{I}_p - (\mathbf{X}' \mathbf{X})^- \mathbf{X}' \mathbf{X}) = \mathbf{O}$. But earlier we showed $\mathcal{C}(\mathbf{I}_p - (\mathbf{X}' \mathbf{X})^- \mathbf{X}' \mathbf{X}) = \mathcal{N}(\mathbf{X}' \mathbf{X})$ and $\mathcal{N}(\mathbf{X}' \mathbf{X}) = \mathcal{N}(\mathbf{X})$.</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Projection">Projection<a class="anchor-link" href="#Projection">&#182;</a></h2><ul>
-<li><p>$\mathbf{A} \mathbf{A}^-$ is a projector into the column space $\mathcal{C}(\mathbf{A})$ along $\mathcal{N}(\mathbf{A}) = \mathcal{C}(\mathbf{I} - \mathbf{A} \mathbf{A}^-)$.</p>
-<p>Proof: $\mathbf{A} \mathbf{A}^-$ is idempotent because $\mathbf{A} \mathbf{A}^- \mathbf{A} \mathbf{A}^- = \mathbf{A} \mathbf{A}^-$. Thus it projects into $\mathcal{C}(\mathbf{A} \mathbf{A}^-)$, which we have shown to be equal to $\mathcal{C}(\mathbf{A})$.</p>
-</li>
-<li><p>$\mathbf{I}_n - \mathbf{A}^- \mathbf{A}$ is a projector into the null space $\mathcal{N}(\mathbf{A})$ along $\mathcal{C}(\mathbf{A})$.</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="An-example-of-generalized-inverses">An example of generalized inverses<a class="anchor-link" href="#An-example-of-generalized-inverses">&#182;</a></h2><p><img src="./three_projs.png" width=600 align="center"/></p>
-<ul>
-<li><p>Let
-$$
-  \mathbf{A} = \begin{pmatrix} 
-  1 \\ 2
-  \end{pmatrix} \in \mathbb{R}^{2 \times 1}.
-$$</p>
-</li>
-<li><p><strong>What are generalized inverses of $\mathbf{A}$?</strong><br>
-Let
-$$
-\mathbf{A}^- = (u,  v).
-$$
-By definition of generalized inverse, we want $\mathbf{A} \mathbf{A}^- \mathbf{A} = \mathbf{A}$. That is
-\begin{eqnarray*}
-  &amp; &amp; \begin{pmatrix} 1 \\ 2 \end{pmatrix} \begin{pmatrix} u, v \end{pmatrix} \begin{pmatrix} 1 \\ 2 \end{pmatrix} \\
-  &amp;=&amp; (u + 2v) \begin{pmatrix} 1 \\ 2 \end{pmatrix} \\
-  &amp;=&amp; \begin{pmatrix} u + 2v \\ 2u + 4v \end{pmatrix} \\
-  &amp;=&amp; \begin{pmatrix} 1 \\ 2 \end{pmatrix},
-\end{eqnarray*}
-leading to the constraint $u + 2v = 1$, or, $v = (1-u)/2$. Thus any value of $u$ gives a generalized inverse
-$$
-  \mathbf{A}_u^- = \begin{pmatrix} u, \frac{1-u}{2} \end{pmatrix}.
-$$</p>
-</li>
-<li><p><strong>Visualize $\mathbf{A} \mathbf{A}^-$.</strong></p>
-<ul>
-<li><p>Take $u = 0$, then
-$$
-\mathbf{A} \mathbf{A}_0^- = \begin{pmatrix} 1 \\ 2 \end{pmatrix} \begin{pmatrix} 0, \frac{1}{2} \end{pmatrix} = \begin{pmatrix} 0 &amp; \frac 12 \\ 0 &amp; 1 \end{pmatrix}.
-$$
-Let's see how $\mathbf{A} \mathbf{A}_0^-$ acts on a vector $\mathbf{x} \in \mathbb{R}^2$:
-$$
-\mathbf{A} \mathbf{A}_0^- \mathbf{x} = \begin{pmatrix} 0 &amp; \frac 12 \\ 0 &amp; 1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} \frac{x_2}{2} \\ x_2 \end{pmatrix} = x_2 \begin{pmatrix} \frac 12 \\ 1 \end{pmatrix}.
-$$</p>
-</li>
-<li><p>Take $u = 1$, then
-$$
-\mathbf{A} \mathbf{A}_1^- = \begin{pmatrix} 1 \\ 2 \end{pmatrix} \begin{pmatrix} 1, 0 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ 2 &amp; 0 \end{pmatrix}.
-$$
-Let's see how $\mathbf{A} \mathbf{A}_1^-$ acts on a vector $\mathbf{x} \in \mathbb{R}^2$:
-$$
-\mathbf{A} \mathbf{A}_1^- \mathbf{x} = \begin{pmatrix} 1 &amp; 0 \\ 2 &amp; 0 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} x_1 \\ 2x_1 \end{pmatrix} = x_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix}.
-$$</p>
-</li>
-<li><p>Take $u = \frac 15$ to make $\mathbf{A} \mathbf{A}_u^-$ symmetric:
-$$
-\mathbf{A} \mathbf{A}_{1/5}^- = \begin{pmatrix} 1 \\ 2 \end{pmatrix} \begin{pmatrix} \frac 15, \frac 25 \end{pmatrix} = \begin{pmatrix} 1/5 &amp; 2/5 \\ 2/5 &amp; 4/5 \end{pmatrix}.
-$$
-Let's see how $\mathbf{A} \mathbf{A}_{1/5}^-$ acts on a vector $\mathbf{x} \in \mathbb{R}^2$:
-$$
-\mathbf{A} \mathbf{A}_{1/5}^- \mathbf{x} = \begin{pmatrix} 1/5 &amp; 2/5 \\ 2/5 &amp; 4/5 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} \frac{x_1 + 2x_2}{5} \\ \frac{2x_1 + 4x_2}{5} \end{pmatrix} = \frac{x_1 + 2x_2}{5} \begin{pmatrix} 1 \\ 2 \end{pmatrix}.
-$$</p>
-</li>
-</ul>
 </li>
 </ul>
 
