@@ -13089,6 +13089,7 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Pkg</span>
 <span class="n">Pkg</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">pwd</span><span class="p">())</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14026,7 +14027,7 @@ Environment:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  0.004457 seconds (1 allocation: 16 bytes)
+<pre>  0.004684 seconds (1 allocation: 16 bytes)
 </pre>
 </div>
 </div>
@@ -14064,7 +14065,7 @@ $$</p>
 </li>
 <li><p>Triangle inequality: $\|\mathbf{x} + \mathbf{y}\| \le \|\mathbf{x}\| + \|\mathbf{y}\|$ for any $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$. Proof: use Cauchy-Schwartz inequality.</p>
 </li>
-<li><p><strong>Cauchy-Schwartz inequality</strong>: $|\mathbf{x}' \mathbf{y}| \le \|\mathbf{x}\| \|\mathbf{y}\|$ for any $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$. The equality holds when (1) $\mathbf{x} = \mathbf{0}$ or $\mathbf{y}=0$ or (2) $\mathbf{x} \ne \mathbf{0}$, $\mathbf{y} \ne \mathbf{0}$, and $\mathbf{x} = \alpha \mathbf{y}$ for some $\alpha \ne 0$.</p>
+<li><p><strong>Cauchy-Schwartz inequality</strong>: $|\mathbf{x}' \mathbf{y}| \le \|\mathbf{x}\| \|\mathbf{y}\|$ for any $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$. The equality holds when (1) $\mathbf{x} = \mathbf{0}$ or $\mathbf{y}=\mathbf{0}$ or (2) $\mathbf{x} \ne \mathbf{0}$, $\mathbf{y} \ne \mathbf{0}$, and $\mathbf{x} = \alpha \mathbf{y}$ for some $\alpha \ne 0$.</p>
 <p>Proof: The function $f(t) = \|\mathbf{x} - t \mathbf{y}\|_2^2 = \|\mathbf{x}\|_2^2 - 2t (\mathbf{x}' \mathbf{y}) + t^2\|\mathbf{y}\|_2^2$ is minimized at $t^\star =(\mathbf{x}'\mathbf{y}) / \|\mathbf{y}\|^2$ with minimal value $f(t^\star) = \|\mathbf{x}\|^2 - (\mathbf{x}'\mathbf{y})^2 / \|\mathbf{y}\|^2 \ge 0$.</p>
 </li>
 </ol>
@@ -14550,7 +14551,7 @@ x ≈ (a1&#39; * x) * a1 + (a2&#39; * x) * a2 + (a3&#39; * x) * a3 = true
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Gram-Schmidt-algorithm">Gram-Schmidt algorithm<a class="anchor-link" href="#Gram-Schmidt-algorithm">&#182;</a></h2><ul>
-<li><p>Given vectros $\mathbf{a}_1, \ldots, \mathbf{a}_k \in \mathbb{R}^n$. G-S algorithm generates an orthonormal basis $\mathbf{q}_1, \mathbf{q}_2, \ldots$, such that $\mathbf{q}_i$ is a linear combination of $\mathbf{a}_1,\ldots,\mathbf{a}_i$ and $\mathbf{a}_i$ is a linear combination of $\mathbf{q}_1,\ldots,\mathbf{q}_i$ for all $i$.</p>
+<li><p>Given vectros $\mathbf{a}_1, \ldots, \mathbf{a}_k \in \mathbb{R}^n$. G-S algorithm generates an orthonormal basis $\mathbf{q}_1, \mathbf{q}_2, \ldots$.</p>
 </li>
 <li><p>For $i=1,\ldots,k$:</p>
 <ol>
@@ -14566,7 +14567,7 @@ x ≈ (a1&#39; * x) * a1 + (a2&#39; * x) * a2 + (a3&#39; * x) * a3 = true
 <ul>
 <li><p>If G-S does not stop early (in step 2), $\mathbf{a}_1, \ldots, \mathbf{a}_k$ are linearly independent.</p>
 </li>
-<li><p>If G-S stops early in iteration $i=j$, then $\mathbf{a}_j$ is a linear combination of $\mathbf{a}_1, \ldots, \mathbf{a}_{j-1}$; so $\mathbf{a}_1, \ldots, \mathbf{a}_k$ are linearly independent.</p>
+<li><p>If G-S stops early in iteration $i=j$, then $\mathbf{a}_j$ is a linear combination of $\mathbf{a}_1, \ldots, \mathbf{a}_{j-1}$; so $\mathbf{a}_1, \ldots, \mathbf{a}_{j-1}$ are linearly independent.</p>
 </li>
 </ul>
 
@@ -14804,7 +14805,7 @@ $$</p>
 </li>
 <li><p>$3n$ flops to compute $\|\tilde{\mathbf{q}}_i\|$ and $\mathbf{q}_i$.</p>
 </li>
-<li><p>Total
+<li><p>Assuming no early termination, total computational cost is:
 $$
 \sum_{i=1}^k ((4n-1) (i - 1) + 3n) = (4n - 1) \frac{k(k-1)}{2} + 3nk \approx 2nk^2,
 $$
