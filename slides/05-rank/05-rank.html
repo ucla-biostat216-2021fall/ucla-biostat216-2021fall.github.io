@@ -13787,7 +13787,7 @@ where columns of $\mathbf{X}_1 \in \mathbb{R}^{n \times \nu}$ form a basis of $\
 $$
   \begin{pmatrix} \mathbf{X}_1 : \mathbf{X}_2 \end{pmatrix} \begin{pmatrix} -\mathbf{u} \\ \mathbf{v} \end{pmatrix} = \mathbf{0}_n.
 $$
-Since the matrix $\begin{pmatrix} \mathbf{X}_1 : \mathbf{X}_2 \end{pmatrix}$ is non-singular, we must have $\mathbf{u}=\mathbf{0}$ and $\mathbf{v}=\mathbf{0}$. This shows that $\mathbf{v}=\mathbf{0}$ whenever $\mathbf{A} \mathbf{X}_2 \mathbf{v} = \mathbf{0}$. So the columns of $\mathbf{A} \mathbf{X}_2$ is linearly independent.<br>
+Since the matrix $\begin{pmatrix} \mathbf{X}_1 : \mathbf{X}_2 \end{pmatrix}$ is non-singular, we must have $\mathbf{u}=\mathbf{0}$ and $\mathbf{v}=\mathbf{0}$. This shows that $\mathbf{v}=\mathbf{0}$ whenever $\mathbf{A} \mathbf{X}_2 \mathbf{v} = \mathbf{0}$. So the columns of $\mathbf{A} \mathbf{X}_2$ are linearly independent.<br>
   (2) Next we show the columns of $\mathbf{A} \mathbf{X}_2$ span $\mathcal{C}(\mathbf{A})$ by showing $\mathcal{C}(\mathbf{A} \mathbf{X}_2) \subseteq \mathcal{C}(\mathbf{A})$ and $\mathcal{C}(\mathbf{A} \mathbf{X}_2) \supseteq \mathcal{C}(\mathbf{A})$. One direction $\mathcal{C}(\mathbf{A} \mathbf{X}_2) \subseteq \mathcal{C}(\mathbf{A})$ is easy. To show the other direction $\mathcal{C}(\mathbf{A}) \subseteq \mathcal{C}(\mathbf{A} \mathbf{X}_2)$, let $\mathbf{w} \in \mathcal{C}(\mathbf{A})$. Then $\mathbf{w} = \mathbf{A} \mathbf{y}$ for some vector $\mathbf{y}$. Because $\mathbf{y} \in \mathbb{R}^n$, which is spanned by columns of $\mathbf{X}$, we can write $\mathbf{y} = \mathbf{X}_1 \mathbf{z}_1 + \mathbf{X}_2 \mathbf{z}_2$ for some vectors $\mathbf{z}_1$ and $\mathbf{z}_2$. Thus $\mathbf{w} = \mathbf{A} \mathbf{X}_1 \mathbf{z}_1 + \mathbf{A} \mathbf{X}_2 \mathbf{z}_2 = \mathbf{A} \mathbf{X}_2 \mathbf{z}_2 \in \mathcal{C}(\mathbf{A} \mathbf{X}_2)$. This proves $\mathcal{C}(\mathbf{A}) \subseteq \mathcal{C}(\mathbf{A} \mathbf{X}_2)$.</p>
 </li>
 </ul>
@@ -13901,7 +13901,7 @@ Since the matrix $\begin{pmatrix} \mathbf{X}_1 : \mathbf{X}_2 \end{pmatrix}$ is 
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Fundamental-theorem-of-ranks-(important)">Fundamental theorem of ranks (important)<a class="anchor-link" href="#Fundamental-theorem-of-ranks-(important)">&#182;</a></h2><ul>
 <li><p>$\text{rank}(\mathbf{A}) = \text{rank}(\mathbf{A}') = \text{rank}(\mathbf{A}'\mathbf{A}) = \text{rank}(\mathbf{A}\mathbf{A}')$.</p>
-<p>Proof: $\text{rank}(\mathbf{A}) = \text{rank}(\mathbf{A}')$ by definition of rank (row rank = column rank = rank). Early on we showed $\mathcal{N}(\mathbf{A}'\mathbf{A}) = \mathcal{N}(\mathbf{A})$. Thus $\text{nullity}(\mathbf{A}) = \text{nullity}(\mathbf{A}'\mathbf{A})$. Then by the rank-nullity theorem, $\text{rank}(\mathbf{A}'\mathbf{A}) = \text{rank}(\mathbf{A})$.</p>
+<p>Proof: $\text{rank}(\mathbf{A}) = \text{rank}(\mathbf{A}')$ by definition of rank (row rank = column rank = rank). Early on we showed $\mathcal{N}(\mathbf{A}'\mathbf{A}) = \mathcal{N}(\mathbf{A})$. Thus $\text{nullity}(\mathbf{A}'\mathbf{A}) = \text{nullity}(\mathbf{A})$. Then by the rank-nullity theorem, $\text{rank}(\mathbf{A}'\mathbf{A}) = \text{rank}(\mathbf{A})$.</p>
 </li>
 <li><p>Matrices of form $\mathbf{A}'\mathbf{A}$ or $\mathbf{A}\mathbf{A}'$ are called the <strong>Gram matrix</strong> or <strong>Gramian matrix</strong>.</p>
 </li>
@@ -14150,7 +14150,7 @@ $$
 $$
 Now apply the same argument to rank factorization $\mathbf{A}' = \mathbf{R}' \mathbf{C}'$, we get the other direction
 $$
-  \text{column rank of } \mathbf{A} = \text{rank}(\mathbf{A}) \le \text{rank}(\mathbf{A}') = \text{row rank of } \mathbf{A}.
+  \text{column rank of } \mathbf{A} \le \text{row rank of } \mathbf{A}.
 $$
 Thus we have a proof of the result $\text{rank}(\mathbf{A}) = \text{rank}(\mathbf{A}')$.</p>
 </li>

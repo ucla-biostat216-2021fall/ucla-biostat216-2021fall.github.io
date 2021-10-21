@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Linear-equations-and-matrix-inverses-(BV-Chapter-11)" data-toc-modified-id="Linear-equations-and-matrix-inverses-(BV-Chapter-11)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Linear equations and matrix inverses (BV Chapter 11)</a></div><div class="lev2 toc-item"><a href="#Left-and-right-inverses" data-toc-modified-id="Left-and-right-inverses-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Left and right inverses</a></div><div class="lev2 toc-item"><a href="#When-does-a-matrix-have-a-left-or-right-inverse?" data-toc-modified-id="When-does-a-matrix-have-a-left-or-right-inverse?-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>When does a matrix have a left or right inverse?</a></div><div class="lev2 toc-item"><a href="#Linear-equations-and-left/right-inverses" data-toc-modified-id="Linear-equations-and-left/right-inverses-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Linear equations and left/right inverses</a></div><div class="lev2 toc-item"><a href="#Solving-linear-equations" data-toc-modified-id="Solving-linear-equations-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Solving linear equations</a></div><div class="lev2 toc-item"><a href="#Generalized-inverse-and-Moore-Penrose-inverse" data-toc-modified-id="Generalized-inverse-and-Moore-Penrose-inverse-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Generalized inverse and Moore-Penrose inverse</a></div></p>
+<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Linear-equations-and-matrix-inverses-(BV-Chapter-11)" data-toc-modified-id="Linear-equations-and-matrix-inverses-(BV-Chapter-11)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Linear equations and matrix inverses (BV Chapter 11)</a></div><div class="lev2 toc-item"><a href="#Left-and-right-inverses" data-toc-modified-id="Left-and-right-inverses-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Left and right inverses</a></div><div class="lev2 toc-item"><a href="#When-does-a-matrix-have-a-left-or-right-inverse?" data-toc-modified-id="When-does-a-matrix-have-a-left-or-right-inverse?-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>When does a matrix have a left or right inverse?</a></div><div class="lev2 toc-item"><a href="#Linear-equations-and-left/right-inverses" data-toc-modified-id="Linear-equations-and-left/right-inverses-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Linear equations and left/right inverses</a></div><div class="lev2 toc-item"><a href="#Solving-linear-equations" data-toc-modified-id="Solving-linear-equations-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Solving linear equations</a></div><div class="lev2 toc-item"><a href="#Generalized-inverse-and-Moore-Penrose-inverse-(optional)" data-toc-modified-id="Generalized-inverse-and-Moore-Penrose-inverse-(optional)-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Generalized inverse and Moore-Penrose inverse (optional)</a></div></p>
 
 </div>
 </div>
@@ -13088,6 +13088,52 @@ div#notebook {
 <h1 id="Linear-equations-and-matrix-inverses-(BV-Chapter-11)">Linear equations and matrix inverses (BV Chapter 11)<a class="anchor-link" href="#Linear-equations-and-matrix-inverses-(BV-Chapter-11)">&#182;</a></h1>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Pkg</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">pwd</span><span class="p">())</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre><span class="ansi-green-intense-fg ansi-bold">  Activating</span> environment at `~/Documents/github.com/ucla-biostat216-2021fall.github.io/slides/06-matinv/Project.toml`
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">LinearAlgebra</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13105,7 +13151,7 @@ $\mathbf{A}$ is <strong>left invertible</strong> if it has at least one left inv
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># a 3x2 matrix</span>
@@ -13122,7 +13168,7 @@ $\mathbf{A}$ is <strong>left invertible</strong> if it has at least one left inv
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13142,82 +13188,11 @@ $\mathbf{A}$ is <strong>left invertible</strong> if it has at least one left inv
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># X1 is a left inverse of A</span>
 <span class="n">X1</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">11</span><span class="o">//</span><span class="mi">9</span> <span class="o">-</span><span class="mi">10</span><span class="o">//</span><span class="mi">9</span> <span class="mi">16</span><span class="o">//</span><span class="mi">9</span><span class="p">;</span> <span class="mi">7</span><span class="o">//</span><span class="mi">9</span> <span class="mi">8</span><span class="o">//</span><span class="mi">9</span> <span class="o">-</span><span class="mi">11</span><span class="o">//</span><span class="mi">9</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[2]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2×3 Matrix{Rational{Int64}}:
- -11//9  -10//9   16//9
-   7//9    8//9  -11//9</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">X1</span> <span class="o">*</span> <span class="n">A</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2×2 Matrix{Int64}:
- 1  0
- 0  1</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="c"># B2 is another left inverse of A</span>
-<span class="n">X2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="o">-</span><span class="mi">1</span><span class="o">//</span><span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span><span class="o">//</span><span class="mi">2</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13237,6 +13212,77 @@ $\mathbf{A}$ is <strong>left invertible</strong> if it has at least one left inv
 
 <div class="output_text output_subarea output_execute_result">
 <pre>2×3 Matrix{Rational{Int64}}:
+ -11//9  -10//9   16//9
+   7//9    8//9  -11//9</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">X1</span> <span class="o">*</span> <span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×2 Matrix{Int64}:
+ 1  0
+ 0  1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># B2 is another left inverse of A</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="o">-</span><span class="mi">1</span><span class="o">//</span><span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span><span class="o">//</span><span class="mi">2</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×3 Matrix{Rational{Int64}}:
  0//1  -1//2   3//1
  0//1   1//2  -2//1</pre>
 </div>
@@ -13249,7 +13295,7 @@ $\mathbf{A}$ is <strong>left invertible</strong> if it has at least one left inv
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">X2</span> <span class="o">*</span> <span class="n">A</span><span class="p">)</span>
@@ -13265,7 +13311,7 @@ $\mathbf{A}$ is <strong>left invertible</strong> if it has at least one left inv
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13298,7 +13344,7 @@ $\mathbf{A}$ is <strong>right invertible</strong> if it has at least one right i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># a 2x3 matrix</span>
@@ -13315,7 +13361,7 @@ $\mathbf{A}$ is <strong>right invertible</strong> if it has at least one right i
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13334,7 +13380,7 @@ $\mathbf{A}$ is <strong>right invertible</strong> if it has at least one right i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># X1 is a right inverse of A</span>
@@ -13351,7 +13397,7 @@ $\mathbf{A}$ is <strong>right invertible</strong> if it has at least one right i
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -13371,82 +13417,10 @@ $\mathbf{A}$ is <strong>right invertible</strong> if it has at least one right i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">X1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2×2 Matrix{Int64}:
- 1  0
- 0  1</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="c"># X2 is anoter right inverse of A</span>
-<span class="n">X2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>3×2 Matrix{Int64}:
- 1  0
- 0  1
- 0  0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">X2</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">X1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13481,8 +13455,8 @@ $\mathbf{A}$ is <strong>right invertible</strong> if it has at least one right i
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="c"># X3 is yet anoter right inverse of A</span>
-<span class="n">X3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># X2 is anoter right inverse of A</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13502,9 +13476,9 @@ $\mathbf{A}$ is <strong>right invertible</strong> if it has at least one right i
 
 <div class="output_text output_subarea output_execute_result">
 <pre>3×2 Matrix{Int64}:
- 1  -1
- 0   0
- 0   1</pre>
+ 1  0
+ 0  1
+ 0  0</pre>
 </div>
 
 </div>
@@ -13518,7 +13492,7 @@ $\mathbf{A}$ is <strong>right invertible</strong> if it has at least one right i
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">X3</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">X2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13548,13 +13522,85 @@ $\mathbf{A}$ is <strong>right invertible</strong> if it has at least one right i
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># X3 is yet anoter right inverse of A</span>
+<span class="n">X3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3×2 Matrix{Int64}:
+ 1  -1
+ 0   0
+ 0   1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">X3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×2 Matrix{Int64}:
+ 1  0
+ 0  1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>$\mathbf{X}$ is a left inverse of $\mathbf{A}$ if and only if $\mathbf{X}'$ is a right inverse of $\mathbf{A}'$.
 $$
-\mathbf{A}' \mathbf{X}' = (\mathbf{X} \mathbf{A})' = \mathbf{I}.
+\mathbf{A}' \mathbf{X}' = \mathbf{I} = (\mathbf{X} \mathbf{A})'.
 $$</li>
 </ul>
 
@@ -13569,7 +13615,7 @@ $$</li>
 <ol>
 <li>$\mathbf{A}$ is right invertible if and only if $\text{rank}(\mathbf{A}) = m$, or equivalently, $\mathbf{A}$ has full row rank, or equivalently $\mathbf{A}$ has independent rows. (Only a square or wide matrix can have right inverses.)  </li>
 <li><p>$\mathbf{A}$ is left invertible if and only if $\text{rank}(\mathbf{A}) = n$, or equivalently, $\mathbf{A}$ has full column rank, or equivalently $\mathbf{A}$ has independent columns. (Only a square or tall matrix can have left inverses.)</p>
-<p>Proof of (1). For the <em>if</em> part, since column rank equals row rank, the columns of $\mathbf{A}$ span $\mathbb{R}^m$. Then for each column $\mathbf{e}_j$ of $\mathbf{I}_m$, there exists $\mathbf{c}_j$ such that $\mathbf{A} \mathbf{c}_j = \mathbf{e}_j$. Collecting $\mathbf{c}_j$ as columns of $\mathbf{C}$, we proved $\mathbf{A} \mathbf{C} = \mathbf{I}$.</p>
+<p>Proof of (1). For the <em>if</em> part, since column rank equals row rank, the columns of $\mathbf{A}$ span $\mathbb{R}^m$. Then for each column $\mathbf{e}_j$ of $\mathbf{I}_m$, there exists $\mathbf{c}_j$ such that $\mathbf{A} \mathbf{c}_j = \mathbf{e}_j$. Collecting $\mathbf{c}_j$ as columns of $\mathbf{C}$, we proved $\mathbf{A} \mathbf{C} = \mathbf{I}_m$.</p>
 <p>For the <em>only if</em> part, since $\mathbf{A} \mathbf{C} = \mathbf{I}_m$, we have $m \ge \text{rank}(\mathbf{A}) \ge \text{rank}(\mathbf{A} \mathbf{C}) = \text{rank}(\mathbf{I}_m) = m$. Thus $\text{rank}(\mathbf{A}) = m$.</p>
 <p>Proof of (2). Apply (1) to $\mathbf{A}'$.</p>
 </li>
@@ -13618,7 +13664,7 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">]</span>
@@ -13634,7 +13680,7 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -13654,7 +13700,7 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">A⁻¹</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
@@ -13670,7 +13716,7 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13690,7 +13736,7 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">A⁻¹</span> <span class="o">*</span> <span class="n">A</span>
@@ -13706,7 +13752,7 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -13726,7 +13772,7 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">A</span> <span class="o">*</span> <span class="n">A⁻¹</span>
@@ -13742,7 +13788,7 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -13763,13 +13809,13 @@ Multiplying both sides on the right by right inverse $\mathbf{Y}$, we obtain $\m
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Examples</p>
+<p>Examples of matrix inverse:</p>
 <ul>
 <li><p>Identity matrix $\mathbf{I}_n$ is invertible, with inverse $\mathbf{I}_n$.</p>
 </li>
 <li><p>A diagonal matrix is invertible if all diagonal entries are nonzero.
 $$
-\text{diag}(a_{11}, \ldots, a_{nn}) = \text{diag}(a_{11}^{-1}, \ldots, a_{nn}^{-1}).
+\text{diag}(a_{11}, \ldots, a_{nn})^{-1} = \text{diag}(a_{11}^{-1}, \ldots, a_{nn}^{-1}).
 $$</p>
 </li>
 <li><p>A $2 \times 2$ matrix is invertible if and only if $a_{11} a_{22} \ne a_{12} a_{21}$
@@ -13828,7 +13874,7 @@ implies (multiplying both sizes by $\mathbf{X}$)
 $$
 \mathbf{x} = \mathbf{X} \mathbf{b}.
 $$
-There is <strong>at most one</strong> solution. If there is a solution, it must be equal to $\mathbf{X} \mathbf{b}$. Note there might be no solution! $\mathbf{X} \mathbf{b}$ gives us a candidate solution to check.</p>
+There is <strong>at most one</strong> solution. If there is a solution, it must be equal to $\mathbf{X} \mathbf{b}$. Note there might be no solution! $\mathbf{X} \mathbf{b}$ gives us a candidate solution to check. Why there can be at most one solution?  (Recall there can be infinitely many left inverses. Why each left inverse will produce the same solution?)</p>
 </li>
 <li><p><strong>Right-invertible matrix</strong>: If $\mathbf{X}$ is a right inverse of $\mathbf{A}$, then
 $$
@@ -13858,7 +13904,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># a 3x2 matrix</span>
@@ -13875,7 +13921,7 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -13903,7 +13949,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># X1 is a left inverse of A</span>
@@ -13920,7 +13966,7 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -13939,7 +13985,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># B2 is another left inverse of A</span>
@@ -13956,7 +14002,7 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -13987,7 +14033,7 @@ has a unique solution $\mathbf{x} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$, whic
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">X1</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
@@ -14003,7 +14049,7 @@ has a unique solution $\mathbf{x} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$, whic
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -14022,7 +14068,7 @@ has a unique solution $\mathbf{x} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$, whic
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="kt">Int</span><span class="o">.</span><span class="p">(</span><span class="n">X2</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
@@ -14038,7 +14084,7 @@ has a unique solution $\mathbf{x} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$, whic
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -14069,7 +14115,7 @@ has no solution since $\mathbf{x} = \mathbf{X}_1 \begin{pmatrix} 1 \\ -1 \\ 0 \e
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">A</span> <span class="o">*</span> <span class="p">(</span><span class="n">X1</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -14085,7 +14131,7 @@ has no solution since $\mathbf{x} = \mathbf{X}_1 \begin{pmatrix} 1 \\ -1 \\ 0 \e
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -14114,80 +14160,10 @@ has (different) solutions</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">X1</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[23]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>3-element Vector{Rational{Int64}}:
-  1//3
-  2//3
- -2//3</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="c"># check solution</span>
-<span class="n">A</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">X1</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[24]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>true</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">X2</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">X1</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -14207,6 +14183,76 @@ has (different) solutions</p>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>3-element Vector{Rational{Int64}}:
+  1//3
+  2//3
+ -2//3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># check solution</span>
+<span class="n">A</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">X1</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>true</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">X2</span><span class="o">&#39;</span> <span class="o">*</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3-element Vector{Rational{Int64}}:
   0//1
   1//2
  -1//1</pre>
@@ -14220,7 +14266,7 @@ has (different) solutions</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># check solution</span>
@@ -14237,7 +14283,7 @@ has (different) solutions</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -14278,7 +14324,7 @@ x_1 \\ x_2 \\ \vdots \\ x_n
 b_1 \\ b_2 \\ \vdots \\ b_n
 \end{pmatrix}.
 $$</p>
-<p><strong>Forward substitution</strong>: 
+<p><strong>Forward substitution</strong> algorithm: 
 $$
 \begin{eqnarray*}
   x_1 &amp;=&amp; b_1 / a_{11} \\
@@ -14304,7 +14350,7 @@ x_1 \\ \vdots \\ x_{n-1} \\ x_n
 b_1 \\ \vdots \\ b_{n-1} \\ b_n
 \end{pmatrix}.
 $$
-  <strong>Back substitution</strong>: 
+  <strong>Back substitution</strong> algorithm: 
 $$
 \begin{eqnarray*}
   x_n &amp;=&amp; b_n / a_{nn} \\
@@ -14345,7 +14391,7 @@ $n^2$ flops.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Generalized-inverse-and-Moore-Penrose-inverse">Generalized inverse and Moore-Penrose inverse<a class="anchor-link" href="#Generalized-inverse-and-Moore-Penrose-inverse">&#182;</a></h2><ul>
+<h2 id="Generalized-inverse-and-Moore-Penrose-inverse-(optional)">Generalized inverse and Moore-Penrose inverse (optional)<a class="anchor-link" href="#Generalized-inverse-and-Moore-Penrose-inverse-(optional)">&#182;</a></h2><ul>
 <li><p>Let $\mathbf{A} \in \mathbb{R}^{m \times n}$. A matrix $\mathbf{G} \in \mathbb{R}^{n \times m}$ is called the <strong>Moore-Penrose inverse</strong> or <strong>MP inverse</strong> of $\mathbf{A}$ if it satisifes following four conditions:<br>
   (1) $\mathbf{A} \mathbf{G} \mathbf{A} = \mathbf{A}$. $\quad \quad$ (<em>generalized inverse</em>, $g_1$ inverse, or <em>inner pseudo-inverse</em>)<br>
   (2) $\mathbf{G} \mathbf{A} \mathbf{G} = \mathbf{G}$. $\quad \quad$ (<em>outer pseudo-inverse</em>)<br>
@@ -14387,7 +14433,7 @@ $$</p>
 <li>$\mathcal{C}(\mathbf{A}) = \mathcal{C}(\mathbf{A} \mathbf{A}^-)$ and $\mathcal{C}(\mathbf{A}') = \mathcal{C}((\mathbf{A}^- \mathbf{A})')$.  </li>
 <li><p>$\text{rank}(\mathbf{A}) = \text{rank}(\mathbf{A} \mathbf{A}^-) = \text{rank}(\mathbf{A}^- \mathbf{A})$.</p>
 <p>Proof of 1: We already know $\mathcal{C}(\mathbf{A}) \supseteq \mathcal{C}(\mathbf{A} \mathbf{A}^-)$. Now since $\mathbf{A} = \mathbf{A} \mathbf{A}^- \mathbf{A}$, we also have $\mathcal{C}(\mathbf{A}) \subseteq \mathcal{C}(\mathbf{A} \mathbf{A}^-)$.<br>
-Proof of 2: By definition of rank.</p>
+Proof of 2: Since $\mathbf{A} = \mathbf{A} \mathbf{A}^- \mathbf{A}$, $\text{rank}(\mathbf{A}) \le \text{rank}(\mathbf{A} \mathbf{A}^-) \le \text{rank}(\mathbf{A})$.</p>
 </li>
 </ol>
 </li>
@@ -14406,6 +14452,193 @@ Proof of 2: By definition of rank.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># a 3x2 matrix (full column rank)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span> <span class="o">-</span><span class="mi">4</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3×2 Matrix{Int64}:
+ -3  -4
+  4   6
+  1   1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># compute MP inverse using SVD</span>
+<span class="n">pinv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×3 Matrix{Float64}:
+ -1.22222   -1.11111    1.77778
+  0.777778   0.888889  -1.22222</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># compute MP inverse using pseudo-inverse</span>
+<span class="p">(</span><span class="n">A</span><span class="o">&#39;</span><span class="n">A</span><span class="p">)</span> <span class="o">\</span> <span class="n">A</span><span class="o">&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×3 Matrix{Float64}:
+ -1.22222   -1.11111    1.77778
+  0.777778   0.888889  -1.22222</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># compute MP inverse by QR</span>
+<span class="n">qra</span> <span class="o">=</span> <span class="n">qr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>LinearAlgebra.QRCompactWY{Float64, Matrix{Float64}}
+Q factor:
+3×3 LinearAlgebra.QRCompactWYQ{Float64, Matrix{Float64}}:
+ -0.588348  -0.457604  0.666667
+  0.784465  -0.522976  0.333333
+  0.196116   0.719092  0.666667
+R factor:
+2×2 Matrix{Float64}:
+ 5.09902   7.2563
+ 0.0      -0.588348</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">qra</span><span class="o">.</span><span class="n">R</span> <span class="o">\</span> <span class="n">qra</span><span class="o">.</span><span class="n">Q</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="p">]</span><span class="o">&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×3 Matrix{Float64}:
+ -1.22222   -1.11111    1.77778
+  0.777778   0.888889  -1.22222</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
