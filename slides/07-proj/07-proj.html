@@ -13077,6 +13077,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Projection-and-idempotent-matrix" data-toc-modified-id="Projection-and-idempotent-matrix-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Projection and idempotent matrix</a></div><div class="lev2 toc-item"><a href="#Direct-sum" data-toc-modified-id="Direct-sum-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Direct sum</a></div><div class="lev2 toc-item"><a href="#Projection" data-toc-modified-id="Projection-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Projection</a></div><div class="lev2 toc-item"><a href="#Cochran-theorem-(optional)" data-toc-modified-id="Cochran-theorem-(optional)-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Cochran theorem (optional)</a></div></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Projection-and-idempotent-matrix">Projection and idempotent matrix<a class="anchor-link" href="#Projection-and-idempotent-matrix">&#182;</a></h1><p><strong>Highlights:</strong> In this lecture, we show any idempotent matrix $\mathbf{P}$ is a projector into $\mathcal{C}(\mathbf{P})$ along $\mathcal{C}(\mathbf{I} - \mathbf{P})$.</p>
 <p>Note when many authors say <strong>projection</strong> or <strong>projectors</strong>, they actually mean <strong>orthogonal projection</strong> or <strong>orthogonal projectors</strong>, which are subject of next lecture. In this course, we differentiate projection and orthogonal projection.</p>
 <p><img src="../06-matinv/three_projs.png" width=600 align="center"/></p>
@@ -13099,14 +13107,16 @@ $$
   \text{dim}(\mathcal{S}_1 + \mathcal{S}_2) = \text{dim}(\mathcal{S}_1) + \text{dim}(\mathcal{S}_2) - \text{dim}(\mathcal{S}_1 \cap \mathcal{S}_2).
 $$</p>
 <p>Recall that the sum of two vector spaces $\mathcal{S}_1 + \mathcal{S}_2$ is defined in HW4.</p>
-<p>Proof (optional): Read BR p156-157.</p>
+<p>Proof (optional): Idea: extend a basis of $\mathcal{S}_1 \cap \mathcal{S}_2$ to ones for $\mathcal{S}_1$ and $\mathcal{S}_2$. See, e.g., BR p156-157.</p>
 </li>
 <li><p>Corollaries.</p>
 <ol>
-<li><strong>Subadditivity of dim function.</strong> Let $\mathcal{S}_1$ and $\mathcal{S}_2$ be two subspaces in $\mathbb{R}^n$. Then
+<li><p><strong>Subadditivity of dim function.</strong> Let $\mathcal{S}_1$ and $\mathcal{S}_2$ be two subspaces in $\mathbb{R}^n$. Then
 $$
 \text{dim}(\mathcal{S}_1 + \mathcal{S}_2) \le \text{dim}(\mathcal{S}_1) + \text{dim}(\mathcal{S}_2).
-$$   </li>
+$$</p>
+<p>This is an immediate corollary of the preceding theorem. In HW4, try to give a self-contained proof without using the preceding theorem.</p>
+</li>
 <li><p><strong>Subadditivity of rank function.</strong> Let $\mathbf{A}$ and $\mathbf{B}$ be two matrices of the same order. Then<br>
 $$
 \text{rank}(\mathbf{A} + \mathbf{B}) \le \text{rank}(\mathbf{A}) + \text{rank}(\mathbf{B}).
@@ -13216,7 +13226,7 @@ $3 \Rightarrow 4$: By the Rank-Nullity theorem,
 $$
 \text{rank}(\mathbf{P}) = n - \text{nullity}(\mathbf{P}) = n - \text{dim}(\mathcal{N}(\mathbf{P})) = n - \text{dim}(\mathcal{C}(\mathbf{I} - \mathbf{P})) = n - \text{rank}(\mathcal{C}(\mathbf{I} - \mathbf{P})).
 $$<br>
-$4 \Rightarrow 5$: For any $\mathbf{x} \in \mathbb{R}^n$, $\mathbf{x} = (\mathbf{P} + \mathbf{I} - \mathbf{P}) \mathbf{x}  = \mathbf{P} \mathbf{x} + (\mathbf{I} - \mathbf{P}) \mathbf{x}$. Thus $\mathbb{R}^n = \mathcal{C}(\mathbf{P}) + \mathcal{C}(\mathbf{I} - \mathbf{P})$. Then $\mathcal{C}(\mathbf{P})$ and $\mathcal{C}(\mathbf{I} - \mathbf{P})$ must be a direct sum.<br>
+$4 \Rightarrow 5$: For any $\mathbf{x} \in \mathbb{R}^n$, $\mathbf{x} = (\mathbf{P} + \mathbf{I} - \mathbf{P}) \mathbf{x}  = \mathbf{P} \mathbf{x} + (\mathbf{I} - \mathbf{P}) \mathbf{x}$. Thus $\mathbb{R}^n = \mathcal{C}(\mathbf{P}) + \mathcal{C}(\mathbf{I} - \mathbf{P})$. Then $\mathcal{C}(\mathbf{P})$ and $\mathcal{C}(\mathbf{I} - \mathbf{P})$ must be a direct sum by earlier result (3 equivalent properties of direct sum).<br>
 $5 \Rightarrow 1$: For any $\mathbf{x} \in \mathbb{R}^n$, $\mathbf{x} = (\mathbf{P} + \mathbf{I} - \mathbf{P}) \mathbf{x}  = \mathbf{P} \mathbf{x} + (\mathbf{I} - \mathbf{P}) \mathbf{x}$, where $\mathbf{P} \mathbf{x} \in \mathcal{C}(\mathbf{P})$ and $(\mathbf{I} - \mathbf{P}) \mathbf{x} \in \mathcal{C}(\mathbf{I} - \mathbf{P})$. 5 then confirms that $\mathbf{P}$ projects into $\mathcal{C}(\mathbf{P})$ along $\mathcal{C}(\mathbf{I} - \mathbf{P})$.</p>
 </li>
 </ol>
@@ -13231,14 +13241,14 @@ $$
 $$
   \mathbf{S} \mathbf{U}' \mathbf{S} \mathbf{U}' = \mathbf{S} \mathbf{U}'.
 $$
-Since $\mathbf{P} = \mathbf{S} \mathbf{U}'$ is a rank factorization, $\text{rank}(\mathbf{S}) = \text{rank}(\mathbf{P}) = r$. That is rows of $\mathbf{S}$ span $\mathbb{R}^r$. Thus there exists a matrix $\mathbf{S}_L$ such that $\mathbf{S}_L \mathbf{S} = \mathbf{I}_r$. Similarly $\mathbf{U}'$ having full column rank implies that there exists a matrix $\mathbf{U}'_R$ such that $\mathbf{U}' \mathbf{U}'_R = \mathbf{I}_r$. Pre-multiplying by $\mathbf{S}_L$ and post-multiplying by $\mathbf{U}'_R$ on both sides of above equation
+Since $\mathbf{P} = \mathbf{S} \mathbf{U}'$ is a rank factorization, $\text{rank}(\mathbf{S}) = \text{rank}(\mathbf{P}) = r$. That is rows of $\mathbf{S}$ span $\mathbb{R}^r$. Thus there exists a left inverse $\mathbf{S}_L$ such that $\mathbf{S}_L \mathbf{S} = \mathbf{I}_r$. Similarly $\mathbf{U}'$ having full column rank implies that there exists a right inverse $\mathbf{U}'_R$ such that $\mathbf{U}' \mathbf{U}'_R = \mathbf{I}_r$. Pre-multiplying by $\mathbf{S}_L$ and post-multiplying by $\mathbf{U}'_R$ on both sides of above equation
 $$
   \mathbf{S}_L \mathbf{S} \mathbf{U}' \mathbf{S} \mathbf{U}' \mathbf{U}'_R = \mathbf{S}_L \mathbf{S} \mathbf{U}' \mathbf{U}'_R.
 $$
 gives the desired identity $\mathbf{U}' \mathbf{S} = \mathbf{I}_r$.</p>
 </li>
 <li><p>Let $\mathbf{P}$ be a projector, or equivalently idempotent. Then $\text{tr}(\mathbf{P}) = \text{rank}(\mathbf{P})$.</p>
-<p>Proof: By BR Theorem 6.5, 
+<p>Proof: By HW1 (BV 10.11),
 $$
   \text{tr}(\mathbf{P}) = \text{tr}(\mathbf{S} \mathbf{U}') = \text{tr}(\mathbf{U}' \mathbf{S}) = \text{tr}(\mathbf{I}_r) = r = \text{rank}(\mathbf{P}).
 $$</p>
@@ -13252,7 +13262,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">LinearAlgebra</span>
@@ -13271,13 +13281,13 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>5×5 Array{Float64,2}:
+<pre>5×5 Matrix{Float64}:
  0.2  0.2  0.2  0.2  0.2
  0.2  0.2  0.2  0.2  0.2
  0.2  0.2  0.2  0.2  0.2
@@ -13293,7 +13303,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># idempotent</span>
@@ -13310,13 +13320,13 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>5×5 Array{Float64,2}:
+<pre>5×5 Matrix{Float64}:
  0.2  0.2  0.2  0.2  0.2
  0.2  0.2  0.2  0.2  0.2
  0.2  0.2  0.2  0.2  0.2
@@ -13332,7 +13342,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">tr</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
@@ -13348,7 +13358,7 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13365,7 +13375,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">rank</span><span class="p">(</span><span class="n">P</span><span class="p">),</span> <span class="n">rank</span><span class="p">(</span><span class="nb">I</span> <span class="o">-</span> <span class="n">P</span><span class="p">)</span>
@@ -13381,7 +13391,7 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13398,7 +13408,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># let&#39;s try a non-orthogonal projection: P = c * ones(n) * v&#39;</span>
@@ -13419,13 +13429,13 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>5×5 Array{Float64,2}:
+<pre>5×5 Matrix{Float64}:
  0.892643  1.00408  0.170126  0.226762  -1.29362
  0.892643  1.00408  0.170126  0.226762  -1.29362
  0.892643  1.00408  0.170126  0.226762  -1.29362
@@ -13441,7 +13451,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">P</span> <span class="o">*</span> <span class="n">P</span>
@@ -13457,13 +13467,13 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>5×5 Array{Float64,2}:
+<pre>5×5 Matrix{Float64}:
  0.892643  1.00408  0.170126  0.226762  -1.29362
  0.892643  1.00408  0.170126  0.226762  -1.29362
  0.892643  1.00408  0.170126  0.226762  -1.29362
@@ -13479,7 +13489,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">tr</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
@@ -13495,7 +13505,7 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13512,7 +13522,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">rank</span><span class="p">(</span><span class="n">P</span><span class="p">),</span> <span class="n">rank</span><span class="p">(</span><span class="nb">I</span> <span class="o">-</span> <span class="n">P</span><span class="p">)</span>
@@ -13528,7 +13538,7 @@ $$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13551,20 +13561,20 @@ $$</p>
 <li><p>Let $\mathbf{P}_1, \ldots, \mathbf{P}_k$ be $n \times n$ matrices with $\sum_{i=1}^k \mathbf{P}_i = \mathbf{I}_n$. Then the following statements are equivalent:</p>
 <ol>
 <li>$\sum_{i=1}^k \text{rank}(\mathbf{P}_i) = n$.  </li>
-<li>$\mathbf{P}_i \mathbf{P}_j = \mathbf{O}$ for $i \ne j$.  </li>
+<li>$\mathbf{P}_i \mathbf{P}_j = \mathbf{0}_{n \times n}$ for $i \ne j$.  </li>
 <li><p>$\mathbf{P}_i^2 = \mathbf{P}_i$ for $i=1,\ldots,k$. That is each $\mathbf{P}_i$ is a projector.</p>
 <p>Proof: We will prove $1 \Rightarrow 2 \Rightarrow 3 \Rightarrow 1$.<br>
 Proof of $1 \Rightarrow 2$: Let $r_i = \text{rank}(\mathbf{P}_i)$ and $\mathbf{P}_i = \mathbf{S}_i \mathbf{U}_i'$ be a rank factorization of $\mathbf{P}_i$ for $i=1,\ldots,k$, where $\mathbf{S}_i \in \mathbb{R}^{n \times r_i}$ and $\mathbf{U}_i' \in \mathbb{R}^{r_i \times n}$ with $\text{rank}(\mathbf{S}_i) = \text{rank}(\mathbf{U}_i) = r_i$. Then 
 \begin{eqnarray*}
 &amp; &amp; \sum_{i=1}^k \mathbf{P}_i = \mathbf{I}_n \\
 &amp;\Rightarrow&amp; \mathbf{S}_1 \mathbf{U}_1' + \cdots + \mathbf{S}_k \mathbf{U}_k' = \mathbf{I}_n \\
-&amp;\Rightarrow&amp; \begin{pmatrix} \mathbf{S}_1 : \cdots : \mathbf{S}_k \end{pmatrix} \begin{pmatrix}
+&amp;\Rightarrow&amp; \begin{pmatrix} \mathbf{S}_1 \, \cdots \, \mathbf{S}_k \end{pmatrix} \begin{pmatrix}
 \mathbf{U}_1' \\ \vdots \\ \mathbf{U}'_k \end{pmatrix} = \mathbf{I}_n \\
 &amp;\Rightarrow&amp; \mathbf{S} \mathbf{U}' = \mathbf{I}_n,
 \end{eqnarray*}
 where
 $$
-\mathbf{S} = \begin{pmatrix} \mathbf{S}_1 : \cdots : \mathbf{S}_k \end{pmatrix}, \quad \mathbf{U}' = \begin{pmatrix} \mathbf{U}_1' \\ \vdots \\ \mathbf{U}'_k \end{pmatrix}.
+\mathbf{S} = \begin{pmatrix} \mathbf{S}_1 \, \cdots \, \mathbf{S}_k \end{pmatrix}, \quad \mathbf{U}' = \begin{pmatrix} \mathbf{U}_1' \\ \vdots \\ \mathbf{U}'_k \end{pmatrix}.
 $$
 Since $\sum_{i=1}^k r_i = n$, $\mathbf{S}, \mathbf{U}$ must be square and $\mathbf{I}_n = \mathbf{S} \mathbf{U}'$ is a rank factorization. $\mathbf{I}_n$ apparently is idempotent thus we have
 $$
