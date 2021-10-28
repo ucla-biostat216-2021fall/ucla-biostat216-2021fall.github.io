@@ -13085,8 +13085,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Projection-and-idempotent-matrix">Projection and idempotent matrix<a class="anchor-link" href="#Projection-and-idempotent-matrix">&#182;</a></h1><p><strong>Highlights:</strong> In this lecture, we show any idempotent matrix $\mathbf{P}$ is a projector into $\mathcal{C}(\mathbf{P})$ along $\mathcal{N}(\mathbf{P}) = \mathcal{C}(\mathbf{I} - \mathbf{P})$.</p>
-<p>Note when many authors say <strong>projection</strong> or <strong>projectors</strong>, they actually mean <strong>orthogonal projection</strong> or <strong>orthogonal projectors</strong>, which are subject of next lecture. In this course, we differentiate projection and orthogonal projection.</p>
+<h1 id="Projection-and-idempotent-matrix">Projection and idempotent matrix<a class="anchor-link" href="#Projection-and-idempotent-matrix">&#182;</a></h1><p><strong>Highlights:</strong> In this lecture, we learn that (1) $\mathbb{R}^m = \mathcal{C}(\mathbf{A}) \oplus \mathcal{N}(\mathbf{A}')$, $\mathbb{R}^n = \mathcal{C}(\mathbf{A}') \oplus \mathcal{N}(\mathbf{A})$; (2) any idempotent matrix $\mathbf{P}$ is a projector into $\mathcal{C}(\mathbf{P})$ along $\mathcal{N}(\mathbf{P}) = \mathcal{C}(\mathbf{I} - \mathbf{P})$.</p>
+<p>Note when many authors say <strong>projection</strong> or <strong>projectors</strong>, they actually mean <strong>orthogonal projection</strong> or <strong>orthogonal projectors</strong>, which are subject of next lecture. In this course, we differentiate (oblique) projection and orthogonal projection.</p>
 <p><img src="../06-matinv/three_projs.png" width=600 align="center"/></p>
 
 </div>
@@ -13100,7 +13100,7 @@ div#notebook {
 $$
 \mathcal{S}_1 + \mathcal{S}_2 = \{\mathbf{x}_1 + \mathbf{x}_2: \mathbf{x}_1 \in \mathcal{S}_1, \mathbf{x}_2 \in \mathcal{S}_2\}.
 $$</p>
-<p>In HW4, you showed that $\mathcal{S}_1 + \mathcal{S}_2$ is a vector space.</p>
+<p>In HW4, we showed that $\mathcal{S}_1 + \mathcal{S}_2$ is a vector space.</p>
 </li>
 <li><p><strong>Dimension of a sum of subspaces.</strong> Let $\mathcal{S}_1$ and $\mathcal{S}_2$ be two subspaces in $\mathbb{R}^n$. Then
 $$
@@ -13159,16 +13159,12 @@ $3 \Rightarrow 1$: We only need to show $\mathcal{S}_1 \cap \mathcal{S}_2 = \{\m
 </li>
 </ol>
 </li>
-<li><p>Equivalence of properties 1, 2, 3 means we can take any of them to generalize the definition of direct sum to more than two subspaces.</p>
-</li>
-<li><p>Let $\mathcal{S}_1, \ldots, \mathcal{S}_k$ be subspaces of same order. Following statements are equivalent:</p>
-<ol>
-<li>$(\mathcal{S}_1 + \cdots + \mathcal{S}_i) \cap \mathcal{S}_{i+1} = \{\mathbf{0}\}$ for $i=1,\ldots,k-1$.</li>
-<li>$\text{dim}(\mathcal{S}_1 + \cdots + \mathcal{S}_k) = \text{dim}(\mathcal{S}_1) + \cdots + \text{dim}(\mathcal{S}_k)$.</li>
-<li>Any vector in $\mathbf{x} \in \mathcal{S}_1 + \cdots + \mathcal{S}_k$ can be uniquely expressed as
-$$
- \mathbf{x} = \mathbf{x}_1 + \cdots + \mathbf{x}_k, \text{ where } \mathbf{x}_i \in \mathcal{S}_i, i=1,\ldots,k.
-$$</li>
+</ul>
+<p><img src="../04-vecsp/four_fundamental_subspaces.png" width=400 align="center"/></p>
+<ul>
+<li>An immediate corollary of the previous result is, for a matrix $\mathbf{A} \in \mathbb{R}^{m \times n}$, <ol>
+<li>$\mathbb{R}^m = \mathcal{C}(\mathbf{A}) \oplus \mathcal{N}(\mathbf{A}')$.  </li>
+<li>$\mathbb{R}^n = \mathcal{C}(\mathbf{A}') \oplus \mathcal{N}(\mathbf{A})$.  </li>
 </ol>
 </li>
 </ul>
@@ -13247,15 +13243,18 @@ $$
 $$
 gives the desired identity $\mathbf{U}' \mathbf{S} = \mathbf{I}_r$.</p>
 </li>
+<li><p>Above result gives us a recipe to <strong>construct (oblique) projectors</strong>. Suppose $\mathbf{R}^n = \mathcal{S}_1 \oplus \mathcal{S}_2$. TODO: How to construct a projector $\mathbf{P}$ that projects into $\mathcal{S}_1$ along $\mathcal{S}_2$?</p>
+</li>
 <li><p>Let $\mathbf{P}$ be a projector, or equivalently idempotent. Then $\text{tr}(\mathbf{P}) = \text{rank}(\mathbf{P})$.</p>
 <p>Proof: By HW1 (BV 10.11),
 $$
   \text{tr}(\mathbf{P}) = \text{tr}(\mathbf{S} \mathbf{U}') = \text{tr}(\mathbf{U}' \mathbf{S}) = \text{tr}(\mathbf{I}_r) = r = \text{rank}(\mathbf{P}).
 $$</p>
 </li>
-<li><p>Example: How to construct a $\mathbf{P} \in \mathbb{R}^n$ that projects into the line $\text{span}(\{\mathbf{1}_n\})$?</p>
+<li><p>Example: How to construct $\mathbf{P} \in \mathbb{R}^{n \times n}$ that projects into the line $\text{span}(\{\mathbf{1}_n\})$?</p>
 </li>
 </ul>
+<p><img src="../06-matinv/three_projs.png" width=600 align="center"/></p>
 
 </div>
 </div>
