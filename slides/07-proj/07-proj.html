@@ -13085,7 +13085,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Projection-and-idempotent-matrix">Projection and idempotent matrix<a class="anchor-link" href="#Projection-and-idempotent-matrix">&#182;</a></h1><p><strong>Highlights:</strong> In this lecture, we learn that (1) $\mathbb{R}^m = \mathcal{C}(\mathbf{A}) \oplus \mathcal{N}(\mathbf{A}')$, $\mathbb{R}^n = \mathcal{C}(\mathbf{A}') \oplus \mathcal{N}(\mathbf{A})$; (2) any idempotent matrix $\mathbf{P}$ is a projector into $\mathcal{C}(\mathbf{P})$ along $\mathcal{N}(\mathbf{P}) = \mathcal{C}(\mathbf{I} - \mathbf{P})$.</p>
+<h1 id="Projection-and-idempotent-matrix">Projection and idempotent matrix<a class="anchor-link" href="#Projection-and-idempotent-matrix">&#182;</a></h1><p><strong>Highlights:</strong> In this lecture, we learn that (1) $\mathbb{R}^m = \mathcal{C}(\mathbf{A}) \oplus \mathcal{N}(\mathbf{A}')$, $\mathbb{R}^n = \mathcal{C}(\mathbf{A}') \oplus \mathcal{N}(\mathbf{A})$; (2) any idempotent matrix $\mathbf{P}$ is a projector into $\mathcal{C}(\mathbf{P})$ along $\mathcal{N}(\mathbf{P}) = \mathcal{C}(\mathbf{I} - \mathbf{P})$; (3) Given $\mathbb{R}^n = \mathcal{S}_1 \oplus \mathcal{S}_2$, know how to construct a projector $\mathbf{P}$ that projects into $\mathcal{S}_1$ along $\mathcal{S}_2$.</p>
 <p>Note when many authors say <strong>projection</strong> or <strong>projectors</strong>, they actually mean <strong>orthogonal projection</strong> or <strong>orthogonal projectors</strong>, which are subject of next lecture. In this course, we differentiate (oblique) projection and orthogonal projection.</p>
 <p><img src="../06-matinv/three_projs.png" width=600 align="center"/></p>
 
@@ -13251,7 +13251,7 @@ $$
   \text{tr}(\mathbf{P}) = \text{tr}(\mathbf{S} \mathbf{U}') = \text{tr}(\mathbf{U}' \mathbf{S}) = \text{tr}(\mathbf{I}_r) = r = \text{rank}(\mathbf{P}).
 $$</p>
 </li>
-<li><p>Example: How to construct $\mathbf{P} \in \mathbb{R}^{n \times n}$ that projects into the line $\text{span}(\{\mathbf{1}_n\})$?</p>
+<li><p>Example: How to construct $\mathbf{P} \in \mathbb{R}^{n \times n}$ that projects onto the line $\text{span}(\{\mathbf{1}_n\})$?</p>
 </li>
 </ul>
 <p><img src="../06-matinv/three_projs.png" width=600 align="center"/></p>

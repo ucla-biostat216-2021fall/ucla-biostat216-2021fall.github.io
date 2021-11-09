@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Orthogonal-projections" data-toc-modified-id="Orthogonal-projections-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Orthogonal projections</a></div><div class="lev2 toc-item"><a href="#Row-rank-=-column-rank:-a-proof-using-orthogonality-(optional)" data-toc-modified-id="Row-rank-=-column-rank:-a-proof-using-orthogonality-(optional)-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Row rank = column rank: a proof using orthogonality (optional)</a></div><div class="lev2 toc-item"><a href="#Ortho-complementary-subspaces" data-toc-modified-id="Ortho-complementary-subspaces-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Ortho-complementary subspaces</a></div><div class="lev2 toc-item"><a href="#The-fundamental-theorem-of-linear-algebra" data-toc-modified-id="The-fundamental-theorem-of-linear-algebra-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>The fundamental theorem of linear algebra</a></div><div class="lev2 toc-item"><a href="#Orthogonal-matrix" data-toc-modified-id="Orthogonal-matrix-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Orthogonal matrix</a></div><div class="lev2 toc-item"><a href="#Orthogonal-projections" data-toc-modified-id="Orthogonal-projections-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Orthogonal projections</a></div></p>
+<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Orthogonal-projections" data-toc-modified-id="Orthogonal-projections-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Orthogonal projections</a></div><div class="lev2 toc-item"><a href="#Ortho-complementary-subspaces" data-toc-modified-id="Ortho-complementary-subspaces-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Ortho-complementary subspaces</a></div><div class="lev2 toc-item"><a href="#The-fundamental-theorem-of-linear-algebra" data-toc-modified-id="The-fundamental-theorem-of-linear-algebra-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>The fundamental theorem of linear algebra</a></div><div class="lev2 toc-item"><a href="#Orthogonal-projections" data-toc-modified-id="Orthogonal-projections-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Orthogonal projections</a></div><div class="lev2 toc-item"><a href="#Orthogonal-projection-into-a-column-space" data-toc-modified-id="Orthogonal-projection-into-a-column-space-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Orthogonal projection into a column space</a></div></p>
 
 </div>
 </div>
@@ -13087,27 +13087,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Orthogonal-projections">Orthogonal projections<a class="anchor-link" href="#Orthogonal-projections">&#182;</a></h1><p><strong>Highlights</strong> In this lecture, we'll show (1) the <strong>fundamental theorem of linear algebra</strong>:</p>
 <p><img src="../04-vecsp/four_fundamental_subspaces.png" width=400 align="center"/></p>
-<p>and (2) any symmetric, idempotent matrix $\mathbf{P}$ is the orthogonal projector onto $\mathcal{C}(\mathbf{P})$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Row-rank-=-column-rank:-a-proof-using-orthogonality-(optional)">Row rank = column rank: a proof using orthogonality (optional)<a class="anchor-link" href="#Row-rank-=-column-rank:-a-proof-using-orthogonality-(optional)">&#182;</a></h2><p>We show that the row rank of a matrix $\mathbf{A} \in \mathbb{R}^{m \times n}$ is equal to its column rank.</p>
-<p>Let $r$ be the row rank of $\mathbf{A}$ and $\mathbf{x}_1, \ldots, \mathbf{x}_r \in \mathbb{R}^n$ be a basis of the row space of $\mathbf{A}$.</p>
-<ul>
-<li><p>Lemma: The vectors $\mathbf{A} \mathbf{x}_1, \ldots, \mathbf{A} \mathbf{x}_r$ are linearly independent.</p>
-<p>Proof: Suppose
-$$
-  \sum_{i=1}^r c_i \mathbf{A} \mathbf{x}_i = \mathbf{A} \sum_{i=1}^r c_i \mathbf{x}_i = \mathbf{A} \mathbf{v} = \mathbf{0},
-$$
-where $\mathbf{v} = \sum_{i=1}^r c_i \mathbf{x}_i$. $\mathbf{v}$ is a linear combination of vectors in $\mathcal{R}(\mathbf{A})$ so $\mathbf{v} \in \mathcal{R}(\mathbf{A})$. Since $\mathbf{A} \mathbf{v} = \mathbf{0}$, $\mathbf{v}$ is orthogonal to each row of $\mathbf{A}$ thus is orthogonal to all vectors in $\mathcal{R}(\mathbf{A})$, including itself. Thus $\mathbf{v}=\mathbf{0}$ and $c_i$ are zero for all $i$. Thus we have shown $\mathbf{A} \mathbf{x}_1, \ldots, \mathbf{A} \mathbf{x}_r$ are linearly independent.</p>
-</li>
-</ul>
-<p>By the lemma, the column rank of $\mathbf{A}$ must be $\ge r$. Now apply the same argument to $\mathbf{A}'$, we have the column rank of $\mathbf{A}$ is $\le r$.</p>
-<p>The lemma also provides a convenient way to produce a basis for the column space given a basis for the row space.</p>
+<p>and (2) any symmetric, idempotent matrix $\mathbf{P}$ is the orthogonal projector onto $\mathcal{C}(\mathbf{P})$ (along $\mathcal{C}(\mathbf{P})^\perp = \mathcal{N}(\mathbf{A}')$).</p>
 
 </div>
 </div>
@@ -13119,7 +13099,8 @@ where $\mathbf{v} = \sum_{i=1}^r c_i \mathbf{x}_i$. $\mathbf{v}$ is a linear com
 <li><p>An <strong>orthocomplement set</strong> of a set $\mathcal{X}$ (not necessarily a subspace) in a vector space $\mathcal{V} \subseteq \mathbb{R}^m$ is defined as
 $$
   \mathcal{X}^\perp = \{ \mathbf{u} \in \mathcal{V}: \langle \mathbf{x}, \mathbf{u} \rangle = 0 \text{ for all } \mathbf{x} \in \mathcal{X}\}.
-$$</p>
+$$
+In midterm Q8, we showed that $\mathcal{X}^\perp$ is always a vector space regardless $\mathcal{X}$ is a vector space or not.</p>
 </li>
 <li><p>TODD: visualize $\mathbb{R}^3 = \text{a plane} \oplus \text{plan}^\perp$.</p>
 </li>
@@ -13130,7 +13111,7 @@ $$</p>
 <li>$\mathcal{V} = \mathcal{S} \oplus \mathcal{S}^\perp$.  </li>
 <li><p>$m = \text{dim}(\mathcal{S}) + \text{dim}(\mathcal{S}^\perp)$.<br>
 By the uniqueness of decomposition for direct sum, we know the expression of $\mathbf{y} = \mathbf{u} + \mathbf{v}$ is also <strong>unique</strong>.</p>
-<p>Proof of 1 (TODO): Let $\mathbf{z}_1, \ldots, \mathbf{z}_r$ be an orthonormal basis of $\mathcal{S}$, e.g., by applying Gram-Schmidt to a basis of $\mathcal{S}$. And let $\mathbf{z}_{r+1}, \ldots, \mathbf{z}_m$ be an orthonormal basis of $\mathcal{S}^\perp$. Then
+<p>Proof of 1: Let $\mathbf{z}_1, \ldots, \mathbf{z}_r$ be an orthonormal basis of $\mathcal{S}$, e.g., by applying Gram-Schmidt to a basis of $\mathcal{S}$. And let $\mathbf{z}_{r+1}, \ldots, \mathbf{z}_m$ be an orthonormal basis of $\mathcal{S}^\perp$. Then
 $$
 \mathbf{y} = \sum_{i=1}^r \langle \mathbf{y}, \mathbf{z}_i \rangle \mathbf{z}_i + \sum_{i=r+1}^m \langle \mathbf{y}, \mathbf{z}_i \rangle \mathbf{z}_i,
 $$
@@ -13192,49 +13173,18 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Orthogonal-matrix">Orthogonal matrix<a class="anchor-link" href="#Orthogonal-matrix">&#182;</a></h2><ul>
-<li><p>Let $\mathbf{Q} \in \mathbb{R}^{n \times n}$. The following statements are equivalent:</p>
-<ol>
-<li>The columns of $\mathbf{Q}$ are orthonormal vectors.  </li>
-<li>$\mathbf{Q}'\mathbf{Q} = \mathbf{I} = \mathbf{Q} \mathbf{Q}'$.  </li>
-<li><p>The rows of $\mathbf{Q}$ are orthonormal vectors.</p>
-<p>Proof: We show $1 \Rightarrow 2 \Rightarrow 3 \Rightarrow 1$.</p>
-<p>Proof of $1 \Rightarrow 2$: Let $\mathbf{Q} = (\mathbf{q}_1 \, \cdots \, \mathbf{q}_n)$. Orthonormality of $\mathbf{q}_i$ shows $\mathbf{Q}' \mathbf{Q} = \mathbf{I}$. Also $\mathbf{q}_i$ are linearly independent thus $\mathbf{Q}$ is non-singular. Thus $\mathbf{Q}^{-1} = \mathbf{Q}'$ and $\mathbf{Q} \mathbf{Q}' = \mathbf{Q} \mathbf{Q}^{-1} = \mathbf{I}$.</p>
-<p>Proof of $2 \Rightarrow 3$: $\mathbf{Q} \mathbf{Q}' = \mathbf{I}$ shows that the rows of $\mathbf{Q}$ are orthonormal.</p>
-<p>Proof of $3 \Rightarrow 1$: Statement 3 says columns of $\mathbf{Q}'$ are orthonormal. We have shown $1 \Rightarrow 2 \Rightarrow 3$. Thus we know rows of $\mathbf{Q}'$ are orthonormal, i.e., columns of $\mathbf{Q}$ are orthonormal.</p>
+<h2 id="Orthogonal-projections">Orthogonal projections<a class="anchor-link" href="#Orthogonal-projections">&#182;</a></h2><p><img src="../06-matinv/three_projs.png" width=600 align="center"/></p>
+<ul>
+<li><p>If $\mathcal{S}$ is a subspace of some vector space $\mathcal{V}$ and $\mathbf{y} \in \mathcal{V}$, then the projection of $\mathbf{y}$ into $\mathcal{S}$ along $\mathcal{S}^\perp$ is called the <strong>orthogonal projection</strong> of $\mathbf{y}$ into $\mathcal{S}$.</p>
 </li>
-</ol>
+<li><p><strong>The closest point theorem.</strong> Let $\mathcal{S}$ be a subspace of some vector space $\mathcal{V}$ and $\mathbf{y} \in \mathcal{V}$. The orthogonal projection of $\mathbf{y}$ into $\mathcal{S}$ is the <strong>unique</strong> point in $\mathcal{S}$ that is closest to $\mathbf{y}$. In other words, if $\mathbf{u}$ is the orthogonal projection of $\mathbf{y}$ into $\mathcal{S}$, then
+$$
+  \|\mathbf{y} - \mathbf{u}\|^2 \le \|\mathbf{y} - \mathbf{w}\|^2 \text{ for all } \mathbf{w} \in \mathcal{S},
+$$
+with equality holding only when $\mathbf{w} = \mathbf{u}$.</p>
+<p>Proof: Picture. $\|\mathbf{y} - \mathbf{w}\|^2 = \|\mathbf{y} - \mathbf{u} + \mathbf{u} - \mathbf{w}\|^2 = \|\mathbf{y} - \mathbf{u}\|^2 + 2(\mathbf{y} - \mathbf{u}))'(\mathbf{u} - \mathbf{w}) +  \|\mathbf{u} - \mathbf{w}\|^2 = \|\mathbf{y} - \mathbf{u}\|^2 + \|\mathbf{u} - \mathbf{w}\|^2 \ge \|\mathbf{y} - \mathbf{u}\|^2$.</p>
 </li>
-<li><p>Any square matrix $\mathbf{Q} \in \mathbb{R}^{n \times n}$ satisfying $\mathbf{Q} \mathbf{Q}' = \mathbf{Q}' \mathbf{Q} = \mathbf{I}$ is called an <strong>orthogonal matrix</strong>.<br>
-  In other words, columns or rows of $\mathbf{Q}$ are orthonormal.</p>
-</li>
-<li><p>Note for a rectangular matrix $\mathbf{Q} \in \mathbb{R}^{m \times n}$, $m &gt; n$, with orthonormal columns, we have $\mathbf{Q}' \mathbf{Q} = \mathbf{I}_n$ but $\mathbf{Q} \mathbf{Q}' \ne \mathbf{I}_m$.</p>
-</li>
-<li><p>Any orthogonal matrix is full rank. And its inverse is its transpose.</p>
-</li>
-<li><p>Examples of orthogonal matrix: $\mathbf{I}$, Householder matrix $\mathbf{H} = \mathbf{I} - 2 \mathbf{u} \mathbf{u}'$ with $\|\mathbf{u}\|=1$, Jacobi matrix.</p>
-</li>
-<li><p>More example: <strong>Hadamard matrix</strong>
-\begin{eqnarray*}
-\mathbf{H}_2 &amp;=&amp; \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; -1 \end{pmatrix}  \\
-\mathbf{H}_4 &amp;=&amp; \begin{pmatrix} 
-1 &amp; 1 &amp; 1 &amp; 1 \\ 
-1 &amp; -1 &amp; 1 &amp; -1 \\ 
-1 &amp; 1 &amp; -1 &amp; 1 \\
-1 &amp; -1 &amp; -1 &amp; 1
-\end{pmatrix} \\
-\mathbf{H}_8 &amp;=&amp; \begin{pmatrix} \mathbf{H}_4 &amp; \mathbf{H}_4 \\ \mathbf{H}_4 &amp; -\mathbf{H}_4 \end{pmatrix}.
-\end{eqnarray*}
-Are these orthogonal matrices?</p>
-<p><strong>Hadamard conjecture</strong> proposes that there is a $\pm 1$ matrix with orthogonal columns whenever 4 divides $n$. <a href="https://en.wikipedia.org/wiki/Hadamard_matrix">Wikipedia</a> says $n=668$ is the smallest of those sizes without a known Hadamard matrix.</p>
-</li>
-<li><p><strong>Orthogonal matrix preserves length and angle.</strong> If $\mathbf{Q} \in \mathbb{R}^{n \times n}$ is an orthgonal matrix, then</p>
-<ol>
-<li>$\|\mathbf{Q} \mathbf{x}\| = \|\mathbf{x}\|$ for any $\mathbf{x} \in \mathbb{R}^n$.  </li>
-<li>$\langle \mathbf{Q} \mathbf{x}, \mathbf{Q} \mathbf{y} \rangle = \langle \mathbf{x}, \mathbf{y} \rangle$ for any $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$.</li>
-</ol>
-</li>
-<li><p>If $\mathbf{Q}_1, \ldots, \mathbf{Q}_k$ are othgononal matrices, then the product $\mathbf{Q} = \mathbf{Q}_1 \cdots \mathbf{Q}_k$ is orthogonal.</p>
+<li><p>Let $\mathbb{R}^n = \mathcal{S} \oplus \mathcal{S}^\perp$. A square matrix $\mathbf{P}_{\mathcal{S}}$ is called the <strong>orthogonal porjector</strong> into $\mathcal{S}$ if, for every $\mathbf{y} \in \mathbb{R}^n$, $\mathbf{P}_{\mathcal{S}} \mathbf{y}$ is the projection of $\mathbf{y}$ into $\mathcal{S}$ along $\mathcal{S}^\perp$.</p>
 </li>
 </ul>
 
@@ -13244,21 +13194,8 @@ Are these orthogonal matrices?</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Orthogonal-projections">Orthogonal projections<a class="anchor-link" href="#Orthogonal-projections">&#182;</a></h2><p><img src="../06-matinv/three_projs.png" width=600 align="center"/></p>
-<ul>
-<li><p>If $\mathcal{S}$ is a subspace of some vector space $\mathcal{V}$ and $\mathbf{y} \in \mathcal{V}$, then the projection of $\mathbf{y}$ into $\mathcal{S}$ along $\mathcal{S}^\perp$ is called the <strong>orthogonal projection</strong> of $\mathbf{y}$ into $\mathcal{S}$.</p>
-</li>
-<li><p><strong>The closest point theorem.</strong> Let $\mathcal{S}$ be a subspace of some vector space $\mathcal{V}$ and $\mathbf{y} \in \mathcal{V}$. The orthogonal projection of $\mathbf{y}$ into $\mathcal{S}$ is the <strong>unique</strong> point in $\mathbf{S}$ that is closest to $\mathbf{y}$. In other words, if $\mathbf{u}$ is the orthogonal projection of $\mathbf{y}$ into $\mathcal{S}$, then
-$$
-  \|\mathbf{y} - \mathbf{u}\|^2 \le \|\mathbf{y} - \mathbf{w}\|^2 \text{ for all } \mathbf{w} \in \mathcal{S},
-$$
-with equality holding only when $\mathbf{w} = \mathbf{u}$.</p>
-<p>Proof: Picture.</p>
-</li>
-<li><p>Let $\mathbb{R}^n = \mathcal{S} \oplus \mathcal{S}^\perp$. A square matrix $\mathbf{P}_{\mathcal{S}}$ is called the <strong>orthogonal porjector</strong> into $\mathcal{S}$ if, for every $\mathbf{y} \in \mathbb{R}^n$, $\mathbf{P}_{\mathcal{S}} \mathbf{y}$ is the projection of $\mathbf{y}$ into $\mathcal{S}$ along $\mathcal{S}^\perp$.</p>
-</li>
-<li><p>For a matrix $\mathbf{X}$, the orthogonal projector onto $\mathcal{C}(\mathbf{X})$ is written as $\mathbf{P}_{\mathbf{X}}$.</p>
-</li>
+<h2 id="Orthogonal-projection-into-a-column-space">Orthogonal projection into a column space<a class="anchor-link" href="#Orthogonal-projection-into-a-column-space">&#182;</a></h2><ul>
+<li>For a matrix $\mathbf{X}$, the orthogonal projector onto $\mathcal{C}(\mathbf{X})$ is written as $\mathbf{P}_{\mathbf{X}}$.  </li>
 </ul>
 <p><img src="./ls_projection.png" width=400 align="center"/></p>
 <ul>
@@ -13330,6 +13267,12 @@ To show the other direction $\mathcal{C}(\mathbf{I} - \mathbf{P}_\mathbf{X}) \su
 <p>Proof of 5: For any $\mathbf{y} \in \mathbb{R}^n$, write $\mathbf{y} = \mathbf{P}_\mathbf{X} \mathbf{y} + (\mathbf{I} - \mathbf{P}_\mathbf{X}) \mathbf{y}$.</p>
 </li>
 </ol>
+</li>
+<li><p>Let $\mathbf{P} \in \mathbb{R}^{n \times n}$ has symmetric with rank $r$ and $\mathbf{P} = \mathbf{U} \mathbf{U}'$ be a rank factorization of $\mathbf{P}$. Then $\mathbf{P}$ is an orthogonal projector if and only if $\mathbf{U}' \mathbf{U} = \mathbf{I}_r$.</p>
+</li>
+<li><p>Another way to construct an orthogonal projector into $\mathcal{C}(\mathbf{A})$. Obtain an orthornormal basis $\mathbf{Q} \in \mathbb{R}^{n \times r}$ of $\mathcal{C}(\mathbf{A})$, e.g., by Gram-Schmidt, and let $\mathbf{P} = \mathbf{Q} \mathbf{Q}'$.</p>
+</li>
+<li><p>TODO: what is the orthogonal projection into $\text{span}(\mathbf{1}_2)$ in above picture?</p>
 </li>
 </ul>
 
