@@ -13085,7 +13085,60 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Determinant">Determinant<a class="anchor-link" href="#Determinant">&#182;</a></h1><p>We review some basic facts about matrix determinant.</p>
+<h1 id="Determinant">Determinant<a class="anchor-link" href="#Determinant">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Pkg</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">pwd</span><span class="p">())</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre><span class="ansi-green-intense-fg ansi-bold">  Activating</span> environment at `~/Documents/github.com/ucla-biostat216-2021fall.github.io/slides/09-det/Project.toml`
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">LinearAlgebra</span><span class="p">,</span> <span class="n">Symbolics</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We review some basic facts about matrix determinant.</p>
 <ul>
 <li><p>The <strong>determinant</strong> of a square matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$ is 
 $$
@@ -13093,7 +13146,7 @@ $$
 $$
 where the summation is over all permutation $(j_1, \ldots, j_n)$ of the set of integers $(1,\ldots,n)$ and $\phi(j_1,\ldots,j_n)$ is the number of transposition to change $(1,\ldots,n)$ to $(j_1,\ldots,j_n)$.</p>
 </li>
-<li><p>Example
+<li><p>Examples: $n = 2$ and 3.
 $$
   \det \begin{pmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{pmatrix} = (-1)^{\phi(1,2)} a_{11} a_{22} + (-1)^{\phi(2,1)} a_{12} a_{21} = a_{11} a_{22} - a_{12} a_{21}.
 $$</p>
@@ -13102,6 +13155,146 @@ $$</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@variables</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1-element Vector{Symbolics.Arr{Num, 2}}:
+ A[1:2,1:2]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="n">Symbolics</span><span class="o">.</span><span class="n">scalarize</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+\begin{equation}
+A{{_1}}ˏ{_1} A{{_2}}ˏ{_2} - A{{_1}}ˏ{_2} A{{_2}}ˏ{_1}
+\end{equation}
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@variables</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1-element Vector{Symbolics.Arr{Num, 2}}:
+ A[1:3,1:3]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="n">Symbolics</span><span class="o">.</span><span class="n">scalarize</span> <span class="o">|&gt;</span> <span class="n">expand</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+\begin{equation}
+A{{_1}}ˏ{_2} A{{_2}}ˏ{_3} A{{_3}}ˏ{_1} + A{{_1}}ˏ{_1} A{{_2}}ˏ{_2} A{{_3}}ˏ{_3} + A{{_1}}ˏ{_3} A{{_2}}ˏ{_1} A{{_3}}ˏ{_2} - A{{_1}}ˏ{_3} A{{_2}}ˏ{_2} A{{_3}}ˏ{_1} - A{{_1}}ˏ{_1} A{{_2}}ˏ{_3} A{{_3}}ˏ{_2} - A{{_1}}ˏ{_2} A{{_2}}ˏ{_1} A{{_3}}ˏ{_3}
+\end{equation}
+
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13120,8 +13313,37 @@ $$</p>
 </ul>
 <p><img src="./Determinant_parallelepiped.svg" width=400 align="center"/></p>
 <ul>
-<li><p>Another interpretation of the determinant is the volume changing factor when operating on a set in $\mathbb{R}^n$. $\text{volume}(f(S)) = |\det(\mathbf{A})| \text{volume}(f(S))$ where $f: \mathbb{R}^n \mapsto \mathbb{R}^n$ is the linear mapping defined by $\mathbf{A}$.</p>
+<li><p>Another interpretation of the determinant is the volume changing factor when operating on a set in $\mathbb{R}^n$. $\text{vol}(f(S)) = |\det(\mathbf{A})| \text{vol}(S)$ where $f: \mathbb{R}^n \mapsto \mathbb{R}^n$ is the linear mapping defined by $\mathbf{A}$.</p>
 </li>
+<li><p>Recall that for differentiable function $f: \mathbb{R}^n \mapsto \mathbb{R}^n$,  the <strong>Jacobian matrix</strong> $\operatorname{D} f(\mathbf{x}) \in \mathbb{R}^{n \times n}$ is
+$$
+\operatorname{D} f(\mathbf{x}) = \begin{pmatrix}
+\frac{\partial f_1}{\partial x_1} (\mathbf{x}) &amp; \frac{\partial f_1}{\partial x_2} (\mathbf{x}) &amp; \cdots &amp; \frac{\partial f_1}{\partial x_n} (\mathbf{x}) \\
+\frac{\partial f_2}{\partial x_1} (\mathbf{x}) &amp; \frac{\partial f_2}{\partial x_2} (\mathbf{x}) &amp; \cdots &amp; \frac{\partial f_2}{\partial x_n} (\mathbf{x}) \\
+\vdots &amp; \vdots &amp; &amp; \vdots \\
+\frac{\partial f_n}{\partial x_1} (\mathbf{x}) &amp; \frac{\partial f_n}{\partial x_2} (\mathbf{x}) &amp; \cdots &amp; \frac{\partial f_n}{\partial x_n} (\mathbf{x})
+\end{pmatrix} = \begin{pmatrix}
+\nabla f_1(\mathbf{x})' \\
+\nabla f_2(\mathbf{x})' \\
+\vdots \\
+\nabla f_n(\mathbf{x})'
+\end{pmatrix}.
+$$
+Its determinant, the <strong>Jacobian determinant</strong>, appears in the higher-dimensional version of <strong>integration by substitution</strong>
+$$
+\int_{f(U)} \phi(\mathbf{v}) \, \operatorname{d} \mathbf{v} = \int_U \phi(f(\mathbf{u})) | \det Df(\mathbf{u})| \, \operatorname{d} \mathbf{u}
+$$
+for function $\phi: \mathbb{R}^n \mapsto \mathbb{R}^m$. This result will be used in transformation of random variables in 202A.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li><p>The determinant of a <strong>lower or upper triangular matrix</strong> $\mathbf{A}$ is the product of the diagonal elements $\prod_{i=1}^n a_{ii}$.</p>
 </li>
 <li><p>Determinant of a singular matrix is 0.</p>
@@ -13130,6 +13352,153 @@ $$</p>
 </li>
 </ul>
 <p>TODO: visualize a rotation matrix and a reflector.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># a rotator</span>
+<span class="n">θ</span> <span class="o">=</span> <span class="nb">π</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="n">cos</span><span class="p">(</span><span class="n">θ</span><span class="p">)</span> <span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">θ</span><span class="p">);</span> <span class="n">sin</span><span class="p">(</span><span class="n">θ</span><span class="p">)</span> <span class="n">cos</span><span class="p">(</span><span class="n">θ</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×2 Matrix{Float64}:
+ 0.707107  -0.707107
+ 0.707107   0.707107</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># a reflector</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="n">cos</span><span class="p">(</span><span class="n">θ</span><span class="p">)</span> <span class="n">sin</span><span class="p">(</span><span class="n">θ</span><span class="p">);</span> <span class="n">sin</span><span class="p">(</span><span class="n">θ</span><span class="p">)</span> <span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">θ</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×2 Matrix{Float64}:
+ 0.707107   0.707107
+ 0.707107  -0.707107</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some properties of determinant.</p>
 <ul>
 <li><p>$\det(\mathbf{A}') = \det(\mathbf{A})$.</p>
 </li>
