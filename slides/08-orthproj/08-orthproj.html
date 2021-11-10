@@ -13087,7 +13087,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Orthogonal-projections">Orthogonal projections<a class="anchor-link" href="#Orthogonal-projections">&#182;</a></h1><p><strong>Highlights</strong> In this lecture, we'll show (1) the <strong>fundamental theorem of linear algebra</strong>:</p>
 <p><img src="../04-vecsp/four_fundamental_subspaces.png" width=400 align="center"/></p>
-<p>and (2) any symmetric, idempotent matrix $\mathbf{P}$ is the orthogonal projector onto $\mathcal{C}(\mathbf{P})$ (along $\mathcal{C}(\mathbf{P})^\perp = \mathcal{N}(\mathbf{A}')$).</p>
+<p>and (2) any symmetric, idempotent matrix $\mathbf{P}$ is the orthogonal projector onto $\mathcal{C}(\mathbf{P})$ (along $\mathcal{C}(\mathbf{P})^\perp = \mathcal{N}(\mathbf{P}')$).</p>
 
 </div>
 </div>
@@ -13122,7 +13122,7 @@ Proof of 4: Follows from essential disjointness between $\mathcal{S}$ and $\math
 </li>
 </ol>
 </li>
-<li><p>Some facts:</p>
+<li><p>Some facts (optional):</p>
 <ol>
 <li>For a set $\mathcal{X}$ in a vector space $\mathcal{V}$, $\mathcal{X}^\perp$ is always a subspace, whether or not $\mathcal{X}$ is a subspace.  </li>
 <li>If $\mathcal{S}$ is a subspace of $\mathcal{V}$, then $(\mathcal{S}^\perp)^\perp = \mathcal{S}$.  </li>
@@ -13182,7 +13182,14 @@ $$
   \|\mathbf{y} - \mathbf{u}\|^2 \le \|\mathbf{y} - \mathbf{w}\|^2 \text{ for all } \mathbf{w} \in \mathcal{S},
 $$
 with equality holding only when $\mathbf{w} = \mathbf{u}$.</p>
-<p>Proof: Picture. $\|\mathbf{y} - \mathbf{w}\|^2 = \|\mathbf{y} - \mathbf{u} + \mathbf{u} - \mathbf{w}\|^2 = \|\mathbf{y} - \mathbf{u}\|^2 + 2(\mathbf{y} - \mathbf{u}))'(\mathbf{u} - \mathbf{w}) +  \|\mathbf{u} - \mathbf{w}\|^2 = \|\mathbf{y} - \mathbf{u}\|^2 + \|\mathbf{u} - \mathbf{w}\|^2 \ge \|\mathbf{y} - \mathbf{u}\|^2$.</p>
+<p>Proof: Picture. 
+\begin{eqnarray*}    
+&amp; &amp; \|\mathbf{y} - \mathbf{w}\|^2 \\
+&amp;=&amp; \|\mathbf{y} - \mathbf{u} + \mathbf{u} - \mathbf{w}\|^2 \\
+&amp;=&amp; \|\mathbf{y} - \mathbf{u}\|^2 + 2(\mathbf{y} - \mathbf{u})'(\mathbf{u} - \mathbf{w}) +  \|\mathbf{u} - \mathbf{w}\|^2 \\
+&amp;=&amp; \|\mathbf{y} - \mathbf{u}\|^2 + \|\mathbf{u} - \mathbf{w}\|^2 \\
+&amp;\ge&amp; \|\mathbf{y} - \mathbf{u}\|^2.
+\end{eqnarray*}</p>
 </li>
 <li><p>Let $\mathbb{R}^n = \mathcal{S} \oplus \mathcal{S}^\perp$. A square matrix $\mathbf{P}_{\mathcal{S}}$ is called the <strong>orthogonal porjector</strong> into $\mathcal{S}$ if, for every $\mathbf{y} \in \mathbb{R}^n$, $\mathbf{P}_{\mathcal{S}} \mathbf{y}$ is the projection of $\mathbf{y}$ into $\mathcal{S}$ along $\mathcal{S}^\perp$.</p>
 </li>
@@ -13214,7 +13221,7 @@ for any generalized inverse $(\mathbf{X}' \mathbf{X})^-$.</li>
 $$
 \mathbf{P}_{\mathbf{X}} = \mathbf{X} (\mathbf{X}' \mathbf{X})^{-1} \mathbf{X}'.
 $$</p>
-<p>Proof of 1: Since the orthogonal projection of $\mathbf{y}$ into $\mathcal{C}(\mathbf{X})$ lives in $\mathcal{C}(\mathbf{X})$, thus can be written as $\mathbf{u} = \mathbf{X} \boldsymbol{\beta}$ for some $\boldsymbol{\beta} \in \mathbb{R}^p$. Furthermore, $\mathbf{v} = \mathbf{y} - \mathbf{X} \boldsymbol{\beta} \in \mathcal{C}(\mathbf{X})^\perp$ thus is orthogonal to any vectors in $\mathcal{C}(\mathbf{X})$ including the columns of $\mathbf{X}$. Thus
+<p>Proof of 1: Since the orthogonal projection of $\mathbf{y}$ into $\mathcal{C}(\mathbf{X})$ lives in $\mathcal{C}(\mathbf{X})$, thus can be written as $\mathbf{u} = \mathbf{X} \boldsymbol{\beta}$ for some $\boldsymbol{\beta} \in \mathbb{R}^p$. Furthermore, $\mathbf{v} = \mathbf{y} - \mathbf{X} \boldsymbol{\beta} \in \mathcal{C}(\mathbf{X})^\perp$ is orthogonal to any vectors in $\mathcal{C}(\mathbf{X})$ including the columns of $\mathbf{X}$. Thus
 $$
 \mathbf{X}' (\mathbf{y} - \mathbf{X} \boldsymbol{\beta}) = \mathbf{0},
 $$

@@ -13187,8 +13187,8 @@ $3 \Rightarrow 1$: We only need to show $\mathcal{S}_1 \cap \mathcal{S}_2 = \{\m
 <li><p>If $\mathbf{P}$ is a projector into $\mathcal{S}$ along $\mathcal{T}$, then</p>
 <ol>
 <li>$\mathbf{P} \mathbf{x} = \mathbf{x}$ for all $\mathbf{x} \in \mathcal{S}$.  </li>
-<li><p>$\mathbf{P} \mathbf{y} = \mathbf{0}$ for all $\mathbf{y} \in \mathcal{T}$.</p>
-<p>Proof: For 1, since $\mathbf{x} = \mathbf{x} + \mathbf{0}$, where $\mathbf{x} \in \mathcal{S}$ and $\mathbf{0} \in \mathcal{T}$. By uniqueness of the projection, $\mathbf{P} \mathbf{x}$ must be equal to $\mathbf{x}$. For 2, $\mathbf{y} = \mathbf{0} + \mathbf{y}$ is the unique decomposition. Then $\mathbf{P} \mathbf{y}$ must be $\mathbf{0}$.</p>
+<li><p>$\mathbf{P} \mathbf{z} = \mathbf{0}$ for all $\mathbf{z} \in \mathcal{T}$.</p>
+<p>Proof: For 1, since $\mathbf{x} = \mathbf{x} + \mathbf{0}$, where $\mathbf{x} \in \mathcal{S}$ and $\mathbf{0} \in \mathcal{T}$. By uniqueness of the projection, $\mathbf{P} \mathbf{x}$ must be equal to $\mathbf{x}$. For 2, $\mathbf{z} = \mathbf{0} + \mathbf{z}$ is the unique decomposition. Then $\mathbf{P} \mathbf{z}$ must be $\mathbf{0}$.</p>
 </li>
 </ol>
 </li>
@@ -13238,11 +13238,11 @@ $$
 $$
   \mathbf{C} \mathbf{R} \mathbf{C} \mathbf{R} = \mathbf{C} \mathbf{R}.
 $$
-Since $\mathbf{P} = \mathbf{C} \mathbf{R}$ is a rank factorization, $\text{rank}(\mathbf{C}) = \text{rank}(\mathbf{P}) = r$. $\mathbf{C}$ has full column rank ($\mathbf{C}$ span $\mathbb{R}^r$); thus there exists a left inverse $\mathbf{C}_L$ such that $\mathbf{C}_L \mathbf{C} = \mathbf{I}_r$. Similarly $\mathbf{R}$ having full row rank (columns of $\mathbb{R}$ span $\mathbb{R}^n$) implies that there exists a right inverse $\mathbf{R}_R$ such that $\mathbf{R} \mathbf{R}_R = \mathbf{I}_r$. Pre-multiplying by $\mathbf{C}_L$ and post-multiplying by $\mathbf{R}_R$ on both sides of above equation
+Since $\mathbf{P} = \mathbf{C} \mathbf{R}$ is a rank factorization, $\text{rank}(\mathbf{C}) = \text{rank}(\mathbf{P}) = r$. $\mathbf{C}$ has full column rank (rows of $\mathbf{C}$ span $\mathbb{R}^r$); thus there exists a left inverse $\mathbf{C}_L$ such that $\mathbf{C}_L \mathbf{C} = \mathbf{I}_r$. Similarly $\mathbf{R}$ having full row rank (columns of $\mathbf{R}$ span $\mathbb{R}^r$) implies that there exists a right inverse $\mathbf{R}_R$ such that $\mathbf{R} \mathbf{R}_R = \mathbf{I}_r$. Pre-multiplying by $\mathbf{C}_L$ and post-multiplying by $\mathbf{R}_R$ on both sides of above equation
 $$
   \mathbf{C}_L \mathbf{C} \mathbf{R} \mathbf{C} \mathbf{R} \mathbf{R}_R = \mathbf{C}_L \mathbf{C} \mathbf{R} \mathbf{R}_R.
 $$
-gives the desired identity $\mathbf{C} \mathbf{R} = \mathbf{I}_r$.</p>
+gives the desired identity $\mathbf{R}\mathbf{C} = \mathbf{I}_r$.</p>
 </li>
 <li><p>Above result gives us a recipe to <strong>construct (oblique) projectors</strong>. Suppose $\mathbf{R}^n = \mathcal{S}_1 \oplus \mathcal{S}_2$. How to construct a projector $\mathbf{P}$ that projects into $\mathcal{S}_1$ along $\mathcal{S}_2$?</p>
 <p>Solution: Let columns of $\mathbf{B}_1 \in \mathbb{R}^{n \times r}$ be a basis of $\mathcal{S}_1$ and columns of $\mathbf{B}_2 \in \mathbb{R}^{n \times (n-r)}$ be a basis of $\mathcal{S}_2$. Let $\mathbf{P} = \mathbf{B}_1 \mathbf{R}$ is a rank factorization of the desired projector. Then $\mathbf{R} \mathbf{B}_1 = \mathbf{I}_r$ and $\mathbf{R} \mathbf{B}_2 = \mathbf{0}_{r \times (n-r)}$. That is
@@ -13252,9 +13252,9 @@ $$
 We get $\mathbf{R} = (\mathbf{I}_r \,\, \mathbf{0}_{r \times (n-r)}) (\mathbf{B}_1 \,\, \mathbf{B}_2)^{-1}$.</p>
 </li>
 <li><p>Let $\mathbf{P}$ be a projector, or equivalently idempotent. Then $\text{tr}(\mathbf{P}) = \text{rank}(\mathbf{P})$.</p>
-<p>Proof: By HW1 (BV 10.11),
+<p>Proof: By HW2 (BV 10.11),
 $$
-  \text{tr}(\mathbf{P}) = \text{tr}(\mathbf{S} \mathbf{U}') = \text{tr}(\mathbf{U}' \mathbf{S}) = \text{tr}(\mathbf{I}_r) = r = \text{rank}(\mathbf{P}).
+  \text{tr}(\mathbf{P}) = \text{tr}(\mathbf{C} \mathbf{R}) = \text{tr}(\mathbf{R} \mathbf{C}) = \text{tr}(\mathbf{I}_r) = r = \text{rank}(\mathbf{P}).
 $$</p>
 </li>
 <li><p>Example: Homework 5. Find the 3 projectors in the picture.</p>

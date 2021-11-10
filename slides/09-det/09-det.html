@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Determinant" data-toc-modified-id="Determinant-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Determinant</a></div></p>
+<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Determinant" data-toc-modified-id="Determinant-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Determinant</a></div><div class="lev2 toc-item"><a href="#Definition-of-determinant" data-toc-modified-id="Definition-of-determinant-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Definition of determinant</a></div><div class="lev2 toc-item"><a href="#Some-interpretations-of-determinant" data-toc-modified-id="Some-interpretations-of-determinant-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Some interpretations of determinant</a></div><div class="lev2 toc-item"><a href="#Some-properties-of-determinant" data-toc-modified-id="Some-properties-of-determinant-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Some properties of determinant</a></div></p>
 
 </div>
 </div>
@@ -13139,12 +13139,13 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We review some basic facts about matrix determinant.</p>
-<ul>
+<h2 id="Definition-of-determinant">Definition of determinant<a class="anchor-link" href="#Definition-of-determinant">&#182;</a></h2><ul>
 <li><p>The <strong>determinant</strong> of a square matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$ is 
 $$
   \det (\mathbf{A}) = \sum (-1)^{\phi(j_1,\ldots,j_n)} \prod_{i=1}^n a_{ij_i},
 $$
 where the summation is over all permutation $(j_1, \ldots, j_n)$ of the set of integers $(1,\ldots,n)$ and $\phi(j_1,\ldots,j_n)$ is the number of transposition to change $(1,\ldots,n)$ to $(j_1,\ldots,j_n)$.</p>
+<p>$(-1)^{\phi(j_1,\ldots,j_n)}$ is also called the sign of permutation.</p>
 </li>
 <li><p>Examples: $n = 2$ and 3.
 $$
@@ -13299,7 +13300,7 @@ A{{_1}}ˏ{_2} A{{_2}}ˏ{_3} A{{_3}}ˏ{_1} + A{{_1}}ˏ{_1} A{{_2}}ˏ{_2} A{{_3}}�
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="./determinant.png" width=400 align="center"/></p>
+<h2 id="Some-interpretations-of-determinant">Some interpretations of determinant<a class="anchor-link" href="#Some-interpretations-of-determinant">&#182;</a></h2><p><img src="./determinant.png" width=400 align="center"/></p>
 <ul>
 <li>Interpretation of the (absolute value of) determinant as the <strong>volume of the parallelom</strong> defined by the columns of the matrix:
 \begin{eqnarray*}
@@ -13333,7 +13334,11 @@ Its determinant, the <strong>Jacobian determinant</strong>, appears in the highe
 $$
 \int_{f(U)} \phi(\mathbf{v}) \, \operatorname{d} \mathbf{v} = \int_U \phi(f(\mathbf{u})) | \det Df(\mathbf{u})| \, \operatorname{d} \mathbf{u}
 $$
-for function $\phi: \mathbb{R}^n \mapsto \mathbb{R}^m$. This result will be used in transformation of random variables in 202A.</p>
+for function $\phi: \mathbb{R}^n \mapsto \mathbb{R}$. This result will be used in transformation of random variables in 202A.</p>
+<p>For an example of $n=1$, an indefinite integral can be transformed to a definite integral over box [-1,1] via change of variable $v = u / (1-u^2)$:
+$$
+\int_{-\infty}^\infty f(v) \, dv = \int_{-1}^1 f\left(\frac{u}{1-u^2}\right) \frac{1+u^2}{(1-u^2)^2} \, du.
+$$</p>
 </li>
 </ul>
 
@@ -13343,10 +13348,10 @@ for function $\phi: \mathbb{R}^n \mapsto \mathbb{R}^m$. This result will be used
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>The determinant of a <strong>lower or upper triangular matrix</strong> $\mathbf{A}$ is the product of the diagonal elements $\prod_{i=1}^n a_{ii}$.</p>
+<h2 id="Some-properties-of-determinant">Some properties of determinant<a class="anchor-link" href="#Some-properties-of-determinant">&#182;</a></h2><ul>
+<li><p>The determinant of a <strong>lower or upper triangular matrix</strong> $\mathbf{A}$ is the product of the diagonal elements $\prod_{i=1}^n a_{ii}$. (Why?)</p>
 </li>
-<li><p>Determinant of a singular matrix is 0.</p>
+<li><p>Any square matrix $\mathbf{A}$ is singular if and only if $\det(\mathbf{A}) = 0$.</p>
 </li>
 <li><p>Determinant of an orthogonal matrix is 1 (<strong>rotation</strong>) or -1 (<strong>reflection</strong>).</p>
 </li>
@@ -13498,7 +13503,6 @@ for function $\phi: \mathbb{R}^n \mapsto \mathbb{R}^m$. This result will be used
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some properties of determinant.</p>
 <ul>
 <li><p>$\det(\mathbf{A}') = \det(\mathbf{A})$.</p>
 </li>
@@ -13506,7 +13510,9 @@ for function $\phi: \mathbb{R}^n \mapsto \mathbb{R}^m$. This result will be used
 </li>
 <li><p>$\det(c\mathbf{A}) = c^n \det(\mathbf{A})$.</p>
 </li>
-<li><p>$\det(\mathbf{A} \mathbf{B}) = \det(\mathbf{A}) \det(\mathbf{B})$.</p>
+<li><p>Product rule: $\det(\mathbf{A} \mathbf{B}) = \det(\mathbf{A}) \det(\mathbf{B})$.</p>
+</li>
+<li><p>Determinant of a permutation matrix is the sign of the permutation.</p>
 </li>
 <li><p>For $\mathbf{A}$ and $\mathbf{D}$ square and nonsingular, 
 \begin{eqnarray*}
