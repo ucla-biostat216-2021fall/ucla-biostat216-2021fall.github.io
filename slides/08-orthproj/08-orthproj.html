@@ -13233,6 +13233,8 @@ $$</p>
 </li>
 </ol>
 </li>
+<li><p>Example: HW5 Q1.3.</p>
+</li>
 <li><p><strong>Uniqueness of orthogonal projector.</strong> Let $\mathbf{A}, \mathbf{B} \in \mathbb{R}^{n \times p}$, both of full column rank and $\mathcal{C}(\mathbf{A}) = \mathcal{C}(\mathbf{B})$. Then $\mathbf{P}_{\mathbf{A}} = \mathbf{P}_{\mathbf{B}}$.</p>
 <p>Proof: Since $\mathcal{C}(\mathbf{A}) = \mathcal{C}(\mathbf{B})$, there exists a non-singular $\mathbf{C} \in \mathbb{R}^{p \times p}$ such that $\mathbf{A} = \mathbf{B} \mathbf{C}$. Then
 \begin{eqnarray*}
@@ -13243,7 +13245,7 @@ $$</p>
   &amp;=&amp; \mathbf{P}_{\mathbf{B}}.
 \end{eqnarray*}</p>
 </li>
-<li><p>Let $\mathbf{P}_\mathbf{X}$ be the orthogonal projector into $\mathcal{C}(\mathbf{X})$, where $\mathbf{X} \in \mathbb{R}^{n \times p}$ has full column rank (not necessary). Following statements are true.</p>
+<li><p>Let $\mathbf{P}_\mathbf{X}$ be the orthogonal projector into $\mathcal{C}(\mathbf{X})$, where $\mathbf{X} \in \mathbb{R}^{n \times p}$ has full column rank. Following statements are true.</p>
 <ol>
 <li>$\mathbf{P}_\mathbf{X}$ and $\mathbf{I} - \mathbf{P}_\mathbf{X}$ are both symmetric and idemponent. </li>
 <li>$\mathbf{P}_\mathbf{X} \mathbf{X} = \mathbf{X}$ and $(\mathbf{I} - \mathbf{P}_\mathbf{X}) \mathbf{X} = \mathbf{O}$.  </li>
@@ -13256,7 +13258,7 @@ $$</p>
 $$
 \mathcal{C}(\mathbf{P}_\mathbf{X}) \subseteq \mathcal{C}(\mathbf{X}) = \mathcal{C}(\mathbf{P}_\mathbf{X} \mathbf{X}) \subseteq \mathcal{C}(\mathbf{P}_\mathbf{X}). 
 $$</p>
-<p>Proof of 4: The second equality is simply the fundamental theorem of linear algebra. For the first equality, first we show $\mathcal{C}(\mathbf{I} - \mathbf{P}_\mathbf{X}) \subseteq \mathcal{N}(\mathbf{X}')$:
+<p>Proof of 4 (optional): The second equality is simply the fundamental theorem of linear algebra. For the first equality, first we show $\mathcal{C}(\mathbf{I} - \mathbf{P}_\mathbf{X}) \subseteq \mathcal{N}(\mathbf{X}')$:
 \begin{eqnarray*}
 &amp; &amp; \mathbf{u} \in \mathcal{C}(\mathbf{I} - \mathbf{P}_\mathbf{X}) \\
 &amp;\Rightarrow&amp; \mathbf{u} = (\mathbf{I} - \mathbf{P}_\mathbf{X}) \mathbf{v} \text{ for some } \mathbf{v} \\
@@ -13275,11 +13277,11 @@ To show the other direction $\mathcal{C}(\mathbf{I} - \mathbf{P}_\mathbf{X}) \su
 </li>
 </ol>
 </li>
-<li><p>Let $\mathbf{P} \in \mathbb{R}^{n \times n}$ has symmetric with rank $r$ and $\mathbf{P} = \mathbf{U} \mathbf{U}'$ be a rank factorization of $\mathbf{P}$. Then $\mathbf{P}$ is an orthogonal projector if and only if $\mathbf{U}' \mathbf{U} = \mathbf{I}_r$.</p>
+<li><p>Let $\mathbf{P} \in \mathbb{R}^{n \times n}$ be symmetric with rank $r$ and $\mathbf{P} = \mathbf{U} \mathbf{U}'$ be a rank factorization of $\mathbf{P}$. Then $\mathbf{P}$ is an orthogonal projector in $\mathcal{C}(\mathbf{U})$ if and only if $\mathbf{U}' \mathbf{U} = \mathbf{I}_r$.</p>
 </li>
-<li><p>Another way to construct an orthogonal projector into $\mathcal{C}(\mathbf{A})$. Obtain an orthornormal basis $\mathbf{Q} \in \mathbb{R}^{n \times r}$ of $\mathcal{C}(\mathbf{A})$, e.g., by Gram-Schmidt, and let $\mathbf{P} = \mathbf{Q} \mathbf{Q}'$.</p>
+<li><p>Above result gives another way to construct an orthogonal projector into $\mathcal{C}(\mathbf{A})$, where $\mathbf{A}$ might not be full column rank. Obtain an orthornormal basis $\mathbf{Q} \in \mathbb{R}^{n \times r}$ of $\mathcal{C}(\mathbf{A})$, e.g., by Gram-Schmidt, and let $\mathbf{P} = \mathbf{Q} \mathbf{Q}'$.</p>
 </li>
-<li><p>HW5: what is the orthogonal projection into $\text{span}(\mathbf{1}_2)$ in above picture?</p>
+<li><p>Example: HW5 Q1.3, Q7.</p>
 </li>
 </ul>
 

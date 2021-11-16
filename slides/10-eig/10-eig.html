@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Eigenvalues-and-Eigenvectors" data-toc-modified-id="Eigenvalues-and-Eigenvectors-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Eigenvalues and Eigenvectors</a></div><div class="lev2 toc-item"><a href="#Compute-eigenvalues-(by-hand)" data-toc-modified-id="Compute-eigenvalues-(by-hand)-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Compute eigenvalues (by hand)</a></div><div class="lev2 toc-item"><a href="#Similar-matrices" data-toc-modified-id="Similar-matrices-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Similar matrices</a></div><div class="lev2 toc-item"><a href="#Diagonalizing-a-matrix" data-toc-modified-id="Diagonalizing-a-matrix-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Diagonalizing a matrix</a></div><div class="lev2 toc-item"><a href="#Non-diagonalizable-matrices" data-toc-modified-id="Non-diagonalizable-matrices-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Non-diagonalizable matrices</a></div><div class="lev2 toc-item"><a href="#Some-properties" data-toc-modified-id="Some-properties-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Some properties</a></div><div class="lev2 toc-item"><a href="#Spectral-decomposition-for-symmetric-matrices" data-toc-modified-id="Spectral-decomposition-for-symmetric-matrices-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Spectral decomposition for symmetric matrices</a></div></p>
+<h1 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h1><p><p><div class="lev1 toc-item"><a href="#Eigenvalues-and-Eigenvectors" data-toc-modified-id="Eigenvalues-and-Eigenvectors-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Eigenvalues and Eigenvectors</a></div><div class="lev2 toc-item"><a href="#Compute-eigenvalues-(by-hand)" data-toc-modified-id="Compute-eigenvalues-(by-hand)-11"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Compute eigenvalues (by hand)</a></div><div class="lev2 toc-item"><a href="#Similar-matrices" data-toc-modified-id="Similar-matrices-12"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Similar matrices</a></div><div class="lev2 toc-item"><a href="#Diagonalizing-a-matrix" data-toc-modified-id="Diagonalizing-a-matrix-13"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Diagonalizing a matrix</a></div><div class="lev2 toc-item"><a href="#Non-diagonalizable-matrices" data-toc-modified-id="Non-diagonalizable-matrices-14"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Non-diagonalizable matrices</a></div><div class="lev2 toc-item"><a href="#Some-properties" data-toc-modified-id="Some-properties-15"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Some properties</a></div><div class="lev2 toc-item"><a href="#Spectral-decomposition-for-symmetric-matrices-(important)" data-toc-modified-id="Spectral-decomposition-for-symmetric-matrices-(important)-16"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Spectral decomposition for symmetric matrices (important)</a></div></p>
 
 </div>
 </div>
@@ -13086,11 +13086,14 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Eigenvalues-and-Eigenvectors">Eigenvalues and Eigenvectors<a class="anchor-link" href="#Eigenvalues-and-Eigenvectors">&#182;</a></h1><ul>
-<li>Let $\mathbf{A} \in \mathbb{R}^{n \times n}$ and 
+<li><p>Let $\mathbf{A} \in \mathbb{R}^{n \times n}$ and 
 $$
   \mathbf{A} \mathbf{x} = \lambda \mathbf{x}, \quad \mathbf{x} \ne \mathbf{0}.
 $$
-Then $\lambda$ is an <strong>eigenvalue</strong> of $\mathbf{A}$ with corresponding <strong>eigenvector</strong> $\mathbf{x}$.</li>
+Then $\lambda$ is an <strong>eigenvalue</strong> of $\mathbf{A}$ with corresponding <strong>eigenvector</strong> $\mathbf{x}$.</p>
+</li>
+<li><p>Note if $\mathbf{x}$ is an eigenvector with eigenvalue $\lambda$, then $\alpha \mathbf{x}$ is also an eigenvector with same eigenvalue $\lambda$. Therefore eigenvectors are determined up to a scaling factor; in practice we often normalize eigenvectors to have unit L2 norm.</p>
+</li>
 </ul>
 
 </div>
@@ -13102,11 +13105,11 @@ Then $\lambda$ is an <strong>eigenvalue</strong> of $\mathbf{A}$ with correspond
 <h2 id="Compute-eigenvalues-(by-hand)">Compute eigenvalues (by hand)<a class="anchor-link" href="#Compute-eigenvalues-(by-hand)">&#182;</a></h2><ul>
 <li><p>From eigen-equation $\mathbf{A} \mathbf{x} = \lambda \mathbf{x}$, we have
 $$
-(\mathbf{A} - \lambda \mathbf{I}) \mathbf{x} = \mathbf{0}.
+(\lambda \mathbf{I} - \mathbf{A}) \mathbf{x} = \mathbf{0}.
 $$
-That is the marix $\mathbf{A} - \lambda \mathbf{I}$ must be singular and
+That is the marix $\lambda \mathbf{I} - \mathbf{A}$ must be singular and
 $$
-\det(\mathbf{A} - \lambda \mathbf{I}) = 0.
+\det(\lambda \mathbf{I} - \mathbf{A}) = 0.
 $$</p>
 </li>
 <li><p>The $n$-degree polynomial
@@ -13612,7 +13615,7 @@ Since $\mathbf{x}^* \mathbf{x} \ne 0$, we have $\lambda^* \lambda = |\lambda| = 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Spectral-decomposition-for-symmetric-matrices">Spectral decomposition for symmetric matrices<a class="anchor-link" href="#Spectral-decomposition-for-symmetric-matrices">&#182;</a></h2><ul>
+<h2 id="Spectral-decomposition-for-symmetric-matrices-(important)">Spectral decomposition for symmetric matrices (important)<a class="anchor-link" href="#Spectral-decomposition-for-symmetric-matrices-(important)">&#182;</a></h2><ul>
 <li><p>For a symmetric matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$,</p>
 <ol>
 <li>all eigenvalues of $\mathbf{A}$ are real numbers, and</li>
