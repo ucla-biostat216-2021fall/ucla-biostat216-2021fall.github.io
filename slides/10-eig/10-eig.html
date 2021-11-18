@@ -13116,7 +13116,7 @@ $$</p>
 $$
   p_{\mathbf{A}}(\lambda) = \det(\lambda \mathbf{I} - \mathbf{A})
 $$
-is called the <strong>characteristic polynomial</strong>. Eigenvalues are the roots of $p_{\mathbf{A}}(\lambda)$.</p>
+is called the <strong>characteristic polynomial</strong>. Eigenvalues are the $n$ roots of $p_{\mathbf{A}}(\lambda)$.</p>
 </li>
 <li><p>Example: For
 $$
@@ -13312,6 +13312,22 @@ vectors:
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Some notations of complex number $x = a + b\sqrt{-1} = a + bi \in \mathbb{C}$. <ul>
+<li>Conjugate of a complex number: $x^* = (a + bi)^* = a - bi$.</li>
+<li>Modulus of a complex number: $|x| = \sqrt{a^2 + b^2} = \sqrt{x^*x}$.  </li>
+<li>Conjugate transpose of a complex vector: for $\mathbf{x} = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix} \in \mathbb{C}^n$, $\mathbf{x}^* = (x_1^* \, \cdots x_n^*)$.  </li>
+<li>L2 norm of a complex vector: for $\mathbf{x} \in \mathbb{C}^n$, $\|\mathbf{x}\| = \sqrt{\mathbf{x}^* \mathbf{x}} = \sqrt{(a_1 + b_1 i)(a_1 - b_1i) + \cdots + (a_n + b_n i)(a_n - b_ni)} = \sqrt{a_1^2 + b_1^2 + \cdots + a_n^2 + b_n^2}$.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13603,7 +13619,7 @@ So $\lambda = \lambda^2$ or $\lambda =0, 1$.</p>
 $$
   \mathbf{x}^* \mathbf{x} = \mathbf{x}^* \mathbf{A}' \mathbf{A} \mathbf{x} = \lambda^* \lambda \mathbf{x}^* \mathbf{x}.
 $$
-Since $\mathbf{x}^* \mathbf{x} \ne 0$, we have $\lambda^* \lambda = |\lambda| = 1$.</p>
+Since $\mathbf{x}^* \mathbf{x} \ne 0$, we have $\lambda^* \lambda = |\lambda|^2 = 1$.</p>
 </li>
 <li><p>Let $\mathbf{A} \in \mathbb{R}^{n \times n}$ (not required to be diagonalizable), then $\text{tr}(\mathbf{A}) = \sum_i \lambda_i$ and $\det(\mathbf{A}) = \prod_i \lambda_i$. The general version can be proved by the Jordan canonical form, a generalization of the eigen-decomposition.</p>
 </li>
@@ -13616,6 +13632,8 @@ Since $\mathbf{x}^* \mathbf{x} \ne 0$, we have $\lambda^* \lambda = |\lambda| = 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Spectral-decomposition-for-symmetric-matrices-(important)">Spectral decomposition for symmetric matrices (important)<a class="anchor-link" href="#Spectral-decomposition-for-symmetric-matrices-(important)">&#182;</a></h2><ul>
+<li><p>Fact (optional): Any normal matrix $\mathbf{A} \in \mathbb{C}^{n \times n}$, satisfying $\mathbf{A}^*\mathbf{A} = \mathbf{A} \mathbf{A}^*$ is diagonalizable by a unitary matrix: $\mathbf{A} = \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^*$.</p>
+</li>
 <li><p>For a symmetric matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$,</p>
 <ol>
 <li>all eigenvalues of $\mathbf{A}$ are real numbers, and</li>
@@ -13646,7 +13664,7 @@ Thus $\mathbf{x}_1 \in \mathcal{C}(\mathbf{A} - \lambda_2 \mathbf{I})$ and $\mat
 </li>
 </ol>
 </li>
-<li><p>For an eigenvalue with multiplicity, we can choose its eigenvectors to be orthogonal to each other. Also we normalize each eigenvector to have unit $\ell_2$ norm. Thus we obtain the extremely useful <strong>spectral decomposition</strong>
+<li><p>For an eigenvalue with multiplicity, we can choose its eigenvectors to be orthogonal to each other. Also we normalize each eigenvector to have unit $\ell_2$ norm. Thus we obtain the extremely useful <strong>spectral decomposition of a symmetric matrix</strong>
 $$
   \mathbf{A} = \mathbf{Q} \boldsymbol{\Lambda} \mathbf{Q}' = \begin{pmatrix} \mid &amp; &amp; \mid \\ \mathbf{q}_1 &amp; \cdots &amp; \mathbf{q}_n \\ \mid &amp; &amp; \mid \end{pmatrix} \begin{pmatrix} \lambda_1 &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; \lambda_n \end{pmatrix} \begin{pmatrix} - &amp; \mathbf{q}_1' &amp; - \\ &amp; \vdots &amp; \\ - &amp; \mathbf{q}_n' &amp; - \end{pmatrix} = \sum_{i=1}^n \lambda_i \mathbf{q}_i \mathbf{q}_i',
 $$
@@ -13656,6 +13674,153 @@ where $\mathbf{Q}$ is orthogonal (columns are eigenvectors) and $\boldsymbol{\La
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.0</span> <span class="mf">1.0</span><span class="p">;</span> <span class="mf">1.0</span> <span class="mf">2.0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×2 Matrix{Float64}:
+ 2.0  1.0
+ 1.0  2.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">Aeig</span> <span class="o">=</span> <span class="n">eigen</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Eigen{Float64, Float64, Matrix{Float64}, Vector{Float64}}
+values:
+2-element Vector{Float64}:
+ 1.0
+ 3.0
+vectors:
+2×2 Matrix{Float64}:
+ -0.707107  0.707107
+  0.707107  0.707107</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c"># eigenvectors are orthonormal</span>
+<span class="n">Aeig</span><span class="o">.</span><span class="n">vectors</span><span class="o">&#39;</span> <span class="o">*</span> <span class="n">Aeig</span><span class="o">.</span><span class="n">vectors</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×2 Matrix{Float64}:
+ 1.0  0.0
+ 0.0  1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">Aeig</span><span class="o">.</span><span class="n">vectors</span> <span class="o">*</span> <span class="kt">Diagonal</span><span class="p">(</span><span class="n">Aeig</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">*</span> <span class="n">Aeig</span><span class="o">.</span><span class="n">vectors</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2×2 Matrix{Float64}:
+ 2.0  1.0
+ 1.0  2.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
