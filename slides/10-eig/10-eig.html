@@ -13116,7 +13116,7 @@ $$</p>
 $$
   p_{\mathbf{A}}(\lambda) = \det(\lambda \mathbf{I} - \mathbf{A})
 $$
-is called the <strong>characteristic polynomial</strong>. Eigenvalues are the $n$ roots of $p_{\mathbf{A}}(\lambda)$.</p>
+is called the <strong>characteristic polynomial</strong>. Eigenvalues are the $n$ roots of $p_{\mathbf{A}}(\lambda)$ (fundamental theorem of algebra).</p>
 </li>
 <li><p>Example: For
 $$
@@ -13321,7 +13321,12 @@ vectors:
 <li>Conjugate of a complex number: $x^* = (a + bi)^* = a - bi$.</li>
 <li>Modulus of a complex number: $|x| = \sqrt{a^2 + b^2} = \sqrt{x^*x}$.  </li>
 <li>Conjugate transpose of a complex vector: for $\mathbf{x} = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix} \in \mathbb{C}^n$, $\mathbf{x}^* = (x_1^* \, \cdots x_n^*)$.  </li>
-<li>L2 norm of a complex vector: for $\mathbf{x} \in \mathbb{C}^n$, $\|\mathbf{x}\| = \sqrt{\mathbf{x}^* \mathbf{x}} = \sqrt{(a_1 + b_1 i)(a_1 - b_1i) + \cdots + (a_n + b_n i)(a_n - b_ni)} = \sqrt{a_1^2 + b_1^2 + \cdots + a_n^2 + b_n^2}$.</li>
+<li>L2 norm of a complex vector: for $\mathbf{x} \in \mathbb{C}^n$, 
+\begin{eqnarray*}
+\|\mathbf{x}\| &amp;=&amp; \sqrt{\mathbf{x}^* \mathbf{x}} \\
+&amp;=&amp; \sqrt{(a_1 + b_1 i)(a_1 - b_1i) + \cdots + (a_n + b_n i)(a_n - b_ni)} \\
+&amp;=&amp; \sqrt{|x_1|^2 + \cdots + |x_n|^2}.
+\end{eqnarray*}</li>
 </ul>
 </li>
 </ul>
@@ -13378,15 +13383,15 @@ $$</li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Non-diagonalizable-matrices">Non-diagonalizable matrices<a class="anchor-link" href="#Non-diagonalizable-matrices">&#182;</a></h2><ul>
-<li><p><strong>Geometric multiplicity (GM)</strong> of an eigenvalue $\lambda$: count the independent eigenvectors for $\lambda$. Look at the null space of $\mathbf{A} - \lambda \mathbf{I}$.</p>
+<li><p><strong>Geometric multiplicity (GM)</strong> of an eigenvalue $\lambda$: count the independent eigenvectors for $\lambda$, i.e., $\text{dim}(\mathcal{N}(\lambda \mathbf{I} - \mathbf{A}))$.</p>
 </li>
 <li><p><strong>Algebraic multiplicity (AM)</strong> of an eigenvalue $\lambda$: count the repetition for $\lambda$. Look at the roots of characteristic polynomial $\det(\lambda \mathbf{I} - \mathbf{A})$.</p>
 </li>
 <li><p>Always $\text{GM} \le \text{AM}$.</p>
 </li>
-<li><p>The shortage of eigenvectors when $\text{GM} &lt; \text{AM}$ means that $\mathbf{A}$ is <strong>not diagonalizable</strong>. There is no invertible matrix such that $\mathbf{A} = \mathbf{X} \boldsymbol{\Lambda} \mathbf{X}^{-1}$.</p>
+<li><p>The shortage of eigenvectors when $\text{GM} &lt; \text{AM}$ means that $\mathbf{A}$ is <strong>not diagonalizable</strong>. There is no invertible matrix $\mathbf{X}$ such that $\mathbf{A} = \mathbf{X} \boldsymbol{\Lambda} \mathbf{X}^{-1}$.</p>
 </li>
-<li><p>Classical example:
+<li><p>Classical example of non-diagonalizable matrices:
 $$
 \mathbf{A} = \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}.
 $$
@@ -13581,9 +13586,10 @@ showing that $\lambda^2$ is an eigenvalue of $\mathbf{A}^2$ with eigenvector $\m
 <li><p>For a diagonalizable matrix $\mathbf{A} = \mathbf{X} \boldsymbol{\Lambda} \mathbf{X}^{-1}$, we have
 $$
 \mathbf{A}^k = \mathbf{X} \boldsymbol{\Lambda}^k \mathbf{X}^{-1}.
-$$</p>
+$$
+Recall that matrix multiplication is an expensive operation, $O(n^3)$ flops. This formula suggests we just need one eigen-decomposition to evaluate matrix powers.</p>
 </li>
-<li><p><strong>Shifting $\mathbf{A}$ shifts all eigenvalues.</strong> 
+<li><p><strong>Shifting diagonal of $\mathbf{A}$ shifts all eigenvalues.</strong> 
 $$
 (\mathbf{A} + s \mathbf{I}) \mathbf{x} = \lambda \mathbf{x} + s \mathbf{x} = (\lambda + s) \mathbf{x}.
 $$</p>
@@ -13632,23 +13638,21 @@ Since $\mathbf{x}^* \mathbf{x} \ne 0$, we have $\lambda^* \lambda = |\lambda|^2 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Spectral-decomposition-for-symmetric-matrices-(important)">Spectral decomposition for symmetric matrices (important)<a class="anchor-link" href="#Spectral-decomposition-for-symmetric-matrices-(important)">&#182;</a></h2><ul>
-<li><p>Fact (optional): Any normal matrix $\mathbf{A} \in \mathbb{C}^{n \times n}$, satisfying $\mathbf{A}^*\mathbf{A} = \mathbf{A} \mathbf{A}^*$, is diagonalizable by a unitary matrix: $\mathbf{A} = \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^*$.</p>
-</li>
 <li><p>For a symmetric matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$,</p>
 <ol>
-<li>all eigenvalues of $\mathbf{A}$ are real numbers, and</li>
+<li>all eigenvalues of $\mathbf{A}$ are real, and</li>
 <li><p>the eigenvectors corresponding to distinct eigenvalues are orthogonal to each other.</p>
 <p>Proof of 1: Pre-multiplying the eigen-equation $\mathbf{A} \mathbf{x} = \lambda \mathbf{x}$ by $\mathbf{x}^*$ (conjugate transpose) gives
 $$
 \mathbf{x}^* \mathbf{A} \mathbf{x} = \lambda \mathbf{x}^* \mathbf{x}.
 $$
-Now both
+Let $\mathbf{x}^* = \mathbf{a} + \mathbf{b} i$ be the associated eigenvector. Now both
 $$
-\mathbf{x}^* \mathbf{x} = x_1^* x_1 + \cdots + x_n^* x_n
+\mathbf{x}^* \mathbf{x} = (\mathbf{a} + \mathbf{b} i)^* (\mathbf{a} + \mathbf{b} i) = (\mathbf{a}' - \mathbf{b}' i)(\mathbf{a} + \mathbf{b} i) = \mathbf{a}' \mathbf{a} + \mathbf{b}' \mathbf{b}
 $$
 and
 $$
-\mathbf{x}^* \mathbf{A} \mathbf{x} = \sum_{i,j} a_{ij} x_i^* x_j = \sum_i a_{ii} x_i^*x_i + \sum_{i &lt; j} a_{ij} (x_i^*x_j + x_i x_j^*) = a_{11} x_1^* x_1 + a_{12}(x_1^* x_2 + x_1 x_2^*) + \cdots
+\mathbf{x}^* \mathbf{A} \mathbf{x} = (\mathbf{a}' - \mathbf{b}' i) \mathbf{A} (\mathbf{a} + \mathbf{b} i) = \mathbf{a}' \mathbf{A} \mathbf{a} + \mathbf{b}' \mathbf{A} \mathbf{b}
 $$
 are real numbers. Therefore $\lambda$ is a real number.</p>
 <p>Proof of 2: Suppose
@@ -13664,7 +13668,7 @@ Thus $\mathbf{x}_1 \in \mathcal{C}(\mathbf{A} - \lambda_2 \mathbf{I})$ and $\mat
 </li>
 </ol>
 </li>
-<li><p>For an eigenvalue with multiplicity, we can choose its eigenvectors to be orthogonal to each other. Also we normalize each eigenvector to have unit $\ell_2$ norm. Thus we obtain the extremely useful <strong>spectral decomposition of a symmetric matrix</strong>
+<li><p>For an eigenvalue with multiplicity, we can choose its eigenvectors to be orthogonal to each other. Also we normalize each eigenvector to have unit L2 norm. Thus we obtain the extremely useful <strong>spectral decomposition of a symmetric matrix</strong>
 $$
   \mathbf{A} = \mathbf{Q} \boldsymbol{\Lambda} \mathbf{Q}' = \begin{pmatrix} \mid &amp; &amp; \mid \\ \mathbf{q}_1 &amp; \cdots &amp; \mathbf{q}_n \\ \mid &amp; &amp; \mid \end{pmatrix} \begin{pmatrix} \lambda_1 &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; \lambda_n \end{pmatrix} \begin{pmatrix} - &amp; \mathbf{q}_1' &amp; - \\ &amp; \vdots &amp; \\ - &amp; \mathbf{q}_n' &amp; - \end{pmatrix} = \sum_{i=1}^n \lambda_i \mathbf{q}_i \mathbf{q}_i',
 $$
@@ -13715,7 +13719,7 @@ where $\mathbf{Q}$ is orthogonal (columns are eigenvectors) and $\boldsymbol{\La
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">Aeig</span> <span class="o">=</span> <span class="n">eigen</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">Aeig</span> <span class="o">=</span> <span class="n">eigen</span><span class="p">(</span><span class="kt">Symmetric</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
 </pre></div>
 
     </div>
