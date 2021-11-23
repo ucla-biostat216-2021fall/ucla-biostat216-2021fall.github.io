@@ -13642,11 +13642,11 @@ Since $\mathbf{x}^* \mathbf{x} \ne 0$, we have $\lambda^* \lambda = |\lambda|^2 
 <ol>
 <li>all eigenvalues of $\mathbf{A}$ are real, and</li>
 <li><p>the eigenvectors corresponding to distinct eigenvalues are orthogonal to each other.</p>
-<p>Proof of 1: Pre-multiplying the eigen-equation $\mathbf{A} \mathbf{x} = \lambda \mathbf{x}$ by $\mathbf{x}^*$ (conjugate transpose) gives
+<p>Proof of 1 (optional): Pre-multiplying the eigen-equation $\mathbf{A} \mathbf{x} = \lambda \mathbf{x}$ by $\mathbf{x}^*$ (conjugate transpose) gives
 $$
 \mathbf{x}^* \mathbf{A} \mathbf{x} = \lambda \mathbf{x}^* \mathbf{x}.
 $$
-Let $\mathbf{x}^* = \mathbf{a} + \mathbf{b} i$ be the associated eigenvector. Now both
+Let $\mathbf{x} = \mathbf{a} + \mathbf{b} i$ be the associated eigenvector. Now both
 $$
 \mathbf{x}^* \mathbf{x} = (\mathbf{a} + \mathbf{b} i)^* (\mathbf{a} + \mathbf{b} i) = (\mathbf{a}' - \mathbf{b}' i)(\mathbf{a} + \mathbf{b} i) = \mathbf{a}' \mathbf{a} + \mathbf{b}' \mathbf{b}
 $$
@@ -13796,7 +13796,7 @@ vectors:
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">Aeig</span><span class="o">.</span><span class="n">vectors</span> <span class="o">*</span> <span class="kt">Diagonal</span><span class="p">(</span><span class="n">Aeig</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">*</span> <span class="n">Aeig</span><span class="o">.</span><span class="n">vectors</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">Aeig</span><span class="o">.</span><span class="n">vectors</span> <span class="o">*</span> <span class="kt">Diagonal</span><span class="p">(</span><span class="n">Aeig</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">*</span> <span class="n">Aeig</span><span class="o">.</span><span class="n">vectors</span><span class="o">&#39;</span>
 </pre></div>
 
     </div>
