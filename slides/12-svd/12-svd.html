@@ -13804,7 +13804,7 @@ This says</p>
 <li>$\mathbf{u}_i$ are simply the eigenvectors of the symmetric matrix $\mathbf{A} \mathbf{A}'$</li>
 <li>$\mathbf{v}_i$ are simply the eigenvectors of the symmetric matrix $\mathbf{A} \mathbf{A}'$</li>
 <li><p>$\sigma_i$ are simply $\sqrt{\lambda_i}$.</p>
-<p>Proof of SVD: Start from positive eigenvalues $\lambda_i &gt; 0$ and corresponding (orthonormal) eigenvectors $\mathbf{v}_i$ of $\mathbf{A} \mathbf{A}'$. Set $\sigma_i = \sqrt \lambda_i$ and
+<p>Proof of existence of SVD: Start from positive eigenvalues $\lambda_i &gt; 0$ and corresponding (orthonormal) eigenvectors $\mathbf{v}_i$ of $\mathbf{A}' \mathbf{A}$. Set $\sigma_i = \sqrt \lambda_i$ and
 $$
 \mathbf{u}_i = \frac{\mathbf{A} \mathbf{v}_i}{\sigma_i}, \quad i = 1,\ldots,r.
 $$
@@ -15203,7 +15203,7 @@ $$
 $$
 is minimized by $\mathbf{A}_k$ among all matrices $\mathbf{B}$ with rank $\le k$.</p>
 </li>
-<li><p><strong>Proof of Eckart-Young theorem for the $\ell_2$ norm.</strong></p>
+<li><p><strong>Proof of Eckart-Young theorem for the $\ell_2$ norm.</strong> (optional)</p>
 <p>First we note
 $$
 \|\mathbf{A} - \mathbf{A}_k\|_2 = \left\|\sum_{i=1}^r \sigma_i \mathbf{u}_i \mathbf{v}_i' - \sum_{i=1}^k \sigma_i \mathbf{u}_i \mathbf{v}_i' \right\|_2 = \left\|\sum_{i=k+1}^r \sigma_i \mathbf{u}_i \mathbf{v}_i' \right\|_2 = \sigma_{k+1}.
@@ -15232,7 +15232,7 @@ There exists such $\mathbf{x}$ because (1) $\mathcal{N}(\mathbf{B})$ has dimensi
 \end{eqnarray*}
 The proof is finished.</p>
 </li>
-<li><p><strong>(Nathan Srebro's) Proof of Eckart-Young theorem for the Frobenius norm.</strong></p>
+<li><p><strong>(Nathan Srebro's) Proof of Eckart-Young theorem for the Frobenius norm.</strong> (optional)</p>
 <p>Let $\mathbf{B}$ be a matrix of rank $k$. By the rank factorization, $\mathbf{B} = \mathbf{C} \mathbf{R}$, where $\mathbf{C} \in \mathbb{R}^{m \times k}$ and $\mathbf{R} \in \mathbb{R}^{k \times n}$. Using SVD of $\mathbf{B}$, we will assume that $\mathbf{C}$ has orthogonal columns (so $\mathbf{C}' \mathbf{C} = \mathbf{D}$) and $\mathbf{R}$ has orthonormal rows (so $\mathbf{R} \mathbf{R}' = \mathbf{I}_k$). We want to show $\mathbf{C} = \mathbf{U}_k \boldsymbol{\Sigma}_k$ and $\mathbf{R} = \mathbf{V}_k'$, where $(\boldsymbol{\Sigma}_k, \mathbf{U}_k, \mathbf{V}_k)$ are the top $k$ singular values/vectors of $\mathbf{A}$. 
   In order for $\mathbf{B} = \mathbf{C} \mathbf{R}$ to minimize
 $$
