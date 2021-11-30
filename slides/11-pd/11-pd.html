@@ -13703,13 +13703,15 @@ M265.897 198.898 L930.879 198.898 L930.879 95.2176 L265.897 95.2176  Z
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>For a twice differentiable, multivariate function $f: \mathbb{R}^n \mapsto \mathbb{R}$, the test for a minimum is:
+<li>For a twice differentiable, multivariate function $f: \mathbb{R}^n \mapsto \mathbb{R}$, the test for a local minimum is:
 $$
 \nabla f(\mathbf{x}) = \begin{pmatrix} \frac{\partial f}{\partial x_1} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{pmatrix} = \mathbf{0} \quad (\text{first derivative test})
 $$
 and
 $$
-\nabla^2 f(\mathbf{x}) = \begin{pmatrix} \frac{\partial^2 f}{\partial x_i \partial x_j} \end{pmatrix} \succ \mathbf{O} \quad (\text{second derivative test}).
+\nabla^2 f(\mathbf{x}) = \begin{pmatrix} \frac{\partial^2 f}{\partial x_1 \partial x_1} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_1 \partial x_n} \\
+\vdots &amp; \ddots &amp; \vdots \\
+\frac{\partial^2 f}{\partial x_n \partial x_1} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_n \partial x_n} \end{pmatrix} \succ \mathbf{O} \quad (\text{second derivative test}).
 $$</li>
 </ul>
 
