@@ -13698,7 +13698,7 @@ Then</p>
 </li>
 <li><p><strong>Frobenius norm</strong> $\|\mathbf{A}\|_{\text{F}}^2 = \sum_{i,j} a_{ij}^2 = \text{tr}(\mathbf{A}' \mathbf{A}) = \sum_i \sigma_i^2$.</p>
 </li>
-<li><p><strong>Spectral norm</strong> or <strong>$\ell_2$ matrix norm</strong> : $\|\mathbf{A}\|_2 = \max \frac{\|\mathbf{A} \mathbf{x}\|}{\|\mathbf{x}\|} = \sigma_1$. HW6_7, Q7.7.</p>
+<li><p><strong>Spectral norm</strong> or <strong>$\ell_2$ matrix norm</strong> : $\|\mathbf{A}\|_2 = \max \frac{\|\mathbf{A} \mathbf{x}\|}{\|\mathbf{x}\|} = \sigma_1$. HW6+7, Q7.7.</p>
 </li>
 </ul>
 
@@ -14704,7 +14704,7 @@ Vt factor:
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li><p>Question: Why the singular values of an orthogonal matrix $\mathbf{Q}$ are all 1?</p>
-<p>Answer: $\mathbf{Q}' \mathbf{Q} = \mathbf{Q} \mathbf{Q}' = \mathbf{I}_n$.</p>
+<p>Answer: $\mathbf{Q} = \mathbf{Q} \cdot \mathbf{I}_n \cdot \mathbf{I}_n$ is the SVD.</p>
 </li>
 </ul>
 
@@ -14893,7 +14893,7 @@ Thus we have $|\lambda| \le \sigma_1$.</p>
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">eigvals</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">.|&gt;</span> <span class="n">abs</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">eigvals</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">.|&gt;</span> <span class="n">abs</span> <span class="o">|&gt;</span> <span class="n">sort</span>
 </pre></div>
 
     </div>
@@ -14913,11 +14913,11 @@ Thus we have $|\lambda| \le \sigma_1$.</p>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>5-element Vector{Float64}:
- 2.494932658676304
  0.40430183507710504
  1.3783689386709292
  1.3783689386709292
- 1.919495811756816</pre>
+ 1.919495811756816
+ 2.494932658676304</pre>
 </div>
 
 </div>
@@ -14931,7 +14931,7 @@ Thus we have $|\lambda| \le \sigma_1$.</p>
 <div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">svdvals</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">svdvals</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="n">sort</span>
 </pre></div>
 
     </div>
@@ -14951,11 +14951,11 @@ Thus we have $|\lambda| \le \sigma_1$.</p>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>5-element Vector{Float64}:
- 3.489438880007399
- 2.8060037261549073
- 1.5864873101456833
+ 0.2015200272614016
  1.175124849036181
- 0.2015200272614016</pre>
+ 1.5864873101456833
+ 2.8060037261549073
+ 3.489438880007399</pre>
 </div>
 
 </div>
@@ -15655,7 +15655,7 @@ $$
 $$</p>
 <p>Proof: Let $\tilde{\mathbf{y}} \in \mathbb{R}^n$ hold corresponding entries in $\mathbf{y}$ and be zero elsewhere. Then
 $$
-\sigma_1 (\mathbf{B}) = \max \frac{\|\mathbf{B} \mathbf{y}\|}{\|\mathbf{y}\|} = \max \frac{\|\mathbf{A} \tilde{\mathbf{y}}\|}{\|\tilde{\mathbf{y}}\|} \le \max \frac{\|\mathbf{A} \mathbf{x}\|}{\|\mathbf{x}\|} = \sigma_1 (\mathbf{A}).
+\sigma_1 (\mathbf{B}) = \max_{\mathbf{y}} \frac{\|\mathbf{B} \mathbf{y}\|}{\|\mathbf{y}\|} = \max_{\tilde{\mathbf{y}}} \frac{\|\mathbf{A} \tilde{\mathbf{y}}\|}{\|\tilde{\mathbf{y}}\|} \le \max_{\mathbf{x}} \frac{\|\mathbf{A} \mathbf{x}\|}{\|\mathbf{x}\|} = \sigma_1 (\mathbf{A}).
 $$</p>
 </li>
 </ul>
@@ -16118,7 +16118,7 @@ are called the <strong>principal components</strong>.</p>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-    <div id="7cbc7cc9-7352-46b4-9c03-851b3ad4cec5" style="width:600px;height:400px;"></div>
+    <div id="acae1c5c-03ad-4a0e-8297-5a7b20fee444" style="width:600px;height:400px;"></div>
     <script>
         requirejs.config({
         paths: {
@@ -16127,7 +16127,7 @@ are called the <strong>principal components</strong>.</p>
     });
     require(['Plotly'], function (Plotly) {
 
-        var PLOT = document.getElementById('7cbc7cc9-7352-46b4-9c03-851b3ad4cec5');
+        var PLOT = document.getElementById('acae1c5c-03ad-4a0e-8297-5a7b20fee444');
     Plotly.plot(PLOT, [
     {
         "xaxis": "x",
@@ -16689,7 +16689,7 @@ are called the <strong>principal components</strong>.</p>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-    <div id="c8d09301-df5b-4e55-b852-f26cea2833e5" style="width:600px;height:400px;"></div>
+    <div id="00970bdf-36d3-446e-acda-679b4bc8c838" style="width:600px;height:400px;"></div>
     <script>
         requirejs.config({
         paths: {
@@ -16698,7 +16698,7 @@ are called the <strong>principal components</strong>.</p>
     });
     require(['Plotly'], function (Plotly) {
 
-        var PLOT = document.getElementById('c8d09301-df5b-4e55-b852-f26cea2833e5');
+        var PLOT = document.getElementById('00970bdf-36d3-446e-acda-679b4bc8c838');
     Plotly.plot(PLOT, [
     {
         "xaxis": "x",
